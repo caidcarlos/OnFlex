@@ -5,7 +5,7 @@ return [
     'manifest' => [
         'name' => env('APP_NAME', 'OnFlex App'),
         'short_name' => 'OnFlex',
-        'start_url' => '/',
+        'start_url' => env('APP_URL', 'https://onflex.co'),
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
         'display' => 'standalone',

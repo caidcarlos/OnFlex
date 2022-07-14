@@ -1,0 +1,24 @@
+{
+  "name": "ONFLEX",
+  "short_name": "ONFLEX",
+  "start_url": "https://onflex.co",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "ONFLEX.",
+  "icons": [{
+    "src": "images/icons/icon-144x144.png",
+    "sizes": "144x144",
+    "type": "image/png",
+    "purpose": "any maskable"
+  },{
+    "src": "images/icons/icon-48x48.png",
+    "sizes": "48x48",
+    "type": "image/png",
+    "purpose": "any maskable"
+  }, {
+    "src": "img/touch/home72.png",
+    "sizes": "72x72",
+    "type": "image/png",
+    "purpose": "any maskable"
+  }]
+}
