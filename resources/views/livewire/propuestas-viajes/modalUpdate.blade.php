@@ -69,8 +69,8 @@
                 </div>
             </div>
             @if(Auth::user()->tipo_usuario == 3)
-                <div class = "w-full border border-green-400 rounded-sm">
-                    <div class = "text-lg text-center py-2 px-4 font-bold bg-green-400 w-full">
+                <div class = "w-full border border-gray-700 rounded-sm">
+                    <div class = "text-lg text-center text-white py-2 px-4 font-bold bg-gray-700 w-full">
                         Estado de tu solicitud
                     </div>
                     @if(($solicitudesViaje == null) OR ($solicitudesViaje->isEmpty()))
@@ -103,8 +103,8 @@
                 </div>
             @endif
             @if(Auth::user()->tipo_usuario == 2)
-                <div class = "w-full border border-green-400 rounded-sm">
-                    <div class = "text-lg text-center py-2 px-4 font-bold bg-green-400 w-full">
+                <div class = "w-full border border-gray-700 rounded-sm">
+                    <div class = "text-lg text-center text-white py-2 px-4 font-bold bg-gray-700 w-full">
                         Solicitudes del Viaje
                     </div>
                     @if(($solicitudesViaje == null) OR ($solicitudesViaje->isEmpty()))
@@ -171,7 +171,7 @@
             @endif
             <div class="mx-auto md:flex md:justify-between w-11/12 mt-4">
                 <div class="w-full sm:text-center sm:mt-2 md:mt-0">
-                    <button class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalUpdate()"
                         wire:loading.attr = "disabled"
                         wire:loading.attr="disabled">

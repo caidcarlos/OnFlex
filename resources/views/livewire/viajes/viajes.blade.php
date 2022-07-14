@@ -205,11 +205,11 @@
                                     <td>{{$vec->estadoV}}</td>
                                     <td>
                                         <div class = "w--full md:flex md:justify-around">
-                                            <button class="md:ml-2 sm:w-full md:w-1/2 md:w-auto inline-flex md:mr-1 items-center sm:px-3 md:px-4 sm:py-1 md:py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalleViaje({{$vec->idV}})">
                                                     Ver Detalles
                                             </button>
-                                            <button class="md:ml-2 sm:w-full md:w-1/2 md:w-auto inline-flex md:ml-1 items-center sm:px-3 md:px-4 sm:py-1 md:py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verGastos({{$vec->idV}})">
                                                     Ver Gastos
                                             </button>
@@ -276,11 +276,11 @@
                                     <td>{{$vt->estadoV}}</td>
                                     <td>
                                         <div class = "w--full md:flex md:justify-around">
-                                            <button class="md:ml-2 sm:w-full md:w-1/2 md:w-auto inline-flex md:mr-1 items-center sm:px-3 md:px-4 sm:py-1 md:py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalleViaje({{$vt->idV}})">
                                                     Ver Detalles
                                             </button>
-                                            <button class="md:ml-2 sm:w-full md:w-1/2 md:w-auto inline-flex md:ml-1 items-center sm:px-3 md:px-4 sm:py-1 md:py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verGastos({{$vt->idV}})">
                                                     Ver Gastos
                                             </button>

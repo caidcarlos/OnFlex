@@ -106,7 +106,7 @@
                                     @enderror
                                 </div>
                                 <div id="flex justify-around">
-                                    <button class="inline-flex mt-4 items-center px-4 py-2 font-bold text-sm bg-gray-700 text-white uppercase hover:bg-green-500 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                         wire:click.prevent = "guardarEmpresa({{$id_empresa}})">
                                         Guardar Cambios
                                     </button>
@@ -171,7 +171,7 @@
                                     @enderror
                                 </div>
                                 <div class = "flex justify-around">
-                                    <button class = "inline-flex items-center mt-4 px-4 py-2 bg-gray-700 font-bold text-sm text-white uppercase hover:bg-green-500 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                    <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                         wire:click.prevent = "guardarTransportista({{$id_trans}})">
                                         Guardar Cambios
                                     </button>
@@ -190,45 +190,39 @@
                         <h3 class="text-lg font-medium text-gray-900">Imagen de Perfil</h3>
                     @endif
                     @if ($vista == 3)
-                    <x-jet-form-section submit="updatePassword">
-                        <x-slot name="title">
-                            {{ __('Actualizar Contraseña') }}
-                        </x-slot>
-                    
-                        <x-slot name="description">
-                            {{ __('') }}
-                        </x-slot>
-                    
-                        <x-slot name="form">
-                            <div class="col-span-6 sm:col-span-4">
-                                <x-jet-label for="current_password" value="{{ __('Contraseña Actual') }}" />
-                                <x-jet-input id="current_password" type="password" class="mt-1 block w-full" wire:model.defer="state.current_password" autocomplete="current-password" />
-                                <x-jet-input-error for="current_password" class="mt-2" />
-                            </div>
-                    
-                            <div class="col-span-6 sm:col-span-4">
-                                <x-jet-label for="password" value="{{ __('Nueva Contraseña') }}" />
-                                <x-jet-input id="password" type="password" class="mt-1 block w-full" wire:model.defer="state.password" autocomplete="new-password" />
-                                <x-jet-input-error for="password" class="mt-2" />
-                            </div>
-                    
-                            <div class="col-span-6 sm:col-span-4">
-                                <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" />
-                                <x-jet-input id="password_confirmation" type="password" class="mt-1 block w-full" wire:model.defer="state.password_confirmation" autocomplete="new-password" />
-                                <x-jet-input-error for="password_confirmation" class="mt-2" />
-                            </div>
-                        </x-slot>
-                    
-                        <x-slot name="actions">
-                            <x-jet-action-message class="mr-3" on="saved">
-                                {{ __('Contraseña Actualizada.') }}
-                            </x-jet-action-message>
-                    
-                            <x-jet-button>
-                                {{ __('Actualizar Contraseña') }}
-                            </x-jet-button>
-                        </x-slot>
-                    </x-jet-form-section>
+                        <h3 class="text-lg font-medium text-gray-900">Actualizar Contraseña</h3>
+                        <div class="mt-4">
+                            <x-jet-label for="act_pass" value="{{ __('Contraseña Actual') }}" />
+                            <input wire:model.defer="act_pass" 
+                                class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                                type="password" disabled>
+                            @error('act_pass')
+                                <div class = "text-sm text-red-600 ">{{$message}}</div>
+                            @enderror
+                        </div>
+                        <div class="mt-4">
+                            <x-jet-label for="n_pass" value="{{ __('Nueva Contraseña') }}" />
+                            <input wire:model.defer="n_pass" 
+                                class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                                type="password" disabled>
+                            @error('n_pass')
+                                <div class = "text-sm text-red-600 ">{{$message}}</div>
+                            @enderror
+                        </div>
+                        <div class="mt-4">
+                            <x-jet-label for="conf_pass" value="{{ __('Actualizar Contraseña') }}" />
+                            <input wire:model.defer="conf_pass" 
+                                class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                                type="password" disabled>
+                            @error('conf_pass')
+                                <div class = "text-sm text-red-600 ">{{$message}}</div>
+                            @enderror
+                        </div>
+                        <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                            wire:click.prevent = "cambiarPassword()">
+                            Cancelar Suscripción
+                        </button>
+
                     @endif
                     @if ($vista == 4)
                         <h3 class="text-lg font-medium text-gray-900">Cancelar Suscripción</h3>
@@ -236,7 +230,7 @@
                             <p class="text-md text-black">Te extrañaremos en OnFlex. Por favor, permite que sepamos porqué nos dejas:</p>
                                 <textarea name="motivo" id="motivo" cols="40" rows="5" 
                                 class="w-full border-gray-400 rounded-sm focus:border-blue-400"></textarea>
-                            <button class = "inline-flex items-center mt-4 px-4 py-2 bg-blue-700 rounded-lg font-bold text-sm text-white uppercase hover:bg-gray-700 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                            <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                 wire:click.prevent = "cancelarSuscripción()">
                                 Cancelar Suscripción
                             </button>

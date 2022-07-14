@@ -1,9 +1,9 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-green-500">
+<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-700">
     <!--div>
         { { $logo }}
     </div-->
 
-    <div class = "text-white font-bold text-center lg:text-6xl md:text-5xl sm:text-4xl">
+    <div class = "text-green-400 font-bold text-center lg:text-6xl md:text-5xl sm:text-4xl">
         OnFlex
     </div>
 

@@ -116,7 +116,7 @@
             </div>
             <div class="mx-auto md:flex md:justify-between w-11/12 mt-4">
                 <div class="md:w-1/2 sm:w-full sm:text-center sm:mt-2 md:mt-0">
-                    <button class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalVerGastos()"
                         wire:loading.attr="disabled">
                         Cerrar

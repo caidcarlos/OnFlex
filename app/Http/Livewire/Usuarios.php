@@ -18,11 +18,12 @@ class Usuarios extends Component
     public $cedula, $nombre, $apellido, $num_pase, $estatura, $peso, $id_trans;
     public $nit, $razon_social, $nombre_rep, $apellido_rep, $telefono, $id_empresa;
     public $email, $contrasenna, $foto_perfil;
+    public $n_pass, $conf_pass, $act_pass;
 
     public function render()
     {
         if(Auth::user()->tipo_usuario == '2'){
-            $perfil = Empresa::where('usuario_id', Auth::user()->id)->get();
+            $perfil = Empresa::where('usuario_id', Auth::user()->id)->get();   
             if($perfil->isEmpty()){
                 $this->nit = '';
                 $this->razon_social = '';
@@ -155,8 +156,22 @@ class Usuarios extends Component
         session()->flash('notificacion', '¡Datos guardados con éxito!');
     }
 
-    public function updatePassword(){
-        
+    public function cambiarPassword(){
+        $this->validate([
+            'act_pass' => 'required',
+            'n_pass' => 'required',
+            'conf_pass' => 'required',
+        ]);
+        $actual = Hash::make($this->act_pass);
+        if((Auth::user()->password == $actual) && ($this->n_pass == $this-> conf_pass)){
+            
+        }
+        if($this->n_pass == $this-> conf_pass){
+
+        }
+        if(Auth::user()->password == $actual){
+
+        }
     }
 
     public function limpiarCampos(){
