@@ -16,11 +16,11 @@
     <div class="bg-white min-h-screen min-w-screen pt-2">
         <div class="mt-1 mx-auto">
             @if ($beneficiario->isEmpty())
-                <div class = "my-2 w-4/5 p-4 text-center mx-auto font-bold text-sm rounded-md shadow bg-gray-700 text-green-400">
+                <div class = "my-2 w-4/5 p-4 text-center mx-auto font-bold text-sm rounded-md shadow bg-gray-700 text-white">
                     No tienes un beneficiario registrado, agrégalo haciendo clic en el botón de abajo  
                 </div>
                 <div class="w-11/12 mx-auto text-center mt-2">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "registrarBeneficiario()">
                         Agregar Beneficiario
                     </button>
@@ -71,13 +71,13 @@
                         @endphp
                         <div class="md:flex md:justify-center my-2">
                             <div class="sm:w-full md:w-auto">
-                                <button class="sm:w-full inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-500 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                <button class="sm:w-full sm:mr-0 md:mr-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                     wire:click.prevent = "editar({{$b->id}})" @if ($hoy<$cp) disabled="disabled" @endif>
                                     Editar
                                 </button>  
                             </div>
                             <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
-                                <button class="sm:w-full inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-500 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                <button class="sm:w-full sm:mt-1 md:mt-0 sm:ml-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-500 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                     wire:click.prevent = "eliminar({{$b->id}})" @if ($hoy<$cp) disabled="disabled" @endif>
                                     Eliminar
                                 </button>  

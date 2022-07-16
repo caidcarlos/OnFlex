@@ -1,12 +1,13 @@
 <nav x-data="{ open: false }" class="bg-gray-700 sticky border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
+        <div class="flex justify-start h-16">
+            <div class="flex sm:w-5/6">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center w-1/4">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <!--x-jet-application-mark class="block h-9 w-auto" /-->
+                        <img src="{{asset('img/onflex-logo.png')}}" alt="OnFlex">
                     </a>
                 </div>
 
@@ -20,7 +21,7 @@
                     <x-jet-dropdown align="left" width="48">
                         <x-slot name="trigger">
                             <span class="inline-flex rounded-md bg-gray-700">
-                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-700 hover:text-green-500 focus:outline-none transition">
+                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-700 hover:text-green-400 focus:outline-none transition">
                                     Archivos
                                     <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -109,13 +110,13 @@
                 <div class="ml-3 relative">
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            @if (!is_null(Auth::user()->profile_photo_path))
+                                <button class="flex texte-center text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ "storage/".Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md bg-gray-700">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-700 hover:text-green-500 focus:outline-none transition">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-700 hover:text-green-400 focus:outline-none transition">
                                         @if(is_null(Auth::user()->nombre))
                                             {{ Auth::user()->email }}
                                         @else

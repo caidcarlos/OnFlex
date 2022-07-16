@@ -1,6 +1,6 @@
 <div class="fixed w-full inset-0 z-50 overflow-hidden items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
     <div class="w-full text-right">
-        <button wire:click.prevent="cerrarModalCreate()" class="p-3 text-white mr-2 mt-2">
+        <button wire:click.prevent="cerrarModalVerGastos()" class="p-3 text-white mr-2 mt-2">
             X
         </button>
     </div>
@@ -91,32 +91,38 @@
                                     @endphp
                                 </td>
                                 <td>
-                                    <button wire:click.prevent = "modificarGasto({{$g->id}})"
-                                        wire:load.attr="disabled">
-                                        Modificar
-                                    </button>
-                                    <button wire:click.prevent = "borrarGasto({{$g->id}})"
-                                        wire:load.attr="disabled">
-                                        Eliminar
-                                    </button>
+                                    @if($estado_viaje != 'TERMINADO')
+                                        <button wire:click.prevent = "modificarGasto({{$g->id}})"
+                                            wire:load.attr="disabled">
+                                            Modificar
+                                        </button>
+                                        <button wire:click.prevent = "borrarGasto({{$g->id}})"
+                                            wire:load.attr="disabled">
+                                            Eliminar
+                                        </button>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
+                        @php
+                            $total = 0;
+                            foreach($gastos as $g){
+                                $total = $total + ($g->cantidad*$g->precio);
+                            }
+                        @endphp
+                        <tr class="border-t border-t-gray-700 text-lg py-2 text-center font-bold py-1">
+                            <td colspan="3">
+                                Total Gastado:
+                            </td>
+                            <td>
+                                {{$total}} COP
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-                @php
-                    $total = 0;
-                    foreach($gastos as $g){
-                        $total = $total + ($g->cantidad*$g->precio);
-                    }
-                @endphp
-                <div class = "text-md text-right font-bold py-2">
-                    Total Gastado: {{$total}}
-                </div>
             </div>
-            <div class="mx-auto md:flex md:justify-between w-11/12 mt-4">
-                <div class="md:w-1/2 sm:w-full sm:text-center sm:mt-2 md:mt-0">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+            <div class="mx-auto text-center mt-4">
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalVerGastos()"
                         wire:loading.attr="disabled">
                         Cerrar

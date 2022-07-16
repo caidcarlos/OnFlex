@@ -14,25 +14,25 @@
             @endif
             <div class="mt-4 shadow w-11/12 mx-auto">
                 @if (Auth::user()->tipo_usuario == 2)
-                    <div class = "text-lg text-green-400 text-center font-bold py-4 w-full bg-gray-700 uppercase">
+                    <div class = "text-lg text-gray-700 text-center uppercase font-bold py-4 w-full bg-white">
                         Viajes en Curso
                     </div>
                     <table class="px-2 w-full border-1 border-gray-700 rounded-sm">
                         <thead>
-                            <tr class="bg-green-400">
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                            <tr class="bg-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Origen / Destino
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Fecha de Viaje
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Transportista
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Estado
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Opciones
                                 </th>
                             </tr>
@@ -70,7 +70,7 @@
                                     </td>
                                     <td>{{$vec->estadoV}}</td>
                                     <td>
-                                        <button class="md:ml-2 sm:w-full md:w-auto inline-flex items-center sm:px-3 md:px-4 sm:py-1 md:py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                        <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                             wire:click.prevent = "verDetalleViaje({{$vec->idV}})">
                                                 Ver Detalles
                                          </button>
@@ -80,25 +80,25 @@
                         </tbody>
                     </table>
                     <div class="py-2">{{$viajesEnCurso->links()}}</div>
-                    <div class = "mt-4 text-lg text-green-400 text-center font-bold py-4 w-full bg-gray-700 uppercase">
+                    <div class = "mt-4 text-lg text-gray-700 text-center font-bold py-4 w-full bg-whiteuppercase">
                         Viajes Terminados
                     </div>
                     <table class="px-2 w-full border-1 border-gray-700 rounded-sm">
                         <thead>
-                            <tr class="bg-green-400">
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                            <tr class="bg-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Origen / Destino
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Fecha de Viaje
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Transportista
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Estado
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Opciones
                                 </th>
                             </tr>
@@ -136,7 +136,7 @@
                                     </td>
                                     <td>{{$vt->estadoV}}</td>
                                     <td>
-                                        <button class="md:ml-2 sm:w-full md:w-auto inline-flex items-center sm:px-3 md:px-4 sm:py-1 md:py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                        <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                             wire:click.prevent = "verDetalleViaje({{$vt->idV}})">
                                                 Ver Detalles
                                         </button>
@@ -148,25 +148,25 @@
                     <div class="py-2">{{$viajesTerminados->links()}}</div>
                 @endif
                 @if (Auth::user()->tipo_usuario == 3)
-                    <div class = "text-lg text-green-400 text-center font-bold py-4 w-full bg-gray-700 uppercase">
+                    <div class = "text-lg text-gray-700 text-center font-bold py-4 w-full bg-white uppercase">
                         Viajes en Curso
                     </div>
                     <table class="px-2 w-full border-1 border-gray-700 rounded-sm">
                         <thead>
-                            <tr class="bg-green-400">
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                            <tr class="bg-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Origen / Destino
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Fecha de Viaje
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Empresa
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Estado
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Opciones
                                 </th>
                             </tr>
@@ -204,12 +204,12 @@
                                     </td>
                                     <td>{{$vec->estadoV}}</td>
                                     <td>
-                                        <div class = "w--full md:flex md:justify-around">
-                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                        <div class = "w-full md:flex md:justify-around">
+                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalleViaje({{$vec->idV}})">
                                                     Ver Detalles
                                             </button>
-                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verGastos({{$vec->idV}})">
                                                     Ver Gastos
                                             </button>
@@ -219,25 +219,25 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class = "mt-4 text-lg text-green-400 text-center font-bold py-4 w-full bg-gray-700 uppercase">
+                    <div class = "mt-4 text-lg text-gray-700 text-center font-bold py-4 w-full bg-white uppercase">
                         Viajes Terminados
                     </div>
                     <table class="px-2 w-full border-1 border-gray-700 rounded-sm">
                         <thead>
-                            <tr class="bg-green-400">
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                            <tr class="bg-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Origen / Destino
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Fecha de Viaje
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Empresa
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Estado
                                 </th>
-                                <th class="w-1/5 text-gray-700 font-bold py-2 text-md border border-gray-700">
+                                <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                     Opciones
                                 </th>
                             </tr>
@@ -276,11 +276,11 @@
                                     <td>{{$vt->estadoV}}</td>
                                     <td>
                                         <div class = "w--full md:flex md:justify-around">
-                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalleViaje({{$vt->idV}})">
                                                     Ver Detalles
                                             </button>
-                                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verGastos({{$vt->idV}})">
                                                     Ver Gastos
                                             </button>

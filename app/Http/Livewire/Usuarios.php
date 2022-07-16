@@ -18,7 +18,7 @@ class Usuarios extends Component
     public $cedula, $nombre, $apellido, $num_pase, $estatura, $peso, $id_trans;
     public $nit, $razon_social, $nombre_rep, $apellido_rep, $telefono, $id_empresa;
     public $email, $contrasenna, $foto_perfil;
-    public $n_pass, $conf_pass, $act_pass;
+    public $n_pass, $conf_pass, $act_pass, $actual;
 
     public function render()
     {
@@ -70,6 +70,19 @@ class Usuarios extends Component
 
     public function cambiarVista($v){
         $this->vista = $v;
+    }
+
+    public function subirImagen(){
+        $this->validate([
+            'foto_perfil' => 'image|max:2048',
+        ]);
+        $fotoUrl = $this->foto_perfil->store('user-img');
+        $user = User::findOrFail(Auth::user()->id);
+        $user->profile_photo_path = $fotoUrl;
+        $user->save();
+        $this->foto_perfil = '';
+        return redirect()->to('/perfil-usuario');
+        session()->flash('notificacion', '¡Foto de perfil guardada con éxito!');
     }
 
     public function guardarEmpresa($id_empresa){
@@ -162,16 +175,26 @@ class Usuarios extends Component
             'n_pass' => 'required',
             'conf_pass' => 'required',
         ]);
-        $actual = Hash::make($this->act_pass);
-        if((Auth::user()->password == $actual) && ($this->n_pass == $this-> conf_pass)){
-            
+        if((Hash::check($this->act_pass, Auth::user()->password)) && ($this->n_pass == $this-> conf_pass)){
+            User::updateOrCreate(['id' => Auth::user()->id],
+            [
+                'password' => Hash::make($this->n_pass),
+            ]);
+            session()->flash('notificacion', 'Contraseña actualizada');
         }
-        if($this->n_pass == $this-> conf_pass){
+        if($this->n_pass != $this-> conf_pass){
+            session()->flash('notificacion-cnc', 'Contraseña no confirmada');
+        }
+        if(!Hash::check($this->act_pass, Auth::user()->password)){
+            session()->flash('notificacion-cnv', 'Contraseña actual no válida');
+        }
+        $this->limpiarPass();
+    }
 
-        }
-        if(Auth::user()->password == $actual){
-
-        }
+    public function limpiarPass(){
+        $this->n_pass = '';
+        $this->conf_pass = '';
+        $this->act_pass = '';
     }
 
     public function limpiarCampos(){

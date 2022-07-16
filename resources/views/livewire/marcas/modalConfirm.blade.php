@@ -5,7 +5,7 @@
         </button>
     </div>
     <div class="mx-auto my-auto md:w-2/5 sm:w-11/12 bg-white rounded-md">
-        <div class="p-4 font-bold text-xl bg-gray-700 text-center text-green-400">
+        <div class="p-4 font-bold text-xl rounded-md bg-gray-700 text-center text-white">
             @if($status==true) Desactivar @else Reactivar @endif Marca
         </div>
         <div class="px-6 pb-2">
@@ -13,28 +13,24 @@
                 ¿Estás seguro que deseas @if($status==true) <b>Desactivar</b> @else <b>Reactivar</b> @endif 
                 la Marca: {{$nombre}}?
             </div>
-            <div class="mx-auto flex justify-between w-11/12 mt-4">
-                <div class="w-1/2">
+            <div class="flex justify-around w-full mt-4 text-center">
                     @if($status==true)
-                        <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                        <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-center text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                             wire:click.prevent = "cambiarStatus({{$id_marca}})">
                             Desactivar
                         </button>
                     @else
-                        <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                        <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-center text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                             wire:click.prevent = "cambiarStatus({{$id_marca}})"
                             wire:loading.attr="disabled">
                             Activar
                         </button>
                     @endif
-                </div>
-                <div class="w-1/2">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-center text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalConfirm()"
                         wire:loading.attr="disabled">
                         Cerrar
                     </button>
-                </div>
             </div>
         </div>
     </div>

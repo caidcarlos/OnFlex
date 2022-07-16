@@ -7,7 +7,7 @@
     <div class="bg-white min-h-screen min-w-screen border-t border-gray-400 pt-2">
         <div class="mt-1 mx-auto">
             <div class="w-11/12 mx-auto">
-                <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                     wire:click.prevent = "registrarTipoCamion()">
                     Nuevo Tipo de Camión
                 </button>
@@ -57,7 +57,7 @@
             <div class="mt-4 shadow w-11/12 mx-auto">
                 <table class="px-2 w-full border-1 border-gray-500">
                     <thead>
-                        <tr class="bg-green-400">
+                        <tr class="bg-gray-700">
                             <th class="w-3/4 text-white font-bold py-2 text-md border border-gray-700">
                                 Nombre
                             </th>
@@ -72,14 +72,11 @@
                                 <td>{{$tipo->nombre}}</td>
                                 <td>
                                     <div class="md:flex md:justify-center my-2">
-                                        <div class="sm:w-full md:w-auto">
-                                            <button class="sm:w-full inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="w-full sm:mr-0 sm:mb-1 md:mr-1 md:mb-0 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "editar({{$tipo->id}})">
                                                 Editar
                                             </button>  
-                                        </div>
-                                        <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
-                                            <button class="sm:w-full inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="w-full sm:ml-0 sm:mt-1 md:ml-1 md:mt-0 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verStatus({{$tipo->id}})">
                                                 @if($tipo->status==true)
                                                     Desactivar
@@ -87,7 +84,6 @@
                                                     Reactivar
                                                 @endif
                                             </button>  
-                                        </div>
                                     </div>
                                 </td>
                             </tr>
