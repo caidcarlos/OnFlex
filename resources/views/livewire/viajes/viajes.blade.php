@@ -205,11 +205,11 @@
                                     <td>{{$vec->estadoV}}</td>
                                     <td>
                                         <div class = "w-full md:flex md:justify-around">
-                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex mb-1 mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalleViaje({{$vec->idV}})">
                                                     Ver Detalles
                                             </button>
-                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex mt-1 mr-0 md:mt-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verGastos({{$vec->idV}})">
                                                     Ver Gastos
                                             </button>
@@ -276,11 +276,11 @@
                                     <td>{{$vt->estadoV}}</td>
                                     <td>
                                         <div class = "w--full md:flex md:justify-around">
-                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex mb-1 mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalleViaje({{$vt->idV}})">
                                                     Ver Detalles
                                             </button>
-                                            <button class="inline-flex sm:mb-1 sm:mr-0 md:mb-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="inline-flex mt-1 mr-0 md:mt-0 md:mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verGastos({{$vt->idV}})">
                                                     Ver Gastos
                                             </button>

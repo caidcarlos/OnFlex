@@ -3,7 +3,7 @@
         { { $logo }}
     </div-->
 
-    <div class = "sm:w-1/2 md:w-1/3 text-green-400 font-bold text-center lg:text-6xl md:text-5xl sm:text-4xl">
+    <div class = "w-4/5 md:w-1/3 text-green-400 font-bold text-center lg:text-6xl md:text-5xl sm:text-4xl">
         <img src="{{asset('img/onflex-logo.png')}}" alt="OnFlex">
     </div>
 

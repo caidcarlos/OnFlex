@@ -32,7 +32,7 @@
                             <div class="mt-4">
                                 <x-jet-label for="nombre" value="{{ __('Peso de Soporte') }}" />
                                 <div class="text-center block w-full text-lg font-bold rounded-md shadow-sm">
-                                    {{$camion->peso_soporte}} Kilogramos
+                                    {{$camion->peso_soporte}} Toneladas
                                 </div>
                             </div>
                             <div class="mt-4">

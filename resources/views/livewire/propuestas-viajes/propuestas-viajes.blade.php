@@ -58,7 +58,7 @@
                 @if($modalConfirm)
                     @include('livewire.propuestas-viajes.modalConfirm')
                 @endif
-            <div class="mt-4 shadow w-11/12 mx-auto">
+            <div class="mt-4 shadow w-11/12 mx-auto overflow-x-auto relative">
                 <table class="px-2 w-full border-1 border-gray-500">
                     <thead>
                         <tr class="bg-gray-700">
@@ -98,19 +98,19 @@
                                 </td>
                                 <td>{{date("d-m-Y", strtotime($propuesta->fecha_viaje))}}</td>
                                 <td>{{$propuesta->tipo_viaje}}</td>
-                                <td>{{$propuesta->peso_carga}} Kilogramos</td>
+                                <td>{{$propuesta->peso_carga}} Toneladass</td>
                                 <td>{{$propuesta->estado_viaje}}</td>
                                 <td>
                                     <div class="md:flex md:justify-center my-2">
                                         <div class="sm:w-full md:w-auto">
-                                            <button class="sm:w-full sm:mr-0 md:mr-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="w-full mr-0 md:mr-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalles({{$propuesta->id}})">
                                                 Ver Detalles
                                             </button>  
                                         </div>
                                         <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
                                             @if ($solicitudes->isEmpty())
-                                                <button class="sm:w-full sm:ml-0 sm:mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                    wire:click.prevent = "solicitarViaje({{$propuesta->id}})">
                                                     Solicitar Viaje
                                                 </button>
@@ -151,32 +151,32 @@
                                                     @endif
                                                 @endforeach
                                                 @if ($police == 5)
-                                                    <button class="sm:w-full sm:ml-0 sm:mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                    <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                         wire:click.prevent = "solicitarViaje({{$propuesta->id}})">
                                                         Solicitar Viaje
                                                     </button>
                                                 @endif
                                                 @if ($police == 1)
-                                                    <button class="sm:w-full sm:ml-0 sm:mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                    <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                         wire:click.prevent = "cancelarSolicitudViaje({{$solic->id}})">
                                                         Cancelar Solicitud
                                                     </button>
                                                 @endif
                                                 @if ($police == 2)
-                                                    <button class="sm:w-full sm:ml-0 sm:mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                    <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                         wire:click.prevent = "comenzarViaje({{$solic->id}})"
                                                         wire:loading.attr = "disabled">
                                                         Comenzar Viaje
                                                     </button>
                                                 @endif
                                                 @if ($police == 3)
-                                                    <button class="sm:w-full sm:ml-0 sm:mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                    <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                         disabled>
                                                         Solicitud Rechazada
                                                     </button>
                                                 @endif
                                                 @if ($police == 4)
-                                                    <button class="sm:w-full sm:ml-0 sm:mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                    <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                         disabled>
                                                         Viaje Comenzado
                                                     </button>
@@ -209,14 +209,14 @@
                                 <td>
                                     <div class="md:flex md:justify-center my-2">
                                         <div class="sm:w-full md:w-auto">
-                                            <button class="sm:w-full sm:mr-0 md:mr-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            <button class="w-full mr-0 md:mr-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verDetalles({{$propuesta->id}})">
                                                 Ver Detalles
                                             </button>  
                                         </div>
                                         <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
                                             @if((Auth::user()->tipo_usuario == 2) && ($propuesta->estado_viaje == 'ACTIVA'))
-                                                <button class="sm:w-full sm:ml-0 sm:mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                     wire:click.prevent = "cancelarViaje({{$propuesta->id}})">
                                                     Cancelar Viaje
                                                 </button>

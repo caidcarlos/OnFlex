@@ -71,12 +71,12 @@
                             <tr class="hover:bg-gray-200 text-sm text-center">
                                 <td>{{$ciudad->nombre}}</td>
                                 <td>
-                                    <div class="md:flex md:justify-center my-2">
-                                        <button class="w-full md:mr-1 sm:mr-0  md:mb-0 sm:mb-2 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-center text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                    <div class="md:flex md:justify-around my-2">
+                                        <button class="w-full md:mr-1 mr-0  md:mb-0 mb-2 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-center text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent="editar({{$ciudad->id}})">
                                                 Editar
                                         </button>  
-                                        <button class="w-full md:ml-1 sm:ml-0 md:mt-0 sm:mt-2 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-center text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                        <button class="w-full md:ml-1 ml-0 md:mt-0 mt-2 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-center text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                 wire:click.prevent = "verStatus({{$ciudad->id}})">
                                             @if($ciudad->status==true)
                                                     Desactivar
@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full text-center bg-gray-700 font-bold text-green-400 text-md py-8 mt-8">
+    <div class="w-full text-center bg-gray-700 font-bold text-green-400 text-md py-8">
         OnFlex. Conetando al país. 2022. - Todos los derechos reservados.
     </div>
 </div>

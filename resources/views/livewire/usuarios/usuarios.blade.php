@@ -12,8 +12,8 @@
     @endphp
    
     <div class = "bg-white min-h-screen min-w-screen border-t border-gray-400 pt-8">
-        <div class = "flex justify-center w-2/3 mx-auto border-r-4 rounded-sm shadow">
-            <div class = "w-1/3">
+        <div class = "flex justify-center w-11/12 md:w-2/3 mx-auto border-r-4 rounded-sm shadow">
+            <div class = "w-1/4 md:w-1/3">
                 <button class="w-full rounded-tl-md pl-2 py-3 text-left text-sm bg-gray-700 text-white hover:text-green-400 disabled:bg-gray-700 disabled:text-green-400"
                     wire:click.prevent="cambiarVista({{$a}})"
                     @if($vista == 1)
@@ -47,7 +47,7 @@
                     Cancelar Suscripción
                 </button>
             </div>
-            <div class = "w-2/3 border-l-4 border-gray-700">
+            <div class = "w-3/4 md:w-2/3 border-l-4 border-gray-700">
                 <div class="p-3">
                     @if ($vista == 1)
                         <h3 class="text-lg font-medium text-gray-900">Información General</h3>
@@ -73,7 +73,7 @@
                                 <div class="mt-4">
                                     <x-jet-label for="razon_social" value="{{ __('Razón Social') }}" />
                                     <input id="razon_social" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                                        type="text" name="razon_social" wire:model="razon_social" required />
+                                        type="text" name="razon_social" wire:model.defer="razon_social" required />
                                     @error('razon_social')
                                         <div id="text-sm text-red-500">{{$message}}</div>
                                     @enderror
@@ -138,7 +138,7 @@
                                 <div class="mt-4">
                                     <x-jet-label for="nombre" value="{{ __('Nombre') }}" />
                                     <input id="nombre" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                                        type="text" name="nombre" wire:model = "nombre" required />
+                                        type="text" name="nombre" wire:model.defer = "nombre" required />
                                     @error('nombre')
                                         <div class = "text-sm text-red-600 ">{{$message}}</div>
                                     @enderror
@@ -308,9 +308,9 @@
                 </div>
             </div>
         </div>
+    </div>
         <!--footer-->
-        <div class="w-full text-center bg-gray-700 font-bold text-green-500 text-md py-8 mt-8">
+        <div class="w-full text-center bottom-0 relative bg-gray-700 font-bold text-green-500 text-md py-8">
             OnFlex. Conetando al país. 2022. - Todos los derechos reservados.
         </div>
-    </div>
 </div>
