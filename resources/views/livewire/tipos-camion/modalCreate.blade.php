@@ -4,7 +4,7 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto md:w-3/5 sm:w-5/6 sm:h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
+    <div class="mx-auto my-auto md:w-3/5 w-5/6 sm:h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
         <div class="p-4 font-bold text-xl">
             Nuevo Tipo de Camión
         </div>

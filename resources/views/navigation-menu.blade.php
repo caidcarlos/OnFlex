@@ -12,11 +12,13 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                </div>
+                @if (Auth::user()->tipo_usuario == 1)
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-jet-nav-link>
+                    </div>
+                @endif
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex pt-4">
                     <x-jet-dropdown align="left" width="48">
                         <x-slot name="trigger">
@@ -130,31 +132,33 @@
                                 </span>
                             @endif
                         </x-slot>
-
-                        <x-slot name="content">
-                            <x-jet-dropdown-link href="{{ route('perfil-usuario') }}">
-                                {{ __('Ver Perfil') }}
-                            </x-jet-dropdown-link>
-                            @if(Auth::user()->tipo_usuario == 3)
-                                <x-jet-dropdown-link href="{{ route('beneficiario') }}">
-                                    {{ __('Beneficiario') }}
+                        <div class="z-50">
+                            <x-slot name="content">
+                                <x-jet-dropdown-link href="{{ route('perfil-usuario') }}">
+                                    {{ __('Ver Perfil') }}
                                 </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('camiones') }}">
-                                    {{ __('Mis Camiones') }}
+                                @if(Auth::user()->tipo_usuario == 3)
+                                    <x-jet-dropdown-link href="{{ route('beneficiario') }}">
+                                        {{ __('Beneficiario') }}
+                                    </x-jet-dropdown-link>
+                                    <x-jet-dropdown-link href="{{ route('camiones') }}">
+                                        {{ __('Mis Camiones') }}
+                                    </x-jet-dropdown-link>
+                                @endif
+                                <x-jet-dropdown-link href="{{ route('viajes') }}">
+                                    {{ __('Mis Viajes') }}
                                 </x-jet-dropdown-link>
-                            @endif
-                            <x-jet-dropdown-link href="{{ route('viajes') }}">
-                                {{ __('Mis Viajes') }}
-                            </x-jet-dropdown-link>
-                            <form method="POST" action="{{ route('logout') }}" x-data>
-                                @csrf
-                            
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
-                                    @click.prevent="$root.submit();">
-                                    {{ __('Cerrar Sesión') }}
-                                </x-jet-dropdown-link>
-                            </form>
-                        </x-slot>
+                                <form method="POST" action="{{ route('logout') }}" x-data>
+                                    @csrf
+                                
+                                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                        @click.prevent="$root.submit();">
+                                        {{ __('Cerrar Sesión') }}
+                                    </x-jet-dropdown-link>
+                                </form>
+                            </x-slot>
+    
+                        </div>
                     <!-- Authentication -->
                     </x-jet-dropdown>
                 </div>
@@ -179,9 +183,9 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
             <div class="pt-4 pb-1 border-t border-gray-200">
-                <div class="flex items-center px-4">
-                    <div>
-                        <div class="font-medium text-base text-gray-800">Archivos</div>
+                <div class="flex items-center px-4 border-b border-white">
+                    <div class="">
+                        <div class="text-base font-bold text-white uppercase">Archivos</div>
                     </div>
                 </div>
                 <div class="mt-3 space-y-1">
@@ -201,12 +205,13 @@
                     <x-jet-responsive-nav-link href="{{ route('tipos-camion') }}" :active="request()->routeIs('tipos-camion')">
                         {{ __('Tipos de Camión') }}
                     </x-jet-responsive-nav-link>
-
-    
-    
                 </div>
             </div>
-    
+            <div class="flex items-center px-4 border-b border-white">
+                <div class="">
+                    <div class="text-base font-bold text-white uppercase">Procesos</div>
+                </div>
+            </div>
             <x-jet-responsive-nav-link href="{{ route('propuestas-viajes') }}" :active="request()->routeIs('propuestas-viajes')">
                 {{ __('Propuestas de Viaje') }}
             </x-jet-responsive-nav-link>

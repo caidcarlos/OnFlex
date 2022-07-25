@@ -58,14 +58,14 @@
                 @if($modalConfirm)
                     @include('livewire.propuestas-viajes.modalConfirm')
                 @endif
-            <div class="mt-4 shadow w-11/12 mx-auto overflow-x-auto relative">
-                <table class="px-2 w-full border-1 border-gray-500">
+            <div class="mt-4 shadow w-11/12 z-10 mx-auto overflow-x-auto relative">
+                <table class="px-2 w-full border-1 border-gray-500 z-10">
                     <thead>
                         <tr class="bg-gray-700">
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                 Origen / Destino
                             </th>
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                 Fecha de Viaje
                             </th>
                             <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
@@ -77,7 +77,7 @@
                             <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Estado
                             </th>
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                 Opciones
                             </th>
                         </tr>
@@ -98,7 +98,7 @@
                                 </td>
                                 <td>{{date("d-m-Y", strtotime($propuesta->fecha_viaje))}}</td>
                                 <td>{{$propuesta->tipo_viaje}}</td>
-                                <td>{{$propuesta->peso_carga}} Toneladass</td>
+                                <td>{{$propuesta->peso_carga}} Toneladas</td>
                                 <td>{{$propuesta->estado_viaje}}</td>
                                 <td>
                                     <div class="md:flex md:justify-center my-2">

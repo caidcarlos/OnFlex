@@ -1,14 +1,17 @@
-<div class="fixed w-full inset-0 z-50 overflow-hidden items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
-    <div class="w-full text-right">
-        <button wire:click.prevent="cerrarModalCreate()" class="p-3 text-white mr-2 mt-2">
-            X
-        </button>
-    </div>
-    <div class="mx-auto my-auto md:w-3/5 w-5/6 sm:h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
-        <div class="p-4 font-bold text-xl">
-            Nuevo Camión
-        </div>
-        <div class="px-6 pb-2">
+<div>
+    <x-guest-layout>
+        <x-jet-authentication-card>
+            <x-slot name="logo">
+                 <x-jet-authentication-card-logo />
+            </x-slot>
+            <div class="mb-4 text-sm text-gray-600">
+                {{ __('¡Excelente! Ya conocemos tus datos y cómo te ves. Te queda 1 paso: Necesitas regitrar un camión para poder ver todas las propuestas de viaje cerca de tu ubicación.') }}
+            </div>
+            @if (session('status'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
+                </div>
+            @endif
             <div class="mt-4">
                 <x-jet-label for="placa" value="{{ __('Placa') }}" />
                 <input id="placa" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
@@ -20,7 +23,7 @@
             <div class="mt-4">
                 <x-jet-label for="peso_soporte" value="{{ __('Peso de Soporte (En Toneladas)') }}" />
                 <input id="peso_soporte" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    type="text" name="peso_soporte" wire:model.defer="peso_soporte" required />
+                    type="number" max="30" name="peso_soporte" wire:model.defer="peso_soporte" required />
                 @error('peso_soporte')
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
@@ -82,14 +85,7 @@
                         Guardar
                     </button>
                 </div>
-                <div class="md:w-1/2 sm:w-full sm:text-center sm:mt-2 md:mt-0">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
-                        wire:click.prevent = "cerrarModalCreate()"
-                        wire:loading.attr="disabled">
-                        Cerrar
-                    </button>
-                </div>
             </div>
-        </div>
-    </div>
+        </x-jet-authentication-card>
+    </x-guest-layout>
 </div>

@@ -13,7 +13,7 @@
                 <div class="mt-4 w-1/2">
                     <select id="origen" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                         name="origen" wire:model.defer="origen" required>
-                        <option class="bg-gray-200" value=null>Seleccione la Ciudad Origen</option>
+                        <option class="bg-gray-200" value=null>Ciudad Origen</option>
                         @foreach ($ciudades as $ciudad)
                             <option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
                         @endforeach
@@ -25,7 +25,7 @@
                 <div class="mt-4 w-1/2 mr-1">
                     <select id="destino" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                         name="destino" wire:model.defer="destino" required>
-                        <option class="bg-gray-200" value=null>Seleccione la Ciudad Destino</option>
+                        <option class="bg-gray-200" value=null>Ciudad Destino</option>
                         @foreach ($ciudades as $ciudad)
                             <option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
                         @endforeach
@@ -56,8 +56,8 @@
                 @enderror
             </div>
             <div class="mt-4">
-                <x-jet-label for="carga_total" value="{{ __('Peso de Carga Total (En Kilogramos)') }}" />
-                <input type="number" id="carga_total" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                <x-jet-label for="carga_total" value="{{ __('Peso de Carga Total (En Toneladas)') }}" />
+                <input type="number" max="30" id="carga_total" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     name="carga_total" wire:model.defer="carga_total" required>
                 @error('carga_total')
                     <div id="text-sm text-red-500">{{$message}}</div>

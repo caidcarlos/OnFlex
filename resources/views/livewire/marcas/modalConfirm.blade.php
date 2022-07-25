@@ -4,7 +4,7 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto md:w-2/5 sm:w-11/12 bg-white rounded-md">
+    <div class="mx-auto my-auto md:w-2/5 w-5/6 bg-white rounded-md">
         <div class="p-4 font-bold text-xl rounded-md bg-gray-700 text-center text-white">
             @if($status==true) Desactivar @else Reactivar @endif Marca
         </div>

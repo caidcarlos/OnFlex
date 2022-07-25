@@ -4,7 +4,7 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto md:w-2/5 sm:w-11/12 bg-white rounded-md">
+    <div class="mx-auto my-auto md:w-2/5 w-5/6 bg-white rounded-md">
         <div class="p-4 font-bold text-xl bg-gray-700 text-center text-green-400">
             @if($status==true) Desactivar @else Reactivar @endif Plan de Pago
         </div>
