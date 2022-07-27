@@ -6,6 +6,9 @@ use App\Models\Beneficiario;
 use App\Models\Ciudad;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Notification;
+use App\Notifications\RegistroBeneficiario;
+use App\Notifications\BorradoBeneficiario;
 
 class Beneficiarios extends Component
 {
@@ -47,7 +50,7 @@ class Beneficiarios extends Component
 
     public function guardarBeneficiario(){
         $this->validate();
-        Beneficiario::create([
+        $beneficiario = Beneficiario::create([
             'cedula' => $this->cedula,
             'nombre' => $this->nombre,
             'apellido' => $this->apellido,
@@ -57,6 +60,7 @@ class Beneficiarios extends Component
             'ciudad_id' => $this->ciudad_id,
             'transportista_id' => Auth::user()->id,
         ]);
+        Notification::send(Auth::user(), new RegistroBeneficiario($beneficiario));
         $this->cerrarModalCreate();
     }
 
@@ -97,6 +101,7 @@ class Beneficiarios extends Component
 
     public function borrar($id_beneficiario){
         $beneficiario = Beneficiario::find($id_beneficiario);
+        //Notification::send(Auth::user(), new BorradoBeneficiario($beneficiario));
         $beneficiario->delete();
         $this->cerrarModalConfirm();
     }
