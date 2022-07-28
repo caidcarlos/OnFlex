@@ -10,6 +10,11 @@ use App\Models\Viaje;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Notification;
+use App\Notifications\RegistroPropuesta;
+use App\Notifications\BorradoPropuesta;
+use App\Notifications\RegistroMiPropuesta;
+use App\Notifications\BorradoMiPropuesta;
 
 class PropuestasViajes extends Component
 {
@@ -90,6 +95,9 @@ class PropuestasViajes extends Component
             'observacion' => $this->observacion,
             'id_empresa' => Auth::user()->id, 
         ]);
+        Notification::send(Auth::user(), new RegistroMiPropuesta($prop));
+        $camioneros = User::where('tipo_usuario',2)->get();
+        Notification::send($camioneros, new RegistroPropuesta($prop));
         $this->cerrarModalCreate();
     }
 
