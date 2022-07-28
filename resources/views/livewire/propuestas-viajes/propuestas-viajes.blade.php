@@ -59,6 +59,13 @@
                     @include('livewire.propuestas-viajes.modalConfirm')
                 @endif
             <div class="mt-4 shadow w-11/12 z-10 mx-auto overflow-x-auto relative">
+                <div>
+                    @if (session()->has('mensaje'))
+                        <div class="text-white py-2 text-center w-full bg-green-400 text-md rounded font-bold mb-2">
+                            {{ session('mensaje') }}
+                        </div>
+                    @endif
+                </div>
                 <table class="px-2 w-full border-1 border-gray-500 z-10">
                     <thead>
                         <tr class="bg-gray-700">
@@ -204,7 +211,7 @@
                                 </td>
                                 <td>{{date("d-m-Y", strtotime($propuesta->fecha_viaje))}}</td>
                                 <td>{{$propuesta->tipo_viaje}}</td>
-                                <td>{{$propuesta->peso_carga}} Kilogramos</td>
+                                <td>{{$propuesta->peso_carga}} Toneladas</td>
                                 <td>{{$propuesta->estado_viaje}}</td>
                                 <td>
                                     <div class="md:flex md:justify-center my-2">

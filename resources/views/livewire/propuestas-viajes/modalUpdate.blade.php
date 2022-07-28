@@ -45,17 +45,17 @@
                 <div class="mt-4 sm:w-full md:w-1/2">
                     <x-jet-label for="carga_total" value="{{ __('Peso de Carga Total') }}" />
                     <div class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                        {{$carga_total}} Kilogramos
+                        {{$carga_total}} Toneladas
                     </div>
                 </div>
                 @if (Auth::user()->tipo_usuario == 3)
                     <div class="mt-4 sm:w-full md:w-1/2">
                         <x-jet-label for="empresa" value="{{ __('Empresa') }}" />
                         <div class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            <button wire:click.prevent="verPerfil({{$perfil_id}})" title="Haz clic para ver perfil de {{$empresa}}"
-                                class="text-gray-700 bg-transparent p-0 underline underline-offset-2">
+                            <!--button wire:click.prevent="verPerfil({ {$perfil_id}})" title="Haz clic para ver perfil de {{$empresa}}"
+                                class="text-gray-700 bg-transparent p-0 underline underline-offset-2"-->
                                 {{$empresa}}
-                            <button>
+                            <!--/button-->
                         </div>
                     </div>
                 @endif
@@ -82,10 +82,12 @@
                                     <div class = "text-md text-black text-center py-2">Su solicitud está en espera de respuesta por la empresa.</div>
                                     @break
                                 @case('APROBADO')
-                                    <div class = "text-md text-black text-center py-2">Su solicitud ha sido aprobada. Ir a <a href="{{route('viajes')}}"
-                                        class ="text-gray-700 bg-transparent p-0 underline underline-offset-2">
-                                            Mis Viajes
-                                        </a>
+                                    <div class = "text-md text-black text-center py-2">Su solicitud ha sido aprobada. 
+                                        <button class ="text-gray-700 bg-transparent p-0 underline underline-offset-2"
+                                        wire:click.defer= "comenzarViaje({{$solV->idSolic}})"
+                                        wire:loading.attr = "disabled">
+                                            Comenzar Viaje
+                                    </button>
                                     </div>
                                     @break
                                 @case('RECHAZADO')
@@ -95,6 +97,13 @@
                                         wire:loading.attr="disabled">
                                             Solicitar de nuevo
                                         </button>
+                                    </div>
+                                    @break
+                                @case('VIAJE COMENZADO')
+                                    <div class = "text-md text-black text-center py-2">Ya ha comenzado este viaje. Gestione este viaje en <a href="{{route('viajes')}}"
+                                        class="text-gray-700 bg-transparent p-0 underline underline-offset-2 hover:bg-green-400">
+                                            Mis viajes
+                                        </a>
                                     </div>
                                     @break
                             @endswitch
@@ -113,10 +122,10 @@
                         @foreach ($solicitudesViaje as $solV)
                             <div class = "w-full sm:text-sm md:text-md hover:bg-gray-300 flex justify-around">
                                 <div class = "p-2 w-1/2">
-                                    <button wire:click.prevent="verPerfil({{$solV->idT}})" title="Haz clic para ver perfil del transportista {{$solV->nombreT}} {{$solV->apellidoT}}"
-                                        class="text-gray-700 bg-transparent sm:py-0 md:py-2 underline underline-offset-2">
+                                    <!--button wire:click.prevent="verPerfil({ {$solV->idT}})" title="Haz clic para ver perfil del transportista {{$solV->nombreT}} {{$solV->apellidoT}}"
+                                        class="text-gray-700 bg-transparent sm:py-0 md:py-2 underline underline-offset-2"-->
                                         {{$solV->nombreT}} {{$solV->apellidoT}}
-                                    <button>
+                                    <!--button-->
                                 </div>
                                 @if ($solV->estado == 'EN ESPERA')
                                     <div class = "p-2 w-1/4 text-right">
@@ -142,9 +151,13 @@
                                         <button>
                                     </div>
                                 @endif
-                                @if ($solV->estado == 'VIAJE INICIADO')
+                                @if ($solV->estado == 'VIAJE COMENZADO')
                                     <div class = "p-2  w-1/2 text-right">
-                                        ¡Ya el viaje ha sido iniciado! Puede ver los detalles en <a href="{{route('viajes')}}">'Mis Viajes'</a>.
+                                        ¡El viaje ha sido iniciado! Ve los detalles en 
+                                        <a class="text-gray-700 bg-transparent p-0 underline underline-offset-2 hover:bg-green-400"
+                                            href="{{route('viajes')}}">
+                                            'Mis Viajes'
+                                        </a>.
                                     </div>
                                 @endif
                                 @if ($solV->estado == 'RECHAZADO')
@@ -153,14 +166,6 @@
                                             disabled
                                             class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
                                                 RECHAZADA
-                                        </button>
-                                    </div>
-                                @endif
-                                @if ($solV->estado == 'VIAJE EMPEZADO')
-                                    <div class = "p-2  w-1/2 text-right">
-                                        ¡Viaje empezado! <button wire:click.prevent="verViaje({{$solV->idSolic}})"
-                                            class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
-                                                Ver Viaje
                                         </button>
                                     </div>
                                 @endif

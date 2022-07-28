@@ -46,7 +46,7 @@
                     <div class="mt-4 sm:w-full md:w-1/2">
                         <x-jet-label for="carga_total" value="{{ __('Peso de Carga Total') }}" />
                         <div class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            {{$dv->peso_carga}} Kilogramos
+                            {{$dv->peso_carga}} Toneladas
                         </div>
                     </div>
                     @if (Auth::user()->tipo_usuario == 3)

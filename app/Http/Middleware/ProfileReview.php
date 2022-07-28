@@ -36,9 +36,6 @@ class ProfileReview
             return redirect()->route('subir-foto-perfil');
         }
         $camiones = Camion::where('transportista_id', '=', Auth::user()->id)->get();
-        //if(($camiones->isEmpty()) && (Auth::user()->tipo_usuario == 2)){
-        //    return redirect()->route('mensaje-final');
-        //}
         if(($camiones->isEmpty()) && (Auth::user()->tipo_usuario == 3)){
             return redirect()->route('subir-camiones');
         }

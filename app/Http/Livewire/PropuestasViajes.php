@@ -149,11 +149,19 @@ class PropuestasViajes extends Component
     }
 
     public function cancelar($id_prop){
-        PropuestaViaje::updateOrCreate(['id' => $id_prop],[
-            'estado_oferta' => 'CANCELADO'
-        ]);
-        Solicitud::where('propuesta_id', '=', $id_prop)
-            ->delete();
+        $viaje = PropuestaViaje::join('solicitud', 'propuesta_viaje.id', '=', 'solicitud.propuesta_id')
+            ->join('viaje', 'viaje.solicitud_id', '=', 'solicitud.id')
+            ->where('propuesta_viaje.id', '=', $id_prop)
+            ->get();
+        if($viaje->isEmpty()){
+            PropuestaViaje::updateOrCreate(['id' => $id_prop],[
+                'estado_oferta' => 'CANCELADO'
+            ]);
+            Solicitud::where('propuesta_id', '=', $id_prop)
+                ->delete();
+        }else{
+            session()->flash('mensaje', 'Ya este viaje fue comenzado, no se puede cancelar.');
+        }
         $this->cerrarModalConfirm();
     }
 
