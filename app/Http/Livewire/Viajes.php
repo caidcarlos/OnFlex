@@ -12,6 +12,9 @@ use App\Models\Viaje;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Notification;
+use App\Notifications\ActualizarViajeEmpresa;
+use App\Notifications\ActualizarViaje;
 
 class Viajes extends Component
 {
@@ -145,10 +148,16 @@ class Viajes extends Component
     }
 
     public function actualizarEstado($id_viaje){
-        Viaje::updateOrCreate(['id' => $id_viaje], [
+        $viaje = Viaje::updateOrCreate(['id' => $id_viaje], [
             'estado' => $this->estadoV
         ]);
+        $solicitud = Solicitud::find($viaje->solicitud_id);
+        $transportista = User::find($viaje->transportista_id);
+        $propuesta = PropuestaViaje::find($solicitud->propuesta_id);
+        $empresa = User::find($propuesta->id_empresa);
         $this->cerrarModalVerViaje();
+        //Notification::send($transportista, new ActualizarViaje($solicitud));
+        //Notification::send($empresa, new ActualizarViajeEmpresa($solicitud));
     }
 
     public function verGastos($id_viaje){

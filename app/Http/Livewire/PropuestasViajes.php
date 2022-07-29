@@ -15,6 +15,13 @@ use App\Notifications\RegistroPropuesta;
 use App\Notifications\BorradoPropuesta;
 use App\Notifications\RegistroMiPropuesta;
 use App\Notifications\BorradoMiPropuesta;
+use App\Notifications\solicitarViaje;
+use App\Notifications\ComenzarViaje;
+use App\Notifications\ComenzarViajeEmpresa;
+use App\Notifications\CancelarViaje;
+use App\Notifications\RechazarViaje;
+use App\Notifications\ReconsiderarViaje;
+use App\Notifications\AceptarViaje;
 
 class PropuestasViajes extends Component
 {
@@ -166,11 +173,14 @@ class PropuestasViajes extends Component
     }
 
     public function solicitarViaje($id_prop){
-        Solicitud::create([
+        $solicitud = Solicitud::create([
             'propuesta_id' => $id_prop,
             'transportista_id' => Auth::user()->id,
             'estado' => 'EN ESPERA',
         ]);
+
+        Notification::send(Auth::user(), new SolicitarViaje($solicitud));
+
     }
 
     public function resolicitarViaje($id_solic){
@@ -185,9 +195,13 @@ class PropuestasViajes extends Component
             'estado' => 'LISTA DE CARGA',
             'solicitud_id' => $id_solic
         ]);
-        Solicitud::updateOrCreate(['id' => $id_solic],[
+        $solicitud = Solicitud::updateOrCreate(['id' => $id_solic],[
             'estado' => 'VIAJE COMENZADO',
         ]);
+        $empresa = User::find($solicitud->id_empresa);
+        $transportista = User::find($solicitud->transportista_id);
+        Notification::send($empresa, new ComenzarViajeEmpresa($solicitud));
+        Notification::send($transportista, new ComenzarViaje($solicitud));
     }
 
     public function aceptarSolicitudViaje($id_solV){
@@ -212,6 +226,7 @@ class PropuestasViajes extends Component
                 )
                 ->where('solicitud.propuesta_id', '=', $id_propuesta)
                 ->get();
+        Notification::send(User::find($id_transp), new AceptarViaje($solicitud));
     }
 
     public function rechazarSolicitudViaje($id_solV){
@@ -251,10 +266,12 @@ class PropuestasViajes extends Component
                 )
                 ->where('solicitud.propuesta_id', '=', $id_propuesta)
                 ->get();
+        Notification::send(User::find($solicitud->transportista_id), new ReconsiderarViaje($solicitud));
     }
 
     public function cancelarSolicitudViaje($id_solicitud){
         $solicitud = Solicitud::find($id_solicitud);
+        Notification::send(Auth::user(), new CancelarViaje($solicitud));
         $solicitud->delete();
     }
 
@@ -266,9 +283,10 @@ class PropuestasViajes extends Component
     }
 
     public function rechazar($id_prop){
-        PropuestaViaje::updateOrCreate(['id' => $id_prop],[
+        $propuesta = PropuestaViaje::updateOrCreate(['id' => $id_prop],[
             'estado_oferta' => 'ACTIVA'
         ]);
+        Notification::send($usuario, new RechazarViaje($propuesta));
         $this->cerrarModalConfirm();
     }
 
