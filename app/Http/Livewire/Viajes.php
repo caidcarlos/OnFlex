@@ -40,6 +40,7 @@ class Viajes extends Component
                     'viaje.id AS idV',
                 )
                 ->where('viaje.estado', '<>', 'TERMINADO')
+                ->where('propuesta_viaje.id_empresa', '=', Auth::user()->id)
                 ->orderBy('propuesta_viaje.fecha_viaje', 'desc')
                 ->paginate(5);
             $viajesTerminados = Viaje::join('solicitud', 'viaje.solicitud_id', '=', 'solicitud.id')
@@ -57,6 +58,7 @@ class Viajes extends Component
                     'viaje.id AS idV',
                 )
                 ->where('viaje.estado', '=', 'TERMINADO')
+                ->where('propuesta_viaje.id_empresa', '=', Auth::user()->id)
                 ->orderBy('propuesta_viaje.fecha_viaje', 'desc')
                 ->paginate(5);
         }
