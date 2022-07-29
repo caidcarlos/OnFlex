@@ -8,6 +8,9 @@ use App\Models\Modelo;
 use App\Models\TipoCamion;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Notification;
+use App\Notifications\RegistroCamion;
+use App\Notifications\BorradoCamion;
 
 class Camiones extends Component
 {
@@ -57,7 +60,7 @@ class Camiones extends Component
 
     public function guardar(){
         $this->validate();
-        Camion::create([
+        $camion = Camion::create([
             'placa' => $this->placa,
             'anno' => $this->anno,
             'peso_soporte' => $this->peso_soporte,
@@ -65,6 +68,7 @@ class Camiones extends Component
             'tipo_camion_id' => $this->tipo_camion_id,
             'transportista_id' => Auth::user()->id,
         ]);
+        Notification::send(Auth::user(), new RegistroCamion($camion));
         $this->cerrarModalCreate();
     }
 
@@ -108,6 +112,7 @@ class Camiones extends Component
 
     public function borrar($camion_id){
         $camion = Camion::find($camion_id);
+        Notification::send(Auth::user(), new BorradoCamion($camion));
         $camion->delete();
         $this->cerrarModalConfirm();
     }
