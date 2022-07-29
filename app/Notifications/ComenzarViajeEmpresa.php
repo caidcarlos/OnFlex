@@ -7,9 +7,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ComenzarViaje extends Notification
+class ComenzarViajeEmpresa extends Notification
 {
-    use Queueable;
+
+        use Queueable;
     protected $solicitud;
 
     /**
@@ -44,7 +45,7 @@ class ComenzarViaje extends Notification
         return (new MailMessage)
             ->greeting('Hola!')
             ->subject('Viaje Iniciado')
-            ->line("Se informó a la empresa que el viaje a iniciado")
+            ->line("El transportista ha iniciado el viaje")
             ->line('Gracias por ser parte de OnFlex!');
     }
 

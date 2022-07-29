@@ -17,6 +17,7 @@ use App\Notifications\RegistroMiPropuesta;
 use App\Notifications\BorradoMiPropuesta;
 use App\Notifications\solicitarViaje;
 use App\Notifications\ComenzarViaje;
+use App\Notifications\ComenzarViajeEmpresa;
 use App\Notifications\CancelarViaje;
 use App\Notifications\RechazarViaje;
 use App\Notifications\ReconsiderarViaje;
@@ -194,9 +195,13 @@ class PropuestasViajes extends Component
             'estado' => 'LISTA DE CARGA',
             'solicitud_id' => $id_solic
         ]);
-        Solicitud::updateOrCreate(['id' => $id_solic],[
+        $solicitud = Solicitud::updateOrCreate(['id' => $id_solic],[
             'estado' => 'VIAJE COMENZADO',
         ]);
+        $empresa = User::find($solicitud->id_empresa);
+        $transportista = User::find($solicitud->transportista_id);
+        Notification::send($empresa, new ComenzarViajeEmpresa($solicitud));
+        Notification::send($transportista, new ComenzarViaje($solicitud));
     }
 
     public function aceptarSolicitudViaje($id_solV){

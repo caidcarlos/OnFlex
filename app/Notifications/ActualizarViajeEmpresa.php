@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ComenzarViaje extends Notification
+class ActualizarViajeEmpresa extends Notification
 {
     use Queueable;
     protected $solicitud;
@@ -41,11 +41,11 @@ class ComenzarViaje extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->greeting('Hola!')
-            ->subject('Viaje Iniciado')
-            ->line("Se informó a la empresa que el viaje a iniciado")
-            ->line('Gracias por ser parte de OnFlex!');
+         return (new MailMessage)
+                    ->greeting('Hola!')
+                    ->subject('Actualizacion de estado de Viaje')
+                    ->line("El transportista a cambiado el estatus del viaje")
+                    ->line('Gracias por ser parte de OnFlex!');
     }
 
     /**
