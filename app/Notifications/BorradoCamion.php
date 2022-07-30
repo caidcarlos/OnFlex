@@ -1,10 +1,13 @@
-<?php
+    <?php
 
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use NotificationChannels\OneSignal\OneSignalChannel;
+use NotificationChannels\OneSignal\OneSignalMessage;
+use NotificationChannels\OneSignal\OneSignalWebButton;
 use Illuminate\Notifications\Notification;
 
 class BorradoCamion extends Notification
@@ -29,7 +32,8 @@ class BorradoCamion extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        //return ['mail'];
+        return [OneSignalChannel::class];
     }
 
     /**
@@ -59,5 +63,19 @@ class BorradoCamion extends Notification
         return [
             //
         ];
+    }
+
+    public function toOneSignal($notifiable)
+    {
+        return OneSignalMessage::create()
+            ->setSubject("Notificacion de borrado de camion")
+            ->setBody("Ver mas detalles")
+            ->setUrl('http://oneflex.co')
+            ->webButton(
+                OneSignalWebButton::create('link-1')
+                    ->text('Click here')
+                    ->icon('https://upload.wikimedia.org/wikipedia/commons/4/4f/Laravel_logo.png')
+                    ->url('http://laravel.com')
+            );
     }
 }

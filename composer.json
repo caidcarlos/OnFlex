@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "ladumor/laravel-pwa": "^0.0.3",
+        "laravel-notification-channels/onesignal": "^2.4",
         "laravel/framework": "^9.11",
         "laravel/jetstream": "^2.8",
         "laravel/sanctum": "^2.14.1",
