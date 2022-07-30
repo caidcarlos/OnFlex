@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('ciudades', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 70);
+            $table->string('nombre', 100);
             $table->boolean('status');
             $table->timestamps();
         });

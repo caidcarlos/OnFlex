@@ -11,15 +11,15 @@ use Livewire\Component;
 
 class SubirCamiones extends Component
 {
-    public $placa, $anno, $peso_soporte, $tipo_camion_id, $camion_id;
+    public $placa, $anno, $peso_soporte, $tipo_camion_id, $camion_id, $marca, $modelo;
     public $modelos = null;
     public $selectedModelo = null, $selectedMarca = null;
     protected $rules = [
         'placa' => 'required',
         'peso_soporte' => 'required|max:30',
         'anno' => 'required|numeric|min:2000',
-//        'marca_id' => 'required',
-        'selectedModelo' => 'required',
+        'marca' => 'required',
+        'modelo' => 'required|max:20',
         'tipo_camion_id' => 'required',
     ];
 
@@ -41,7 +41,8 @@ class SubirCamiones extends Component
             'placa' => $this->placa,
             'anno' => $this->anno,
             'peso_soporte' => $this->peso_soporte,
-            'modelo_id' => $this->selectedModelo,
+            'marca_id' => $this->marca,
+            'modelo' => $this->modelo,
             'tipo_camion_id' => $this->tipo_camion_id,
             'transportista_id' => Auth::user()->id,
         ]);

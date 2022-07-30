@@ -16,7 +16,7 @@
             @endif
             @if (Auth::user()->tipo_usuario != 2)
                 <div class="w-11/12 sm:mx-auto md:flex md:justify-between mt-2 mx-auto">
-                    <div class="sm:w-full md:w-1/5 flex justify-around">
+                    <div class="sm:w-full md:w-1/3 flex justify-around">
                         <div class="mt-3 mr-2 md:w-1/5">Ver</div>
                         <div class="w-2/5">
                             <select wire:model="cantidad" 
@@ -30,7 +30,7 @@
                         </div>
                         <div class="mt-3 ml-1 md:w-2/5">registros</div>
                     </div>
-                    <div class="sm:w-full md:w-2/5">
+                    <div class="sm:w-full md:w-1/2">
                         <select wire:model="buscaOrigen" 
                             class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                             <option value="">Todas las ciudades</option>
@@ -38,14 +38,6 @@
                                 <option value={{$ciudad->id}}>{{$ciudad->nombre}}</option>
                             @endforeach
                         </select>
-                    </div>
-                    <div class="sm:w-full md:w-2/5 ml-2 flex justify-around text-center">
-                        <div class="w-full flex juestify-around">
-                            <label for="small-range" class="mt-3 block mb-1 w-1/3 text-sm font-medium text-gray-900 dark:text-gray-300">Peso de Carga</label>
-                            <input type="number" min="700" max="2000" step="10" 
-                                class="block mt-1 w-2/3 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                                wire:model="buscaPesoCarga">
-                        </div>
                     </div>
                 </div>
             @endif
@@ -66,33 +58,33 @@
                         </div>
                     @endif
                 </div>
-                <table class="px-2 w-full border-1 border-gray-500 z-10">
+                <table class="px-2 w-auto md:w-full border-1 border-gray-500 z-10">
                     <thead>
                         <tr class="bg-gray-700">
-                            <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                 Origen / Destino
                             </th>
-                            <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                 Fecha de Viaje
                             </th>
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-auto md:w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Tipo de Viaje
                             </th>
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-auto md:w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Peso de Carga
                             </th>
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-auto md:w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Estado
                             </th>
-                            <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                 Opciones
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($propuestas as $propuesta)
-                        @if (Auth::user()->tipo_usuario == 3) 
-                            @if ($propuesta->estado_viaje == 'ACTIVA')
+                        @if ((Auth::user()->tipo_usuario == 3) || (Auth::user()->tipo_usuario == 1)) 
+                            @if (($propuesta->estado_viaje == 'ACTIVA') && ($propuesta->fecha_viaje >= date('Y-m-d')))
                             <tr class="hover:bg-gray-200 text-sm text-center">
                                 <td>
                                     {{$propuesta->origenN}}
@@ -159,13 +151,15 @@
                                                 @endforeach
                                                 @if ($police == 5)
                                                     <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
-                                                        wire:click.prevent = "solicitarViaje({{$propuesta->id}})">
+                                                        wire:click.prevent = "solicitarViaje({{$propuesta->id}})"
+                                                        wire:loading.attr = "disabled">
                                                         Solicitar Viaje
                                                     </button>
                                                 @endif
                                                 @if ($police == 1)
                                                     <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
-                                                        wire:click.prevent = "cancelarSolicitudViaje({{$solic->id}})">
+                                                        wire:click.prevent = "cancelarSolicitudViaje({{$solic->id}})"
+                                                        wire:loading.attr = "disabled">
                                                         Cancelar Solicitud
                                                     </button>
                                                 @endif
@@ -195,43 +189,46 @@
                             </tr>
                             @endif
                         @else
-                            <tr class="hover:bg-gray-200 text-sm text-center">
-                                <td>
-                                    @foreach ($ciudades as $ciudad)
-                                        @if ($ciudad->id == $propuesta->origen)
-                                            {{$ciudad->nombre}}
-                                        @endif
-                                    @endforeach
-                                    / 
-                                    @foreach ($ciudades as $ciudad)
-                                        @if ($ciudad->id == $propuesta->destino)
-                                            {{$ciudad->nombre}}
-                                        @endif
-                                    @endforeach
-                                </td>
-                                <td>{{date("d-m-Y", strtotime($propuesta->fecha_viaje))}}</td>
-                                <td>{{$propuesta->tipo_viaje}}</td>
-                                <td>{{$propuesta->peso_carga}} Toneladas</td>
-                                <td>{{$propuesta->estado_viaje}}</td>
-                                <td>
-                                    <div class="md:flex md:justify-center my-2">
-                                        <div class="sm:w-full md:w-auto">
-                                            <button class="w-full mr-0 md:mr-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
-                                                wire:click.prevent = "verDetalles({{$propuesta->id}})">
-                                                Ver Detalles
-                                            </button>  
-                                        </div>
-                                        <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
-                                            @if((Auth::user()->tipo_usuario == 2) && ($propuesta->estado_viaje == 'ACTIVA'))
-                                                <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
-                                                    wire:click.prevent = "cancelarViaje({{$propuesta->id}})">
-                                                    Cancelar Viaje
-                                                </button>
+                            @if ($propuesta->fecha_viaje >= date('Y-m-d'))
+                                <tr class="hover:bg-gray-200 text-sm text-center">
+                                    <td>
+                                        @foreach ($ciudades as $ciudad)
+                                            @if ($ciudad->id == $propuesta->origen)
+                                                {{$ciudad->nombre}}
                                             @endif
+                                        @endforeach
+                                        / 
+                                        @foreach ($ciudades as $ciudad)
+                                            @if ($ciudad->id == $propuesta->destino)
+                                                {{$ciudad->nombre}}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td>{{date("d-m-Y", strtotime($propuesta->fecha_viaje))}}</td>
+                                    <td>{{$propuesta->tipo_viaje}}</td>
+                                    <td>{{$propuesta->peso_carga}} Toneladas</td>
+                                    <td>{{$propuesta->estado_viaje}}</td>
+                                    <td>
+                                        <div class="md:flex md:justify-center my-2">
+                                            <div class="w-full md:w-auto">
+                                                <button class="w-full mr-0 md:mr-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                    wire:click.prevent = "verDetalles({{$propuesta->id}})">
+                                                    Ver Detalles
+                                                </button>  
+                                            </div>
+                                            <div class="mt-4 md:mt-0 w-full md:w-auto">
+                                                @if((Auth::user()->tipo_usuario == 2) && ($propuesta->estado_viaje == 'ACTIVA'))
+                                                    <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                                        wire:click.prevent = "cancelarViaje({{$propuesta->id}})"
+                                                        wire:loading.attr = "disabled">
+                                                        Cancelar Viaje
+                                                    </button>
+                                                @endif
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endif
                         @endif
                         @endforeach
                     </tbody>

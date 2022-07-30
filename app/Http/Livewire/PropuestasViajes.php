@@ -27,7 +27,7 @@ class PropuestasViajes extends Component
 {
     use WithPagination;
     public $cantidad = 10, $num_viajes = 1;
-    public $buscaOrigen, $buscaPesoCarga = 700;
+    public $buscaOrigen = null, $buscaPesoCarga = 700;
     public $origen, $destino, $fecha_viaje, $carga_total, $tipo_viaje, $id_viaje;
     public $hora_publicacion, $fecha_publicacion, $estado_oferta, $empresa, $observacion, $perfil_id, $propuesta_id;
     public $detalles;
@@ -59,22 +59,36 @@ class PropuestasViajes extends Component
                 ->paginate($this->cantidad);
         }
         if((Auth::user()->tipo_usuario == 3) || (Auth::user()->tipo_usuario == 1)){
-            $propuestas = PropuestaViaje::join('ciudades', 'ciudades.id', '=', 'propuesta_viaje.origen_id')
-                ->select(
-                    'propuesta_viaje.origen_id AS origen',
-                    'propuesta_viaje.destino_id AS destino',
-                    'propuesta_viaje.fecha_viaje AS fecha_viaje',
-                    'propuesta_viaje.id AS id',
-                    'propuesta_viaje.tipo_viaje AS tipo_viaje',
-                    'propuesta_viaje.estado_oferta AS estado_viaje',
-                    'propuesta_viaje.peso_carga_total AS peso_carga',
-                    'ciudades.nombre AS origenN',
-                )
-                ->where('propuesta_viaje.fecha_viaje', '>=', date('Y-m-d'))
-                ->orWhere('propuesta_viaje.origen_id', '=', $this->buscaOrigen)
-//                ->orWhere('detalle_propuesta.id_origen', 'LIKE', '%'.$this->buscaTipoCamion.'%')
-//                ->orWhere('propuesta_viaje.peso_carga_total', 'LIKE', '%'.$this->buscaPesoCarga.'%')
-                ->paginate($this->cantidad);
+            if($this->buscaOrigen == null){
+                $propuestas = PropuestaViaje::join('ciudades', 'ciudades.id', '=', 'propuesta_viaje.origen_id')
+                    ->select(
+                        'propuesta_viaje.origen_id AS origen',
+                        'propuesta_viaje.destino_id AS destino',
+                        'propuesta_viaje.fecha_viaje AS fecha_viaje',
+                        'propuesta_viaje.id AS id',
+                        'propuesta_viaje.tipo_viaje AS tipo_viaje',
+                        'propuesta_viaje.estado_oferta AS estado_viaje',
+                        'propuesta_viaje.peso_carga_total AS peso_carga',
+                        'ciudades.nombre AS origenN',
+                    )
+                    ->orderBy('propuesta_viaje.fecha_viaje', 'desc')
+                    ->paginate($this->cantidad);
+            }else{
+                $propuestas = PropuestaViaje::join('ciudades', 'ciudades.id', '=', 'propuesta_viaje.origen_id')
+                    ->select(
+                        'propuesta_viaje.origen_id AS origen',
+                        'propuesta_viaje.destino_id AS destino',
+                        'propuesta_viaje.fecha_viaje AS fecha_viaje',
+                        'propuesta_viaje.id AS id',
+                        'propuesta_viaje.tipo_viaje AS tipo_viaje',
+                        'propuesta_viaje.estado_oferta AS estado_viaje',
+                        'propuesta_viaje.peso_carga_total AS peso_carga',
+                        'ciudades.nombre AS origenN',
+                    )
+                    ->where('propuesta_viaje.origen_id', '=', $this->buscaOrigen)
+                    ->orderBy('propuesta_viaje.fecha_viaje', 'desc')
+                    ->paginate($this->cantidad);
+            }
         }
         $ciudades = Ciudad::all();
         $solicitudes = Solicitud::where('transportista_id', '=', Auth::user()->id)

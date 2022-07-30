@@ -66,12 +66,14 @@
                                         Editar
                                     </button>  
                                 </div>
-                                <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
-                                    <button class="ml-2 md:mt-0 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
-                                        wire:click.prevent = "eliminar({{$camion->id}})">
-                                        Eliminar
-                                    </button>  
-                                </div>
+                                @if ($camiones->count() > 1)
+                                    <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
+                                        <button class="ml-2 md:mt-0 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                            wire:click.prevent = "eliminar({{$camion->id}})">
+                                            Eliminar
+                                        </button>  
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endforeach

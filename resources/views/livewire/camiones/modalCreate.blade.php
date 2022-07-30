@@ -35,29 +35,22 @@
             </div>
             <div class="mt-4">
                 <x-jet-label for="marca" value="{{ __('Marca') }}" />
-                <select id="marca_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    name="marca_id" wire:model="selectedMarca" required>
+                <select id="marca" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                    name="marca" wire:model="marca" required>
                     <option class="bg-gray-200" value=null>Seleccione una Marca</option>
                     @foreach ($marcas as $marca)
                         <option value="{{$marca->id}}">{{$marca->nombre}}</option>
                     @endforeach
                 </select>
-                @error('selectedMarca')
+                @error('marca')
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
                 <x-jet-label for="modelo" value="{{ __('Modelo') }}" />
-                <select id="selectedModelo" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    name="selectedModelo" wire:model="selectedModelo" required>
-                    <option class="bg-gray-200" value=null>Seleccione un Modelo</option>
-                    @if (!is_null($modelos))
-                        @foreach ($modelos as $modelo)
-                            <option value="{{$modelo->id}}">{{$modelo->nombre}}</option>
-                        @endforeach
-                    @endif
-                </select>
-                @error('selectedModelo')
+                <input id="modelo" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                    type="text" min="6" name="modelo" wire:model.defer="modelo" required />
+                @error('modelo')
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
@@ -74,15 +67,15 @@
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
-            <div class="mx-auto flex justify-between w-11/12 mt-4">
-                <div class="md:w-1/2 sm:w-full sm:text-center">
+            <div class="mx-auto flex justify-between w-full mt-4">
+                <div class="w-1/2 sm:text-center">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "guardar()"
                         wire:loading.attr="disabled">
                         Guardar
                     </button>
                 </div>
-                <div class="md:w-1/2 sm:w-full sm:text-center sm:mt-2 md:mt-0">
+                <div class="md:w-1/2 sm:text-center">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalCreate()"
                         wire:loading.attr="disabled">

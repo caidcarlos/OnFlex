@@ -4,11 +4,11 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto md:w-3/5 sm:w-5/6 sm:h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
+    <div class="mx-auto my-auto md:w-3/5 w-5/6 h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
         <div class="p-4 font-bold text-xl">
             Nueva Propuesta de Viaje
         </div>
-        <div class="px-6 pb-w">
+        <div class="px-6 pb-w py-4">
             <div class="w-full p-4 flex mx-auto justify-around">
                 <div class="mt-4 w-1/2">
                     <select id="origen" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
@@ -71,15 +71,15 @@
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
-            <div class="mx-auto md:flex md:justify-between w-11/12 mt-4">
-                <div class="md:w-1/2 sm:w-full sm:text-center">
+            <div class="flex md:justify-between w-full mt-4 mb-8">
+                <div class="w-1/2 text-center">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "guardar()"
                         wire:loading.attr="disabled">
                         Guardar
                     </button>
                 </div>
-                <div class="md:w-1/2 sm:w-full sm:text-center sm:mt-2 md:mt-0">
+                <div class="w-1/2 text-center">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalCreate()"
                         wire:loading.attr="disabled">

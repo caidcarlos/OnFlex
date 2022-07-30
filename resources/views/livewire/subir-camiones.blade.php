@@ -38,29 +38,22 @@
             </div>
             <div class="mt-4">
                 <x-jet-label for="marca" value="{{ __('Marca') }}" />
-                <select id="marca_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    name="marca_id" wire:model="selectedMarca" required>
+                <select id="marca" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                    name="marca" wire:model="marca" required>
                     <option class="bg-gray-200" value=null>Seleccione una Marca</option>
                     @foreach ($marcas as $marca)
                         <option value="{{$marca->id}}">{{$marca->nombre}}</option>
                     @endforeach
                 </select>
-                @error('selectedMarca')
+                @error('marca')
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
                 <x-jet-label for="modelo" value="{{ __('Modelo') }}" />
-                <select id="selectedModelo" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    name="selectedModelo" wire:model="selectedModelo" required>
-                    <option class="bg-gray-200" value=null>Seleccione un Modelo</option>
-                    @if (!is_null($modelos))
-                        @foreach ($modelos as $modelo)
-                            <option value="{{$modelo->id}}">{{$modelo->nombre}}</option>
-                        @endforeach
-                    @endif
-                </select>
-                @error('selectedModelo')
+                <input id="modelo" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                    type="text" min="6" name="modelo" wire:model.defer="modelo" required />
+                @error('modelo')
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>

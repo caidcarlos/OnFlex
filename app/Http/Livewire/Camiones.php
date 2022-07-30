@@ -15,30 +15,27 @@ use App\Notifications\BorradoCamion;
 class Camiones extends Component
 {
     public $modalCreate = false, $modalUpdate = false, $modalConfirm = false;
-    public $placa, $anno, $peso_soporte, $tipo_camion_id, $camion_id;
-    public $selectedModelo = null, $selectedMarca = null;
-    public $marca, $modelo;
+    public $placa, $anno, $peso_soporte, $tipo_camion_id, $modelo, $marca, $camion_id;
     public $modelos;
     protected $rules = [
         'placa' => 'required',
         'peso_soporte' => 'required',
         'anno' => 'required|numeric|min:2000',
-//        'marca_id' => 'required',
-        'selectedModelo' => 'required',
+        'marca' => 'required',
+        'modelo' => 'required|max:10',
         'tipo_camion_id' => 'required',
     ];
 
     public function render()
     {
         $camiones = Camion::join('tipos_camion', 'tipos_camion.id', '=', 'camiones.tipo_camion_id')
-        ->join('modelos', 'modelos.id', '=', 'camiones.modelo_id')
-        ->join('marcas', 'modelos.marca_id', '=', 'marcas.id')
+        ->join('marcas', 'camiones.marca_id', '=', 'marcas.id')
         ->select(
             'camiones.id AS id',
             'camiones.placa AS placa',
             'camiones.anno AS anno',
             'camiones.peso_soporte AS peso_soporte',
-            'modelos.nombre AS modelo',
+            'camiones.modelo AS modelo',
             'marcas.nombre AS marca',
             'tipos_camion.nombre AS tipo_camion',
         )
@@ -64,7 +61,8 @@ class Camiones extends Component
             'placa' => $this->placa,
             'anno' => $this->anno,
             'peso_soporte' => $this->peso_soporte,
-            'modelo_id' => $this->selectedModelo,
+            'marca_id' => $this->marca,
+            'modelo' => $this->modelo,
             'tipo_camion_id' => $this->tipo_camion_id,
             'transportista_id' => Auth::user()->id,
         ]);
@@ -80,9 +78,9 @@ class Camiones extends Component
         $this->peso_soporte = $camion->peso_soporte;
         $this->anno = $camion->anno;
         $this->tipo_camion_id = $camion->tipo_camion_id;
-        $this->selectedModelo = $camion->modelo_id;
-        $modelo = Modelo::find($this->selectedModelo);
-        $this->selectedMarca = $modelo->marca_id;
+        $this->modelo = $camion->modelo;
+        $marca = Marca::find($camion->marca_id);
+        $this->marca = $marca->id;
         $this->abrirModalUpdate();
     }
 
@@ -92,7 +90,8 @@ class Camiones extends Component
             'placa' => $this->placa,
             'anno' => $this->anno,
             'peso_soporte' => $this->peso_soporte,
-            'modelo_id' => $this->selectedModelo,
+            'marca_id' => $this->marca,
+            'modelo' => $this->modelo,
             'tipo_camion_id' => $this->tipo_camion_id,
         ]);
         $this->cerrarModalUpdate();
@@ -102,18 +101,16 @@ class Camiones extends Component
         $camion = Camion::find($camion_id);
         $this->camion_id = $camion->id;
         $this->placa = $camion->placa;
-        $this->selectedModelo = $camion->modelo_id;
-        $modelo = Modelo::find($this->selectedModelo);
-        $this->modelo = $modelo->nombre;
-        $marca = Marca::find($modelo->marca_id);
+        $this->modelo = $camion->modelo;
+        $marca = Marca::find($camion->marca_id);
         $this->marca = $marca->nombre;
         $this->abrirModalConfirm();
     }
 
     public function borrar($camion_id){
         $camion = Camion::find($camion_id);
-        Notification::send(Auth::user(), new BorradoCamion($camion));
         $camion->delete();
+        Notification::send(Auth::user(), new BorradoCamion($camion));
         $this->cerrarModalConfirm();
     }
 
@@ -145,8 +142,8 @@ class Camiones extends Component
         $this->placa = '';
         $this->anno = '';
         $this->peso_soporte = '';
-        $this->selectedModelo = '';
-        $this->selectedMarca = '';
+        $this->marca = '';
+        $this->modelo = '';
         $this->tipo_camion_id = '';
     }
 

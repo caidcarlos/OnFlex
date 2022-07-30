@@ -44,7 +44,7 @@ class ActualizarViajeEmpresa extends Notification
          return (new MailMessage)
                     ->greeting('Hola!')
                     ->subject('Actualizacion de estado de Viaje')
-                    ->line("El transportista a cambiado el estatus del viaje")
+                    ->line("El transportista ha cambiado el estatus del viaje")
                     ->line('Gracias por ser parte de OnFlex!');
     }
 
