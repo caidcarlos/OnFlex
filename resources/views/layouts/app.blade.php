@@ -52,6 +52,19 @@
         
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+            OneSignal.init({
+              appId: "ca07da62-4bb9-49a2-80f2-b194e2efc8ec",
+              safari_web_id: "",
+              notifyButton: {
+                enable: true,
+              },
+            });
+            });
+        </script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
