@@ -95,7 +95,7 @@ class Usuarios extends Component
         ]);
         if($id_empresa == 0){
             $this->validate([
-                'nit' => 'unique:empresa|required|max:20',
+                'nit' => 'unique:empresa|required|max:12',
                 'nombre_rep' => 'required|max:50',
                 'apellido_rep' => 'required|max:50',
                 'telefono' => 'required',
@@ -135,7 +135,7 @@ class Usuarios extends Component
         if($id_trans == 0){
             $this->validate([
                 'nombre' => 'string|required|max:50',
-                'cedula' => 'unique:transportista|required|max:10',
+                'cedula' => 'unique:transportista|required|max:12',
                 'apellido' => 'string|required|max:50',
                 'num_pase' => 'required',
                 'peso' => 'required',

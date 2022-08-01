@@ -36,7 +36,7 @@ class PropuestasViajes extends Component
     protected $rules = [
         'fecha_viaje' => 'required',
         'tipo_viaje' => 'required',
-        'carga_total' => 'required',
+        'carga_total' => 'required|numeric|max:35',
         'origen' => 'required',
         'destino' => 'required',
         'observacion' => 'max:250',
@@ -90,7 +90,7 @@ class PropuestasViajes extends Component
                     ->paginate($this->cantidad);
             }
         }
-        $ciudades = Ciudad::all();
+        $ciudades = Ciudad::orderBy('nombre', 'asc')->get();
         $solicitudes = Solicitud::where('transportista_id', '=', Auth::user()->id)
             ->get();
         return view('livewire.propuestas-viajes.propuestas-viajes', compact('solicitudes','propuestas','ciudades'));
@@ -193,7 +193,7 @@ class PropuestasViajes extends Component
             'estado' => 'EN ESPERA',
         ]);
 
-        Notification::send(Auth::user(), new SolicitarViaje($solicitud));
+        //Notification::send(Auth::user(), new SolicitarViaje($solicitud));
 
     }
 
