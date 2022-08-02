@@ -15,7 +15,7 @@ class ciuadesSeeder extends Seeder
      */
     public function run()
     {
-        Ciudad::create(['nombre' => 'Bogotá', 'status' => true]);
+        Ciudad::create(['nombre' => 'BOGOTÁ', 'status' => true]);
         Ciudad::create(['nombre' => 'MEDELLIN', 'status' => true]);
         Ciudad::create(['nombre' => 'ABEJORRAL', 'status' => true]);
         Ciudad::create(['nombre' => 'ABRIAQUI', 'status' => true]);

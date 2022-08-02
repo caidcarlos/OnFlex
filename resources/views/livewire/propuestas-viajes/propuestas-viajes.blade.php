@@ -58,7 +58,7 @@
                         </div>
                     @endif
                 </div>
-                <table class="px-2 w-auto md:w-full border-1 border-gray-500 z-10">
+                <table class="px-2 w-full border-1 border-gray-500 z-10">
                     <thead>
                         <tr class="bg-gray-700">
                             <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
