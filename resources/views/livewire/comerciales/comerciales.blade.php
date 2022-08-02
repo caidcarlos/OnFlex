@@ -122,7 +122,17 @@
                                 <tr class="hover:bg-gray-200 text-sm text-center">
                                     <td>{{$comercial->nombre}}</td>
                                     <td>{{$comercial->apellidos}}</td>
-                                    <td>Cuentas Vendidas</td>
+                                    <td>
+                                        @php
+                                            $i = 0;
+                                            foreach($empresas as $e){
+                                                if($e->comercial == $comercial->id){
+                                                    $i++;
+                                                }
+                                            }
+                                            echo $i;
+                                        @endphp
+                                    </td>
                                     <td>
                                         @if($comercial->status == true)
                                             Activo
@@ -155,7 +165,15 @@
                                     <td>{{$comercial->nombre}}</td>
                                     <td>{{$comercial->apellidos}}</td>
                                     <td>
-                                        
+                                        @php
+                                            $i = 0;
+                                            foreach($empresas as $e){
+                                                if($e->comercial == $comercial->id){
+                                                    $i++;
+                                                }
+                                            }
+                                            echo $i;
+                                        @endphp
                                     </td>
                                     <td>
                                         @if($comercial->status == true)
