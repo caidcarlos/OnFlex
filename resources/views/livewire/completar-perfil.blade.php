@@ -58,7 +58,7 @@
                         @enderror
                     </div>
                     <div class="mt-4">
-                        <x-jet-label for="comercial" value="{{ __('¿Qué Comercial le vendió la cuenta?') }}" />
+                        <x-jet-label for="comercial" value="{{ __('Asesorado por:') }}" />
                         <select id="comercial" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                             type="text" name="comercial" wire:model.defer = "comercial" required>
                             <option value=null>Seleccione un comercial de la lista</option>
