@@ -16,6 +16,7 @@ use App\Http\Livewire\TiposCamion;
 use App\Http\Livewire\Usuarios;
 use App\Http\Livewire\Viajes;
 use App\Http\Middleware\ProfileReview;
+use App\Http\Middleware\ProtectDashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +58,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
     ProfileReview::class,
+    ProtectDashboard::class,
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');

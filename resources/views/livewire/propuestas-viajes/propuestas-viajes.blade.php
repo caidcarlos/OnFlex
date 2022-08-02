@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="bg-white min-h-screen min-w-screen border-t border-gray-400 pt-2">
-        <div class="mt-1 mx-auto">
+        <div class="mt-3 mx-auto">
             @if (Auth::user()->tipo_usuario == 2)
                 <div class="w-11/12 mx-auto">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
@@ -50,7 +50,7 @@
                 @if($modalConfirm)
                     @include('livewire.propuestas-viajes.modalConfirm')
                 @endif
-            <div class="mt-4 shadow w-11/12 z-10 mx-auto overflow-x-auto relative">
+            <div class="mt-4 shadow w-11/12 mx-auto overflow-x-auto relative" style="z-index: 1 !important;">
                 <div>
                     @if (session()->has('mensaje'))
                         <div class="text-white py-2 text-center w-full bg-green-400 text-md rounded font-bold mb-2">
@@ -58,7 +58,7 @@
                         </div>
                     @endif
                 </div>
-                <table class="px-2 w-full border-1 border-gray-500 z-10">
+                <table class="px-2 w-full border-1 border-gray-500" style="z-index: 1 !important;">
                     <thead>
                         <tr class="bg-gray-700">
                             <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
