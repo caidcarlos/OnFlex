@@ -9,8 +9,8 @@
             Nueva Propuesta de Viaje
         </div>
         <div class="px-6 pb-w py-4">
-            <div class="w-full p-4 flex mx-auto justify-around">
-                <div class="mt-4 w-1/2">
+            <div class="w-full md:flex mx-auto md:justify-around">
+                <div class="mt-2 w-full">
                     <select id="origen" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                         name="origen" wire:model.defer="origen" required>
                         <option class="bg-gray-200" value=null>Ciudad Origen</option>
@@ -22,7 +22,7 @@
                         <div id="text-sm text-red-500">{{$message}}</div>
                     @enderror
                 </div>
-                <div class="mt-4 w-1/2 mr-1">
+                <div class="mt-2 w-full">
                     <select id="destino" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                         name="destino" wire:model.defer="destino" required>
                         <option class="bg-gray-200" value=null>Ciudad Destino</option>

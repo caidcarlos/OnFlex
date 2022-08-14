@@ -120,7 +120,7 @@
                         <div class = "text-md text-black text-center py-2">Esta propuesta no tiene solicitudes todavía</div>
                     @else
                         @foreach ($solicitudesViaje as $solV)
-                            <div class = "w-full sm:text-sm md:text-md hover:bg-gray-300 flex justify-around">
+                            <div class = "w-full sm:text-sm md:text-md hover:bg-gray-300 flex justify-around border border-gray-200">
                                 <div class = "p-2 w-1/2">
                                     <!--button wire:click.prevent="verPerfil({ {$solV->idT}})" title="Haz clic para ver perfil del transportista {{$solV->nombreT}} {{$solV->apellidoT}}"
                                         class="text-gray-700 bg-transparent sm:py-0 md:py-2 underline underline-offset-2"-->
@@ -128,18 +128,20 @@
                                     <!--button-->
                                 </div>
                                 @if ($solV->estado == 'EN ESPERA')
-                                    <div class = "p-2 w-1/4 text-right">
-                                        <button wire:click.prevent="aceptarSolicitudViaje({{$solV->idSolic}})"
-                                            wire:loading.attr = "disabled"
-                                            class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
-                                            Aceptar
-                                        <button>
-                                    </div>
-                                    <div class = "p-2 w-1/4 text-right">
-                                        <button wire:click.prevent="rechazarSolicitudViaje({{$solV->idSolic}})"
-                                            class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
-                                            Rechazar
-                                        <button>
+                                    <div class = "p-2">
+                                        <div class = "w-1/4 text-right">
+                                            <button wire:click.prevent="aceptarSolicitudViaje({{$solV->idSolic}})"
+                                                wire:loading.attr = "disabled"
+                                                class="mr-0 md:mr-1 mb-1 md:mb-0 inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                                Aceptar
+                                            <button>
+                                        </div>
+                                        <div class = "w-1/4 text-right">
+                                            <button wire:click.prevent="rechazarSolicitudViaje({{$solV->idSolic}})"
+                                                class="ml-0 md:ml-1 inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                                Rechazar
+                                            <button>
+                                        </div>
                                     </div>
                                 @endif
                                 @if ($solV->estado == 'APROBADO')

@@ -63,10 +63,10 @@
                                     </td>
                                     <td>{{$vec->fechaV}}</td>
                                     <td>
-                                        <button wire:click.prevent = "verPerfil({{$vec->idT}})" title="Haga clic para ver perfil de {{$vec->nombreT}} {{$vec->apellidoT}}"
-                                            class="bd-transparent p-0 underline">
+                                        <!--button wire:click.prevent = "verPerfil({{$vec->idT}})" title="Haga clic para ver perfil de {{$vec->nombreT}} {{$vec->apellidoT}}"
+                                            class="bd-transparent p-0 underline"-->
                                             {{$vec->nombreT}} {{$vec->apellidoT}}
-                                        </button>
+                                        <!--/button-->
                                     </td>
                                     <td>{{$vec->estadoV}}</td>
                                     <td>
@@ -129,10 +129,10 @@
                                     </td>
                                     <td>{{$vt->fechaV}}</td>
                                     <td>
-                                        <button wire:click.prevent = "verPerfil({{$vt->idT}})" title="Haga clic para ver perfil de {{$vt->nombreT}} {{$vt->apellidoT}}"
-                                            class="bd-transparent p-0 underline">
+                                        <!--button wire:click.prevent = "verPerfil({{$vt->idT}})" title="Haga clic para ver perfil de {{$vt->nombreT}} {{$vt->apellidoT}}"
+                                            class="bd-transparent p-0 underline"-->
                                             {{$vt->nombreT}} {{$vt->apellidoT}}
-                                        </button>
+                                        <!--/button-->
                                     </td>
                                     <td>{{$vt->estadoV}}</td>
                                     <td>
@@ -197,10 +197,10 @@
                                     </td>
                                     <td>{{$vec->fechaV}}</td>
                                     <td>
-                                        <button wire:click.prevent = "verPerfil({{$vec->idE}})" title="Haga clic para ver perfil de {{$vec->nombreE}}"
-                                            class="bd-transparent p-0 underline">
+                                        <!--button wire:click.prevent = "verPerfil({{$vec->idE}})" title="Haga clic para ver perfil de {{$vec->nombreE}}"
+                                            class="bd-transparent p-0 underline"-->
                                             {{$vec->nombreE}}
-                                        </button>
+                                        <!--/button-->
                                     </td>
                                     <td>{{$vec->estadoV}}</td>
                                     <td>
@@ -268,10 +268,10 @@
                                     </td>
                                     <td>{{$vt->fechaV}}</td>
                                     <td>
-                                        <button wire:click.prevent = "verPerfil({{$vt->idE}})" title="Haga clic para ver perfil de {{$vt->nombreE}}"
-                                            class="bd-transparent p-0 underline">
+                                        <!--button wire:click.prevent = "verPerfil({{$vt->idE}})" title="Haga clic para ver perfil de {{$vt->nombreE}}"
+                                            class="bd-transparent p-0 underline"-->
                                             {{$vt->nombreE}}
-                                        </button>
+                                        <!--/button-->
                                     </td>
                                     <td>{{$vt->estadoV}}</td>
                                     <td>

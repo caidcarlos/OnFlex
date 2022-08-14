@@ -61,22 +61,22 @@
                 <table class="px-2 w-full border-1 border-gray-500" style="z-index: 1 !important;">
                     <thead>
                         <tr class="bg-gray-700">
-                            <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Origen / Destino
                             </th>
-                            <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Fecha de Viaje
                             </th>
-                            <th class="w-auto md:w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Tipo de Viaje
                             </th>
-                            <th class="w-auto md:w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Peso de Carga
                             </th>
-                            <th class="w-auto md:w-1/6 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Estado
                             </th>
-                            <th class="w-auto md:w-1/5 text-white font-bold py-2 text-md border border-gray-700">
+                            <th class="w-1/6 text-white font-bold py-2 text-md border border-gray-700">
                                 Opciones
                             </th>
                         </tr>

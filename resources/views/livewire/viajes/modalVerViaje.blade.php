@@ -4,7 +4,7 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto md:w-3/5 sm:w-5/6 sm:h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
+    <div class="mx-auto my-auto md:w-3/5 w-5/6 h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
         <div class="p-4 font-bold text-xl">
             Detalle de Viaje
         </div>
@@ -132,18 +132,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="mx-auto flex justify-between w-11/12 mt-4">
+                <div class="mx-auto flex justify-between mt-4">
                     @if((Auth::user()->tipo_usuario == 3) && ($dv->estadoV != 'TERMINADO'))
-                        <div class="w-full sm:text-center sm:mt-2 md:mt-0">
-                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                        <div class="w-1/2 text-center">
+                            <button class="inline-flex mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                 wire:click.prevent = "actualizarEstado({{$dv->idV}})"
                                 wire:loading.attr = "disabled">
                                 Guardar Cambios
                             </button>
                         </div>
                     @endif
-                    <div class="w-full sm:text-center sm:mt-2 md:mt-0">
-                        <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <div class="w-1/2 text-center">
+                        <button class="inline-flex ml-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                             wire:click.prevent = "cerrarModalVerViaje()"
                             wire:loading.attr="disabled">
                             Cerrar

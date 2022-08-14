@@ -15,7 +15,7 @@ class SubirCamiones extends Component
     public $modelos = null;
     public $selectedModelo = null, $selectedMarca = null;
     protected $rules = [
-        'placa' => 'required',
+        'placa' => 'required|unique:camiones',
         'peso_soporte' => 'required',
         'anno' => 'required|numeric|min:2000',
         'marca' => 'required',

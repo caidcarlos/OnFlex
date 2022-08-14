@@ -18,6 +18,19 @@
         @livewireStyles
         
         <!-- SERVICE WORKER -->
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "ca07da62-4bb9-49a2-80f2-b194e2efc8ec",
+      safari_web_id: "web.onesignal.auto.379e9ba9-232a-4433-a939-20e3e6310530",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
         <!-- Chrome for Android theme color -->
         <meta name="theme-color" content="#000000">
 
@@ -52,6 +65,7 @@
         
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/validacion.js') }}"></script>
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
         <script>
             window.OneSignal = window.OneSignal || [];

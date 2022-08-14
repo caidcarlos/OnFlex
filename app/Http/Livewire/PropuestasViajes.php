@@ -118,7 +118,7 @@ class PropuestasViajes extends Component
         ]);
         Notification::send(Auth::user(), new RegistroMiPropuesta($prop));
         $camioneros = User::where('tipo_usuario',2)->get();
-        Notification::send($camioneros, new RegistroPropuesta($prop));
+        //Notification::send($camioneros, new RegistroPropuesta($prop));
         $this->cerrarModalCreate();
     }
 
@@ -214,8 +214,8 @@ class PropuestasViajes extends Component
         ]);
         $empresa = User::find($solicitud->id_empresa);
         $transportista = User::find($solicitud->transportista_id);
-        Notification::send($empresa, new ComenzarViajeEmpresa($solicitud));
-        Notification::send($transportista, new ComenzarViaje($solicitud));
+//        Notification::send($empresa, new ComenzarViajeEmpresa($solicitud));
+//        Notification::send($transportista, new ComenzarViaje($solicitud));
     }
 
     public function aceptarSolicitudViaje($id_solV){

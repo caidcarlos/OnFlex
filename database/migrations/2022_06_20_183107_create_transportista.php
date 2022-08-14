@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('apellido', 50);
             $table->string('cedula', 15)->unique();
             $table->string('num_pase', 200);
-            $table->float('peso', 5, 2);
-            $table->float('estatura', 3, 2);
+            $table->float('peso', 5, 2)->nullable();
+            $table->float('estatura', 3, 2)->nullable();
             $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('users');
             $table->timestamps();

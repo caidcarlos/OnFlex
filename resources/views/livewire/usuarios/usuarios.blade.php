@@ -159,22 +159,33 @@
                                         <div class = "text-sm text-red-600 ">{{$message}}</div>
                                     @enderror
                                 </div>
-                                <div class="mt-4">
-                                    <x-jet-label for="peso" value="{{ __('Peso (en kilogramos)') }}" />
+                                <!--div class="mt-4">
+                                    <x-jet-label for="peso" value="{{ __('Peso (en kilogramos. Utilice punto para separar decimal)') }}" />
                                     <input id="peso" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                                        type="text" name="peso" wire:model.defer = "peso" required />
+                                        type="text" name="peso" placeholder="90.00" title="Por favor use de separador decimal un punto (.)" maxlength="5" onKeyPress="return validarDecimal(event,this);" wire:model.defer = "peso" required />
                                     @error('peso')
                                         <div class = "text-sm text-red-600 ">{{$message}}</div>
                                     @enderror
+                                    @if (session()->has('msj_peso'))
+                                        <div class="text-sm text-red-600 ">
+                                            {{ session('msj_peso') }}
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="mt-4">
-                                    <x-jet-label for="estatura" value="{{ __('Estatura (en metros)') }}" />
+                                    <x-jet-label for="estatura" value="{{ __('Estatura (En metros. Utilice punto para separar decimal)') }}" />
                                     <input id="estatura" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                                        type="text" name="estatura" wire:model.defer = "estatura" required />
+                                        type="text" name="estatura" placeholder="1.86" title="Por favor use de separador decimal un punto (.)" maxlenght="4" onKeyPress="return validarDecimal(event,this);" wire:model.defer = "estatura" required />
                                     @error('estatura')
                                         <div class = "text-sm text-red-600 ">{{$message}}</div>
                                     @enderror
-                                </div>
+                                    @if (session()->has('msj_estatura'))
+                                        <div class="text-sm text-red-600 ">
+                                            {{ session('msj_estatura') }}
+                                        </div>
+                                    @endif
+
+                                </div-->
                                 <div class="flex justify-around mt-4">
                                     <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                         wire:click.prevent = "guardarTransportista({{$id_trans}})">
