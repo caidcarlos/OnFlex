@@ -4,7 +4,7 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto w-4/5 sm:h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
+    <div class="mx-auto my-auto w-4/5 h-3/4 md:h-5/6 bg-white rounded-md overflow-y-scroll">
         <div class="p-4 font-bold text-xl">
             Editar Modelo
         </div>
@@ -67,16 +67,16 @@
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
-            <div class="mx-auto flex justify-between w-11/12 mt-4">
-                <div class="md:w-1/2 sm:w-full">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+            <div class="mx-auto flex justify-between mt-4">
+                <div class="w-1/2 text-center">
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "modificar({{$camion_id}})"
                         wire:loagind.attr="disabled">
                         Modificar
                     </button>
                 </div>
-                <div class="md:w-1/2 sm:w-full sm:text-center sm:mt-2 md:mt-0">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                <div class="w-1/2 text-center">
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalUpdate()"
                         wire:loading.attr="disabled">
                         Cerrar

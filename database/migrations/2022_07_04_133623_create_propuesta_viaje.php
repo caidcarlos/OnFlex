@@ -21,7 +21,7 @@ return new class extends Migration
             $table->float('peso_carga_total', 6, 2);
             $table->string('tipo_viaje', 20);
             $table->string('estado_oferta', 20);
-            $table->string('observacion', 250)->nullable();
+            $table->text('observacion', 1000)->nullable();
             $table->unsignedBigInteger('origen_id');
             $table->unsignedBigInteger('destino_id');
             $table->unsignedBigInteger('id_empresa');

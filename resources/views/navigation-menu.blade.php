@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-gray-700 sticky border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-[#303c4e] sticky border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-start h-16">
@@ -22,8 +22,8 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex pt-4">
                     <x-jet-dropdown align="left" width="48">
                         <x-slot name="trigger">
-                            <span class="inline-flex rounded-md bg-gray-700">
-                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-700 hover:text-green-400 focus:outline-none transition">
+                            <span class="inline-flex rounded-md bg-[#303c4e]">
+                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#303c4e] hover:text-[#00f2a1] focus:outline-none transition">
                                     Archivos
                                     <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -68,7 +68,7 @@
                         <x-jet-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-[#303c4e] focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
                                         {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -118,11 +118,11 @@
                         <x-slot name="trigger">
                             @if (!is_null(Auth::user()->profile_photo_path))
                                 <button class="flex texte-center text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-10 w-10 rounded-full object-cover" src="{{ "storage/".Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}" />
+                                    <img class="h-10 w-10 rounded-full bg-white object-cover" src="{{ "storage/".Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
-                                <span class="inline-flex rounded-md bg-gray-700">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-700 hover:text-green-400 focus:outline-none transition">
+                                <span class="inline-flex rounded-md bg-[#303c4e]">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#303c4e] hover:text-[#00f2a1] focus:outline-none transition">
                                         @if(is_null(Auth::user()->nombre))
                                             {{ Auth::user()->email }}
                                         @else
@@ -170,7 +170,7 @@
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-green-400 hover:text-gray-700 hover:bg-green-400 focus:outline-none focus:bg-green-400 focus:text-gray-700 transition">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-[#00f2a1] hover:text-[#303c4e] hover:bg-[#00f2a1] focus:outline-none focus:bg-[#00f2a1] focus:text-[#303c4e] transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -228,7 +228,7 @@
             <div class="flex items-center px-4">
                 @if (Auth::user()->profile_photo_path)
                     <div class="shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ "storage/".Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->nombre }}" />
+                        <img class="h-10 w-10 rounded-full object-cover bg-white" src="{{ "storage/".Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->nombre }}" />
                     </div>
                 @endif
 

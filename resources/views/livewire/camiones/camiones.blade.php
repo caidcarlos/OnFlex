@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-[#303c4e] leading-tight">
             {{ __('Mis Camiones') }}
         </h2>
     </x-slot>
@@ -16,13 +16,13 @@
     <div class="bg-white min-h-screen min-w-screen pt-2">
         <div class="mt-1 mx-auto">
             @if ($camiones->isEmpty())
-                <div class = "my-2 w-4/5 p-4 text-center mx-auto font-bold text-sm rounded-md shadow bg-gray-700 text-white">
+                <div class = "my-2 w-4/5 p-4 text-center mx-auto font-bold text-sm rounded-md shadow bg-[#303c4e] text-white">
                     No tienes un camión registrado, agrégalo haciendo clic en el botón de abajo  
                 </div>
             @else
                 <div class="mt-4 md:flex md:justify-around w-5/6 shadow mx-auto">
                     @foreach ($camiones as $camion)
-                        <div class="my-4 sm:w-full md:w-1/2 border md:mx-1 sm:p-1 md:p-2 border-green-400 rounded-md mx-auto">
+                        <div class="my-4 sm:w-full md:w-1/2 border md:mx-1 sm:p-1 md:p-2 border-[#00f2a1] rounded-md mx-auto">
                             <div class="mt-4">
                                 <x-jet-label for="nombre" value="{{ __('Placa') }}" />
                                 <div class="text-center block w-full text-lg font-bold rounded-md shadow-sm">
@@ -61,14 +61,14 @@
                             </div>
                             <div class="flex justify-center my-2 sm:text-center">
                                 <div class="md:w-auto">
-                                    <button class="mr-2 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                    <button class="mr-2 inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                         wire:click.prevent = "editar({{$camion->id}})">
                                         Editar
                                     </button>  
                                 </div>
                                 @if ($camiones->count() > 1)
                                     <div class="sm:mt-4 md:mt-0 sm:w-full md:w-auto">
-                                        <button class="ml-2 md:mt-0 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                        <button class="ml-2 md:mt-0 inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                             wire:click.prevent = "eliminar({{$camion->id}})">
                                             Eliminar
                                         </button>  
@@ -81,19 +81,19 @@
             @endif
             @if ($camiones->count() < 2)
                 <div class="w-11/12 mx-auto text-center my-2">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "registrar()">
                         Agregar Camión
                     </button>
                 </div>
             @endif
-            <!--div class="w-5/6 p-4 border boder-gray-700 rounded-sm mx-auto">
+            <!--div class="w-5/6 p-4 border boder-[#303c4e] rounded-sm mx-auto">
                 Podrá hacer cambios o eliminar al beneficiario después de 90 días, luego del registro o última modificación.<br>
                 Fecha de últimos cambios:
             </div-->
         </div>
     </div>
-    <div class="w-full text-center bg-gray-700 font-bold text-green-400 text-md py-8">
+    <div class="w-full text-center bg-[#303c4e] font-bold text-[#00f2a1] text-md py-8">
         OnFlex. Conetando al país. 2022. - Todos los derechos reservados.
     </div>
 </div>

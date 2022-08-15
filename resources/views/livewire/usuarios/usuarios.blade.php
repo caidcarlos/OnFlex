@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-[#303c4e] leading-tight">
             {{ __('Perfil de Usuario') }}
         </h2>
     </x-slot>
@@ -10,11 +10,13 @@
         $c = 3;
         $d = 4;
     @endphp
-   
+    @if ($modalConfirm)
+        @include('livewire.usuarios.modalConfirm')
+    @endif
     <div class = "bg-white min-h-screen min-w-screen border-t border-gray-400 pt-8">
         <div class = "flex justify-center w-11/12 md:w-2/3 mx-auto border-r-4 rounded-sm shadow">
             <div class = "w-1/4 md:w-1/3">
-                <button class="w-full rounded-tl-md pl-2 py-3 text-left text-sm bg-gray-700 text-white hover:text-green-400 disabled:bg-gray-700 disabled:text-green-400"
+                <button class="w-full rounded-tl-md pl-2 py-3 text-left text-sm bg-[#303c4e] text-white hover:text-[#00f2a1] disabled:bg-[#303c4e] disabled:text-[#00f2a1]"
                     wire:click.prevent="cambiarVista({{$a}})"
                     @if($vista == 1)
                         disabled
@@ -22,7 +24,7 @@
                     >
                     Información General
                 </button>
-                <button class="w-full pl-2 py-3 text-left text-sm bg-gray-700 text-white hover:text-green-400 disabled:bg-gray-700 disabled:text-green-400"
+                <button class="w-full pl-2 py-3 text-left text-sm bg-[#303c4e] text-white hover:text-[#00f2a1] disabled:bg-[#303c4e] disabled:text-[#00f2a1]"
                     wire:click.prevent="cambiarVista({{$b}})"
                     @if($vista == 2)
                         disabled
@@ -30,7 +32,7 @@
                     >
                     Imagen de Perfil
                 </button>
-                <button class="w-full pl-2 py-3 text-left text-sm bg-gray-700 text-white hover:text-green-400 disabled:bg-gray-700 disabled:text-green-400"
+                <button class="w-full pl-2 py-3 text-left text-sm bg-[#303c4e] text-white hover:text-[#00f2a1] disabled:bg-[#303c4e] disabled:text-[#00f2a1]"
                     wire:click.prevent="cambiarVista({{$c}})"
                     @if($vista == 3)
                         disabled
@@ -38,7 +40,7 @@
                     >
                     Actualizar Contraseña
                 </button>
-                <button class="w-full pl-2 rounded-bl-md py-3 text-left text-sm bg-gray-700 text-white hover:text-green-400 disabled:bg-gray-700 disabled:text-green-400"
+                <button class="w-full pl-2 rounded-bl-md py-3 text-left text-sm bg-[#303c4e] text-white hover:text-[#00f2a1] disabled:bg-[#303c4e] disabled:text-[#00f2a1]"
                     wire:click.prevent="cambiarVista({{$d}})"
                     @if($vista == 4)
                         disabled
@@ -47,7 +49,7 @@
                     Cancelar Suscripción
                 </button>
             </div>
-            <div class = "w-3/4 md:w-2/3 border-l-4 border-gray-700">
+            <div class = "w-3/4 md:w-2/3 border-l-4 border-[#303c4e]">
                 <div class="p-3">
                     @if ($vista == 1)
                         <h3 class="text-lg font-medium text-gray-900">Información General</h3>
@@ -111,7 +113,7 @@
                                     @enderror
                                 </div>
                                 <div id="flex justify-around">
-                                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                    <button class="my-4 inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                         wire:click.prevent = "guardarEmpresa({{$id_empresa}})">
                                         Guardar Cambios
                                     </button>
@@ -187,7 +189,7 @@
 
                                 </div-->
                                 <div class="flex justify-around mt-4">
-                                    <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                                    <button class = "inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                         wire:click.prevent = "guardarTransportista({{$id_trans}})">
                                         Guardar Cambios
                                     </button>
@@ -222,7 +224,7 @@
                                 @enderror
                             </div>
                             <div wire:loading wire:target="foto_perfil"
-                                class="py-4 text-center w-ful mx-auto rounded-md text-sm text-white bg-gray-700">
+                                class="py-4 text-center w-ful mx-auto rounded-md text-sm text-white bg-[#303c4e]">
                                 <p class="px-4">Un momento, cargando vista previa de imagen seleccionada.</p>
                             </div>
                             @if($foto_perfil)
@@ -233,14 +235,14 @@
                                     </div>                                       
                                 </div>
                             @endif
-                            <div class="flex justify-around mt-5">
-                                <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                            <div class="mt-4">
+                                <button class = "inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                     wire:click.prevent = "subirImagen()"
                                     wire:loading.attr = "disabled"
                                     wire:target = "foto_perfil">
                                     Guardar Cambios
                                 </button>
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     @if (session()->has('notificacion'))
                                         <div class="text-small text-black bg-green-300 p-2 mr-2 rounded-md">
                                             {{ session('notificacion') }}
@@ -279,8 +281,8 @@
                                 <div class = "text-sm text-red-600 ">{{$message}}</div>
                             @enderror
                         </div>
-                        <div class ="flex justify-around mt-4">
-                            <button class = "my-4 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                        <div class ="flex justify-start mt-4">
+                            <button class = "my-4 inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                             wire:loading.attr = "disabled"
                             wire:click.prevent = "cambiarPassword()">
                             Actualizar Contraseña
@@ -308,10 +310,10 @@
                         <h3 class="text-lg font-medium text-gray-900">Cancelar Suscripción</h3>
                         <div class = "p-4">
                             <p class="text-md text-black">Te extrañaremos en OnFlex. Por favor, permite que sepamos porqué nos dejas:</p>
-                                <textarea name="motivo" id="motivo" cols="40" rows="5" 
+                                <textarea wire:model.defer="motivo" name="motivo" id="motivo" cols="40" rows="5" 
                                 class="w-full border-gray-400 rounded-sm focus:border-blue-400"></textarea>
-                            <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 hover:bg-green-400 font-bold text-sm text-white hover:text-gray-700 uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
-                                wire:click.prevent = "cancelarSuscripción()">
+                            <button class = "my-4 inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                <!--wire:click.prevent = "abrirModalConfirm()"-->
                                 Cancelar Suscripción
                             </button>
                         </div>
@@ -321,7 +323,7 @@
         </div>
     </div>
         <!--footer-->
-        <div class="w-full text-center bottom-0 relative bg-gray-700 font-bold text-green-500 text-md py-8">
+        <div class="w-full text-center bottom-0 relative bg-[#303c4e] font-bold text-green-500 text-md py-8">
             OnFlex. Conetando al país. 2022. - Todos los derechos reservados.
         </div>
 </div>

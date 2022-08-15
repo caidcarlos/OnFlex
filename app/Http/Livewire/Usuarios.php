@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\CancelarSuscripcion;
 use App\Models\Empresa;
 use App\Models\Transportista;
 use App\Models\User;
@@ -19,6 +20,8 @@ class Usuarios extends Component
     public $nit, $razon_social, $nombre_rep, $apellido_rep, $telefono, $id_empresa;
     public $email, $contrasenna, $foto_perfil;
     public $n_pass, $conf_pass, $act_pass, $actual;
+    public $motivo = null;
+    public $modalConfirm = false;
 
     public function render()
     {
@@ -225,6 +228,26 @@ class Usuarios extends Component
             session()->flash('notificacion-cnv', 'Contraseña actual no válida');
         }
         $this->limpiarPass();
+    }
+
+    public function cancelarSuscripcion(){
+        CancelarSuscripcion::create([
+            'motivo' => $this->motivo,
+            'user_id' => Auth::user()->id
+        ]);
+        $usuario = User::findOrFail(Auth::user()->id);
+        $usuario->status = false;
+        $usuario->save();
+        Auth::logout();
+        return redirect('/');
+    }
+
+    public function abrirModalConfirm(){
+        $this->modalConfirm = true;
+    }
+
+    public function cerrarModalConfirm(){
+        $this->modalConfirm = false;
     }
 
     public function limpiarPass(){

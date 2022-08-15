@@ -4,11 +4,11 @@
             <x-slot name="logo">
                  <x-jet-authentication-card-logo />
             </x-slot>
-            <div class="mb-4 text-sm text-gray-600">
+            <div class="mb-4 text-sm text-[#303c4e]">
                 {{ __('¡Excelente! Ya conocemos tus datos y cómo te ves. Te queda 1 paso: Necesitas regitrar un camión para poder ver todas las propuestas de viaje cerca de tu ubicación.') }}
             </div>
             @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
+                <div class="mb-4 font-medium text-sm text-[#00f2a1]">
                     {{ session('status') }}
                 </div>
             @endif
@@ -23,7 +23,7 @@
             <div class="mt-4">
                 <x-jet-label for="peso_soporte" value="{{ __('Peso de Soporte (En Toneladas)') }}" />
                 <input id="peso_soporte" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    type="number" max="30" name="peso_soporte" placeholder="1.86" title="Por favor use de separador decimal un punto (.)" maxlenght="5" onKeyPress="return validarDecimal(event,this);" wire:model.defer="peso_soporte" required />
+                    type="number" max="30" name="peso_soporte" placeholder="30" title="Por favor use de separador decimal un punto (.)" maxlenght="5" onKeyPress="return validarDecimal(event,this);" wire:model.defer="peso_soporte" required />
                 @error('peso_soporte')
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror
@@ -72,7 +72,7 @@
             </div>
             <div class="mx-auto flex justify-between w-11/12 mt-4">
                 <div class="md:w-1/2 sm:w-full sm:text-center">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-gray-700 focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition"
                         wire:click.prevent = "guardar()"
                         wire:loading.attr="disabled">
                         Guardar

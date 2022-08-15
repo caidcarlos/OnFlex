@@ -6,7 +6,7 @@
                     <x-jet-authentication-card-logo />
                 </x-slot>
         
-                <div class="mb-4 text-sm text-gray-600">
+                <div class="mb-4 text-sm text-[#303c4e]">
                     @if (Auth::user()->tipo_usuario == 2)
                         {{ __('¡Muy bien! Ya conocemos los datos de tu empresa, ahora es turno de que sepamos cómo se ve el logo de tu emrpesa') }}
                     @endif
@@ -15,7 +15,7 @@
                     @endif
                 </div>
                 @if (session('status'))
-                    <div class="mb-4 font-medium text-sm text-green-600">
+                    <div class="mb-4 font-medium text-sm text-[#00f2a1]">
                         {{ session('status') }}
                     </div>
                 @endif
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="flex justify-around mt-4">
-                    <button class = "inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                    <button class = "inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition"
                         wire:click.prevent = "guardarImagen()"
                         wire:loading.attr = "disabled"
                         wire:target = "imagen">

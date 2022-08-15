@@ -8,6 +8,7 @@ use App\Http\Livewire\CompletarPerfil;
 use App\Http\Livewire\Marcas;
 use App\Http\Livewire\MensajeFinal;
 use App\Http\Livewire\Modelos;
+use App\Http\Livewire\PagoPlan;
 use App\Http\Livewire\PlanesPago;
 use App\Http\Livewire\PropuestasViajes;
 use App\Http\Livewire\SubirCamiones;
@@ -50,6 +51,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/completar-perfil', Comple
 Route::middleware(['auth:sanctum', 'verified'])->get('/subir-foto-perfil', SubirFotoPerfil::class)->name('subir-foto-perfil');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/subir-camiones', SubirCamiones::class)->name('subir-camiones');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/mensaje-final', MensajeFinal::class)->name('mensaje-final');//
+Route::middleware(['auth:sanctum', 'verified'])->get('/pago-plan', PagoPlan::class)->name('pago-plan');//
 //Route::middleware(['auth:sanctum', 'verified'])->get('/categorias', Categorias::class)->middleware('can:categorias')->name('categorias');
 
 

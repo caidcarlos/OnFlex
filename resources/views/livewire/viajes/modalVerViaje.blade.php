@@ -4,7 +4,7 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto md:w-3/5 w-5/6 h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
+    <div class="mx-auto my-auto md:w-3/5 w-5/6 h-3/4 md:h-5/6 bg-white rounded-md overflow-y-scroll">
         <div class="p-4 font-bold text-xl">
             Detalle de Viaje
         </div>
@@ -53,10 +53,10 @@
                         <div class="mt-4 sm:w-full md:w-1/2">
                             <x-jet-label for="empresa" value="{{ __('Empresa') }}" />
                             <div class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                                <button wire:click.prevent="verPerfil({{$dv->idE}})" title="Haz clic para ver perfil de {{$dv->nombreE}}"
-                                    class="text-gray-700 bg-transparent p-0 underline underline-offset-2">
+                                <!--button wire:click.prevent="verPerfil({{$dv->idE}})" title="Haz clic para ver perfil de {{$dv->nombreE}}"
+                                    class="text-gray-700 bg-transparent p-0 underline underline-offset-2"-->
                                     {{$dv->nombreE}}
-                                <button>
+                                <!--button-->
                             </div>
                         </div>
                     @endif
@@ -64,10 +64,10 @@
                         <div class="mt-4 sm:w-full md:w-1/2">
                             <x-jet-label for="transportista" value="{{ __('Transportista') }}" />
                             <div class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                                <button wire:click.prevent="verPerfil({{$dv->idT}})" title="Haz clic para ver perfil de {{$dv->nombreT}} {{$dv->apellidoT}}"
-                                    class="text-gray-700 bg-transparent p-0 underline underline-offset-2">
+                                <!--button wire:click.prevent="verPerfil({ {$dv->idT}})" title="Haz clic para ver perfil de {{$dv->nombreT}} {{$dv->apellidoT}}"
+                                    class="text-gray-700 bg-transparent p-0 underline underline-offset-2"-->
                                     {{$dv->nombreT}} {{$dv->apellidoT}}
-                                <button>
+                                <!--button-->
                             </div>
                         </div>
                     @endif
@@ -75,7 +75,7 @@
                 <div class="w-full p-4 md:flex md:justify-start">
                     <div class="mt-4 w-full">
                         <x-jet-label for="observaciones" value="{{ __('Observaciones') }}" />
-                        <div class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        <div class="overflow-x-auto block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                             {{$dv->observacion}}
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                 <div class="mx-auto flex justify-between mt-4">
                     @if((Auth::user()->tipo_usuario == 3) && ($dv->estadoV != 'TERMINADO'))
                         <div class="w-1/2 text-center">
-                            <button class="inline-flex mr-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                            <button class="inline-flex mr-1 items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                 wire:click.prevent = "actualizarEstado({{$dv->idV}})"
                                 wire:loading.attr = "disabled">
                                 Guardar Cambios
@@ -143,7 +143,7 @@
                         </div>
                     @endif
                     <div class="w-1/2 text-center">
-                        <button class="inline-flex ml-1 items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                        <button class="inline-flex ml-1 items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                             wire:click.prevent = "cerrarModalVerViaje()"
                             wire:loading.attr="disabled">
                             Cerrar

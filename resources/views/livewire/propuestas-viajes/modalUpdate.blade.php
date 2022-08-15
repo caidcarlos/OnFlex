@@ -4,7 +4,7 @@
             X
         </button>
     </div>
-    <div class="mx-auto my-auto md:w-3/5 w-5/6 h-1/2 md:h-5/6 bg-white rounded-md overflow-y-scroll">
+    <div class="mx-auto my-auto md:w-3/5 w-5/6 h-3/4 md:h-5/6 bg-white rounded-md overflow-y-scroll">
         <div class="p-4 font-bold text-xl">
             Detalle de Viaje
         </div>
@@ -63,8 +63,8 @@
             <div class="w-full p-4 md:flex md:justify-start">
                 <div class="mt-4 w-full">
                     <x-jet-label for="observaciones" value="{{ __('Observaciones') }}" />
-                    <div class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                        {{$observacion}}
+                    <div class="block mt-1 w-full overflow-x-auto border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        <pre>{{$observacion}}</pre>
                     </div>
                 </div>
             </div>
@@ -128,17 +128,17 @@
                                     <!--button-->
                                 </div>
                                 @if ($solV->estado == 'EN ESPERA')
-                                    <div class = "p-2">
-                                        <div class = "w-1/4 text-right">
+                                    <div class = "py-2">
+                                        <div class = "w-1/4 text-center">
                                             <button wire:click.prevent="aceptarSolicitudViaje({{$solV->idSolic}})"
                                                 wire:loading.attr = "disabled"
-                                                class="mr-0 md:mr-1 mb-1 md:mb-0 inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                                class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] hover:text-[#00f2a1] font-bold text-sm text-white active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition">
                                                 Aceptar
                                             <button>
                                         </div>
-                                        <div class = "w-1/4 text-right">
+                                        <div class = "w-1/4 text-center">
                                             <button wire:click.prevent="rechazarSolicitudViaje({{$solV->idSolic}})"
-                                                class="ml-0 md:ml-1 inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                                class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] hover:text-[#00f2a1] font-bold text-sm text-white active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition">
                                                 Rechazar
                                             <button>
                                         </div>
@@ -148,7 +148,7 @@
                                     <div class = "p-2  w-1/2 text-right">
                                         ¡Aprobado! <button wire:click.prevent="reconsiderarSolicitudViaje({{$solV->idSolic}})"
                                             wire:loading.attr = "disabled"
-                                            class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                            class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-[#00f2a1] font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
                                             Deshacer
                                         <button>
                                     </div>
@@ -166,7 +166,7 @@
                                     <div class = "p-2  w-1/2 text-right">
                                         <button wire:click.prevent="reconsiderarSolicitudViaje({{$solV->idSolic}})"
                                             disabled
-                                            class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-green-500 font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                            class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-[#00f2a1] font-bold text-sm text-white uppercase active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
                                                 RECHAZADA
                                         </button>
                                     </div>
@@ -176,9 +176,9 @@
                     @endif
                 </div>
             @endif
-            <div class="mx-auto md:flex md:justify-between w-11/12 mt-4">
-                <div class="w-full sm:text-center sm:mt-2 md:mt-0">
-                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+            <div class="mx-auto flex justify-between mt-4">
+                <div class="w-full text-center">
+                    <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalUpdate()"
                         wire:loading.attr = "disabled"
                         wire:loading.attr="disabled">

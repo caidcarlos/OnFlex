@@ -28,12 +28,14 @@ class usuario_roles_seeder extends Seeder
             'tipo_usuario' => '1',
             'email' => 'admin@onflex.test',
             'password' => Hash::make('123oNFleX45.*'),
+            'status' => true,
         ])->assignRole($role1);
         User::create([
             'nombre' => 'sandyrod',
             'tipo_usuario' => '1',
             'email' => 'sandyrod@gmail.com',
             'password' => Hash::make('123oNFleX45.*'),
-        ])->assignRole($role1);
+            'status' => true,
+            ])->assignRole($role1);
     }
 }

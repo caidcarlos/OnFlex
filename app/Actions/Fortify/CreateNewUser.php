@@ -31,6 +31,7 @@ class CreateNewUser implements CreatesNewUsers
             'tipo_usuario' => $input['tipo_usuario'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'status' => true,
         ]);
         if($input['tipo_usuario'] == '2'){
             $newser->assignRole('Empresa');

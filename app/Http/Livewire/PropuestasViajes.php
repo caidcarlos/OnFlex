@@ -39,7 +39,7 @@ class PropuestasViajes extends Component
         'carga_total' => 'required|numeric|max:35',
         'origen' => 'required',
         'destino' => 'required',
-        'observacion' => 'max:250',
+        'observacion' => 'max:1000',
     ];
 
     public function render()

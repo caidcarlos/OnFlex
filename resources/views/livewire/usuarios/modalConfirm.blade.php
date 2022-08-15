@@ -6,26 +6,25 @@
     </div>
     <div class="mx-auto my-auto md:w-2/5 w-5/6 bg-white rounded-md">
         <div class="p-4 font-bold text-xl bg-[#303c4e] text-center text-[#00f2a1]">
-            Eliminar Baneficiario
+            Cancelar Suscripción
         </div>
         <div class="px-6 pb-2">
             <div class="p-8 text-center text-black text-xl">
-                ¿Estás seguro que deseas <b>eliminar</b> como beneficiario a 
-                {{$nombre}} {{$apellido}}?
+                ¿Estás seguro que deseas <b>cancelar</b> tu suscripción a OnFlex?
             </div>
-            <div class="mx-auto flex justify-between w-11/12 mt-4">
-                <div class="w-1/2">
+            <div class="mx-auto flex justify-between mt-4">
+                <div class="w-1/2 text-center">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition"
-                        wire:click.prevent = "borrar({{$beneficiario_id}})"
+                        wire:click.prevent = "cancelarSuscripcion()"
                         wire:loading.attr="disabled">
-                        Eliminar
+                            Sí, ¡quiero irme!
                     </button>
                 </div>
-                <div class="w-1/2">
+                <div class="w-1/2 text-center">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition"
                         wire:click.prevent = "cerrarModalConfirm()"
                         wire:loading.attr="disabled">
-                        Cerrar
+                            Cerrar
                     </button>
                 </div>
             </div>
