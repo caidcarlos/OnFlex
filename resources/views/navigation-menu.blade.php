@@ -47,6 +47,9 @@
                             <x-jet-dropdown-link href="{{ route('planes-pago') }}">
                                 {{ __('Planes de Pago') }}
                             </x-jet-dropdown-link>
+                            <x-jet-dropdown-link href="{{ route('revisiones-pagos') }}">
+                                {{ __('Revisiones de Pago') }}
+                            </x-jet-dropdown-link>
                             <x-jet-dropdown-link href="{{ route('tipos-camion') }}">
                                 {{ __('Tipos de Camión') }}
                             </x-jet-dropdown-link>
@@ -148,6 +151,9 @@
                                     <x-jet-dropdown-link href="{{ route('camiones') }}">
                                         {{ __('Mis Camiones') }}
                                     </x-jet-dropdown-link>
+                                    <x-jet-dropdown-link href="{{ route('mis-pagos') }}">
+                                        {{ __('Mis Pagos') }}
+                                    </x-jet-dropdown-link>
                                 @endif
                                 <x-jet-dropdown-link href="{{ route('viajes') }}">
                                     {{ __('Mis Viajes') }}
@@ -211,6 +217,9 @@
                     <x-jet-responsive-nav-link href="{{ route('planes-pago') }}" :active="request()->routeIs('planes-pago')">
                         {{ __('Planes de Pago') }}
                     </x-jet-responsive-nav-link>
+                    <x-jet-responsive-nav-link href="{{ route('revisiones-pagos') }}" :active="request()->routeIs('revisiones-pagos')">
+                        {{ __('Revisiones de Pago') }}
+                    </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('tipos-camion') }}" :active="request()->routeIs('tipos-camion')">
                         {{ __('Tipos de Camión') }}
                     </x-jet-responsive-nav-link>
@@ -248,6 +257,9 @@
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('camiones') }}" :active="request()->routeIs('camiones')">
                         {{ __('Mis Camiones') }}
+                    </x-jet-responsive-nav-link>
+                    <x-jet-responsive-nav-link href="{{ route('mis-pagos') }}" :active="request()->routeIs('mis-pagos')">
+                        {{ __('Mis Pagos') }}
                     </x-jet-responsive-nav-link>
                 @endif
                 <x-jet-responsive-nav-link href="{{ route('viajes') }}" :active="request()->routeIs('viajes')">

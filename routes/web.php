@@ -7,10 +7,13 @@ use App\Http\Livewire\Comerciales;
 use App\Http\Livewire\CompletarPerfil;
 use App\Http\Livewire\Marcas;
 use App\Http\Livewire\MensajeFinal;
+use App\Http\Livewire\MisPagos;
 use App\Http\Livewire\Modelos;
 use App\Http\Livewire\PagoPlan;
+use App\Http\Livewire\PagosManuales;
 use App\Http\Livewire\PlanesPago;
 use App\Http\Livewire\PropuestasViajes;
+use App\Http\Livewire\RevisionesPagos;
 use App\Http\Livewire\SubirCamiones;
 use App\Http\Livewire\SubirFotoPerfil;
 use App\Http\Livewire\TiposCamion;
@@ -46,12 +49,14 @@ Route::middleware(['auth:sanctum', 'verified', ProfileReview::class])->get('/ben
 Route::middleware(['auth:sanctum', 'verified', ProfileReview::class])->get('/camiones', Camiones::class)->name('camiones');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/propuestas-viajes', PropuestasViajes::class)->name('propuestas-viajes')->middleware(ProfileReview::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('/viajes', Viajes::class)->name('viajes')->middleware(ProfileReview::class);//
-Route::middleware(['auth:sanctum', 'verified'])->get('/viajes', Viajes::class)->name('viajes')->middleware(ProfileReview::class);//
 Route::middleware(['auth:sanctum', 'verified'])->get('/completar-perfil', CompletarPerfil::class)->name('completar-perfil');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/subir-foto-perfil', SubirFotoPerfil::class)->name('subir-foto-perfil');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/subir-camiones', SubirCamiones::class)->name('subir-camiones');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/mensaje-final', MensajeFinal::class)->name('mensaje-final');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/pago-plan', PagoPlan::class)->name('pago-plan');//
+Route::middleware(['auth:sanctum', 'verified'])->get('/pagos-manuales', PagosManuales::class)->name('pagos-manuales');//
+Route::middleware(['auth:sanctum', 'verified'])->get('/revisiones-pagos', RevisionesPagos::class)->name('revisiones-pagos');//
+Route::middleware(['auth:sanctum', 'verified'])->get('/mis-pagos', MisPagos::class)->name('mis-pagos');//
 //Route::middleware(['auth:sanctum', 'verified'])->get('/categorias', Categorias::class)->middleware('can:categorias')->name('categorias');
 
 

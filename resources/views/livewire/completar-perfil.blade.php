@@ -6,7 +6,7 @@
             </x-slot>
     
             <div class="mb-4 text-sm text-[#303c4e]">
-                {{ __('Bienvenido a OnFlex. Antes de comenzar a utilizar esta aplicación, por favor tómate unos minutos para completar tus datos de perfil') }}
+                {{ __('¡Muy bien! Hemos validado tu pago. Antes de comenzar a utilizar la aplicación, por favor tómate unos minutos para completar tu perfil de usuario') }}
             </div>
     
             @if (session('status'))

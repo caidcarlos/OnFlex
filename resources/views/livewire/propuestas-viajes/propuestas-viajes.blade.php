@@ -50,7 +50,6 @@
                 @if($modalConfirm)
                     @include('livewire.propuestas-viajes.modalConfirm')
                 @endif
-            <div class="mt-4 shadow w-11/12 mx-auto overflow-x-auto relative">
                 <div>
                     @if (session()->has('mensaje'))
                         <div class="text-white py-2 text-center w-full bg-green-400 text-md rounded font-bold mb-2">
@@ -58,14 +57,15 @@
                         </div>
                     @endif
                 </div>
-                <table class="px-2 w-full border-1 border-gray-500">
-                    <thead>
-                        <tr class="bg-[#303c4e]">
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-[#303c4e]">
-                                Origen / Destino
-                            </th>
-                            <th class="w-1/6 text-white font-bold py-2 text-md border border-[#303c4e]">
-                                Fecha de Viaje
+                <div class="mt-4 shadow w-11/12 mx-auto overflow-x-auto">
+                    <table class="px-2 w-full border-1 border-gray-500">
+                        <thead>
+                            <tr class="bg-[#303c4e]">
+                                <th class="w-1/6 text-white font-bold py-2 text-md border border-[#303c4e]">
+                                    Origen / Destino
+                                </th>
+                                <th class="w-1/6 text-white font-bold py-2 text-md border border-[#303c4e]">
+                                    Fecha de Viaje
                             </th>
                             <th class="w-1/6 text-white font-bold py-2 text-md border border-[#303c4e]">
                                 Tipo de Viaje
