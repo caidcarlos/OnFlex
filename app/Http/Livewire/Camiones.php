@@ -11,19 +11,29 @@ use Livewire\Component;
 use Notification;
 use App\Notifications\RegistroCamion;
 use App\Notifications\BorradoCamion;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class Camiones extends Component
 {
+    public Camion $camion;
     public $modalCreate = false, $modalUpdate = false, $modalConfirm = false;
     public $placa, $anno, $peso_soporte, $tipo_camion_id, $modelo, $marca, $camion_id;
     public $modelos;
+
     protected $rules = [
-        'placa' => 'required',
-        'peso_soporte' => 'required',
-        'anno' => 'required|numeric|min:2000',
-        'marca' => 'required',
-        'modelo' => 'required|max:10',
-        'tipo_camion_id' => 'required',
+            'placa' => 'required|unique:camiones,placa',
+            'peso_soporte' => 'required|numeric|min:10|max:35',
+            'anno' => 'required|numeric|min:2000',
+            'marca' => 'required',
+            'modelo' => 'required|max:10',
+            'tipo_camion_id' => 'required',
+        ];
+
+    protected $validationAttributes = [
+        'anno' => 'año',
+        'tipo_camion_id' => 'tipo de camión',
+        'peso_soporte' => 'peso de soporte',
     ];
 
     public function render()
@@ -85,15 +95,22 @@ class Camiones extends Component
     }
 
     public function modificar($camion_id){
-        $this->validate();
-        Camion::updateOrCreate(['id' =>$camion_id],[
-            'placa' => $this->placa,
-            'anno' => $this->anno,
-            'peso_soporte' => $this->peso_soporte,
-            'marca_id' => $this->marca,
-            'modelo' => $this->modelo,
-            'tipo_camion_id' => $this->tipo_camion_id,
+        $camion = Camion::findOrFail($camion_id);
+        $validateData = $this->validate([
+            'placa' => 'required',
+            'peso_soporte' => 'required|numeric|min:10|max:35',
+            'anno' => 'required|numeric|min:2000',
+            'marca' => 'required',
+            'modelo' => 'required|max:10',
+            'tipo_camion_id' => 'required',
         ]);
+        $camion->placa = $this->placa;
+        $camion->anno = $this->anno;
+        $camion->peso_soporte = $this->peso_soporte;
+        $camion->marca_id = $this->marca;
+        $camion->modelo = $this->modelo;
+        $camion->tipo_camion_id = $this->tipo_camion_id;
+        $camion->save($validateData);
         $this->cerrarModalUpdate();
     }
 

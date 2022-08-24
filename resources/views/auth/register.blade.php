@@ -13,6 +13,7 @@
                 <x-jet-label for="tipo_usuario" value="{{ __('Tipo de Usuario') }}" />
                 <select class = "block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     id="tipo_usuario" name="tipo_usuario" required>
+                    <option value="">Elija un tipo de usuario</option>
                     <option value="2">Empresa</option>
                     <option value="3">Transportista</option>
                 </select>
@@ -35,14 +36,14 @@
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
-                    <x-jet-label for="terms">
+                    <x-jet-label for="terminos_y_politicas">
                         <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
+                            <x-jet-checkbox name="terminos_y_politicas" id="terminos_y_politicas"/>
 
                             <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                                {!! __('He leído y acepto los :terms_of_service y las :privacy_policy', [
+                                        'terms_of_service' => '<a target="_blank" href="https://onflex.co/pdf/Terminos-y-Condiciones-ONFLEX.pdf" class="underline text-sm text-gray-600 hover:text-[#303c4e]">'.__('Términos y Condiciones').'</a>',
+                                        'privacy_policy' => '<a target="_blank" href="https://onflex.co/pdf/politica-de-proteccion-de-datos-personales-ONFLEX.pdf" class="underline text-sm text-gray-600 hover:text-[#303c4e]">'.__('Políticas de Privacidad').'</a>',
                                 ]) !!}
                             </div>
                         </div>

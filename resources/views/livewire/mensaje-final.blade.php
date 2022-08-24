@@ -44,25 +44,6 @@
                         href="{{route('camiones')}}">aquí</a></div>
                     </div>
                 @endif
-                <form>
-                    <script src='https://checkout.epayco.co/checkout.js'
-                        data-epayco-key='28f77f799ead4ee69f14fbf98c62c1c0' 
-                        class='epayco-button' 
-                        data-epayco-amount='79990' 
-                        data-epayco-tax='0.00'  
-                        data-epayco-tax-ico='0.00'               
-                        data-epayco-tax-base='79990'
-                        data-epayco-name='Suscripción a OnFlex 1 mes' 
-                        data-epayco-description='Suscripción a OnFlex 1 mes' 
-                        data-epayco-currency='cop'    
-                        data-epayco-country='CO' 
-                        data-epayco-test='true' 
-                        data-epayco-external='false' 
-                        data-epayco-response=''  
-                        data-epayco-confirmation='' 
-                        data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'> 
-                    </script> 
-                </form> 
 
             </x-jet-authentication-card>
         </x-guest-layout>

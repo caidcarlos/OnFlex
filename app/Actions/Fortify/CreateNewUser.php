@@ -20,12 +20,16 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
+        $messages = [
+            'terms.required' => 'Debe aceptar nuestro Términos y Condiciones y nuestras Políticas de seguridad para continuar.'
+        ];
+
         Validator::make($input, [
             'tipo_usuario' => ['required', 'string'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
-        ])->validate();
+            'terminos_y_politicas' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
+        ])->validate($messages);
 
         $newser =  User::create([
             'tipo_usuario' => $input['tipo_usuario'],
@@ -41,4 +45,5 @@ class CreateNewUser implements CreatesNewUsers
         }
         return $newser;
     }
+
 }

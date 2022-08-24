@@ -14,15 +14,15 @@
                 <input id="placa" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     type="text" min="6" name="placa" wire:model.defer="placa" required />
                 @error('placa')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
                 <x-jet-label for="peso_soporte" value="{{ __('Peso de Soporte (En Toneladas)') }}" />
                 <input id="peso_soporte" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    type="text" name="peso_soporte" placeholder="30" title="Por favor use de separador decimal un punto (.)" maxlenght="5" onKeyPress="return validarDecimal(event,this);" wire:model.defer="peso_soporte" required />
+                    type="number" name="peso_soporte" placeholder="30" max="35" wire:model.defer="peso_soporte" required />
                 @error('peso_soporte')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -30,7 +30,7 @@
                 <input id="anno" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     type="number" min="2000" max="{{date('Y')}}" step="1.0" name="anno" wire:model.defer="anno" required />
                 @error('anno')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -43,7 +43,7 @@
                     @endforeach
                 </select>
                 @error('marca')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -51,7 +51,7 @@
                 <input id="modelo" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     type="text" min="6" name="modelo" wire:model.defer="modelo" required />
                 @error('modelo')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -64,7 +64,7 @@
                     @endforeach
                 </select>
                 @error('tipo_camion_id')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mx-auto flex justify-between w-full mt-4">

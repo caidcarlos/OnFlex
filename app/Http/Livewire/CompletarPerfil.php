@@ -32,16 +32,16 @@ class CompletarPerfil extends Component
             'nombre' => 'required|min:2|max:50',
             'apellido' => 'required|min:2|max:50',
             'licencia' => 'required',
-//            'peso' => 'required',
-//            'estatura' => 'required',
+            'peso' => 'required',
+            'estatura' => 'required',
         ]);
         $this->guadarNombre($this->nombre);
         Transportista::create([
             'cedula' => $this->cedula,
             'apellido' => $this->apellido,
             'num_pase' => $this->licencia,
-//            'peso' => $this->peso,
-//            'estatura' => $this->estatura,
+            'peso' => $this->peso,
+            'estatura' => $this->estatura,
             'usuario_id' => Auth::user()->id,
         ]);
         return redirect()->route('subir-foto-perfil');

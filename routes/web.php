@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\AmigoEnVia;
 use App\Http\Livewire\Beneficiarios;
 use App\Http\Livewire\Camiones;
 use App\Http\Livewire\Ciudades;
@@ -9,6 +10,7 @@ use App\Http\Livewire\Marcas;
 use App\Http\Livewire\MensajeFinal;
 use App\Http\Livewire\MisPagos;
 use App\Http\Livewire\Modelos;
+use App\Http\Livewire\Nutricionista;
 use App\Http\Livewire\PagoPlan;
 use App\Http\Livewire\PagosManuales;
 use App\Http\Livewire\PlanesPago;
@@ -57,6 +59,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/pago-plan', PagoPlan::cla
 Route::middleware(['auth:sanctum', 'verified'])->get('/pagos-manuales', PagosManuales::class)->name('pagos-manuales');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/revisiones-pagos', RevisionesPagos::class)->name('revisiones-pagos');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/mis-pagos', MisPagos::class)->name('mis-pagos');//
+Route::middleware(['auth:sanctum', 'verified'])->get('/amigo-en-via', AmigoEnVia::class)->name('amigo-en-via');//
+Route::middleware(['auth:sanctum', 'verified'])->get('/nutricionista', Nutricionista::class)->name('nutricionista');//
 //Route::middleware(['auth:sanctum', 'verified'])->get('/categorias', Categorias::class)->middleware('can:categorias')->name('categorias');
 
 

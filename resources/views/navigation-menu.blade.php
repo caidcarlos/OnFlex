@@ -145,6 +145,9 @@
                                     {{ __('Ver Perfil') }}
                                 </x-jet-dropdown-link>
                                 @if(Auth::user()->tipo_usuario == 3)
+                                    <x-jet-dropdown-link href="{{ route('amigo-en-via')}}">
+                                        {{ __('Amigo en vía') }}
+                                    </x-jet-dropdown-link>
                                     <x-jet-dropdown-link href="{{ route('beneficiario') }}">
                                         {{ __('Beneficiario') }}
                                     </x-jet-dropdown-link>
@@ -153,6 +156,9 @@
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link href="{{ route('mis-pagos') }}">
                                         {{ __('Mis Pagos') }}
+                                    </x-jet-dropdown-link>
+                                    <x-jet-dropdown-link href="{{ route('nutricionista')}}">
+                                        {{ __('Nutricionista') }}
                                     </x-jet-dropdown-link>
                                 @endif
                                 <x-jet-dropdown-link href="{{ route('viajes') }}">
@@ -252,6 +258,9 @@
                     {{ __('Ver Perfil') }}
                 </x-jet-responsive-nav-link>
                 @if(Auth::user()->tipo_usuario == 3)
+                    <x-jet-responsive-nav-link href="{{ route('amigo-en-via') }}" :active="request()->routeIs('amigo-en-via')">
+                        {{ __('Amigo en Vía') }}
+                    </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('beneficiario') }}" :active="request()->routeIs('beneficiario')">
                         {{ __('Beneficiario') }}
                     </x-jet-responsive-nav-link>
@@ -260,6 +269,9 @@
                     </x-jet-responsive-nav-link>
                     <x-jet-responsive-nav-link href="{{ route('mis-pagos') }}" :active="request()->routeIs('mis-pagos')">
                         {{ __('Mis Pagos') }}
+                    </x-jet-responsive-nav-link>
+                    <x-jet-responsive-nav-link href="{{ route('nutricionista') }}" :active="request()->routeIs('nutricionista')">
+                        {{ __('Nutricionista') }}
                     </x-jet-responsive-nav-link>
                 @endif
                 <x-jet-responsive-nav-link href="{{ route('viajes') }}" :active="request()->routeIs('viajes')">

@@ -14,15 +14,15 @@
                 <input id="placa" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     type="text" min="6" name="placa" wire:model.defer="placa" required />
                 @error('placa')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
                 <x-jet-label for="peso_soporte" value="{{ __('Peso de Soporte (En Toneladas)') }}" />
                 <input id="peso_soporte" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    type="text" name="peso_soporte" placeholder="1.86" title="Por favor use de separador decimal un punto (.)" maxlenght="5" onKeyPress="return validarDecimal(event,this);" wire:model.defer="peso_soporte" required />
+                    type="number" name="peso_soporte" placeholder="1.86" min="10" max="35" wire:model.defer="peso_soporte" required />
                 @error('peso_soporte')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -30,7 +30,7 @@
                 <input id="anno" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     type="number" min="2000" max="{{date('Y')}}" step="1.0" name="anno" wire:model.defer="anno" required />
                 @error('anno')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -43,7 +43,7 @@
                     @endforeach
                 </select>
                 @error('marca')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -51,7 +51,7 @@
                 <input id="modelo" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                     type="text" min="6" name="modelo" wire:model.defer="modelo" required />
                 @error('modelo')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mt-4">
@@ -64,14 +64,14 @@
                     @endforeach
                 </select>
                 @error('tipo_camion_id')
-                    <div id="text-sm text-red-500">{{$message}}</div>
+                    <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
             </div>
             <div class="mx-auto flex justify-between mt-4">
                 <div class="w-1/2 text-center">
                     <button class="inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                         wire:click.prevent = "modificar({{$camion_id}})"
-                        wire:loagind.attr="disabled">
+                        wire:loading.attr="disabled">
                         Modificar
                     </button>
                 </div>

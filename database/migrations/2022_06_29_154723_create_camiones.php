@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('camiones', function (Blueprint $table) {
             $table->id();
-            $table->string('placa', 10)->unique();
+            $table->string('placa', 10);
             $table->string('modelo', 10);
             $table->integer('anno');
-            $table->float('peso_soporte', 6, 2);
+            $table->double('peso_soporte', 6, 2);
             $table->unsignedBigInteger('transportista_id');
             $table->unsignedBigInteger('marca_id');
             $table->unsignedBigInteger('tipo_camion_id');

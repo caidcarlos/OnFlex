@@ -59,8 +59,8 @@ class Usuarios extends Component
                     $this->cedula = $p->cedula;
                     $this->apellido = $p->apellido;
                     $this->num_pase = $p->num_pase;
-//                    $this->estatura = $p->estatura;
-//                    $this->peso = $p->peso;
+                    $this->estatura = $p->estatura;
+                    $this->peso = $p->peso;
                     $this->id_trans = $p->id;
                 }
             }
@@ -141,33 +141,15 @@ class Usuarios extends Component
                 'cedula' => 'unique:transportista|required|max:12',
                 'apellido' => 'string|required|max:50',
                 'num_pase' => 'required',
-//                'peso' => 'required|numeric',
-//                'estatura' => 'required|numeric',
+                'peso' => 'required|numeric',
+                'estatura' => 'required|numeric',
             ]);
-/*            $estat = $this->peso;
-            $permitidos = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
-            for($i=0; $i<count($permitidos); $i++){
-                $check = strpos($estat, $permitidos[$i]);
-                if($check === false)
-                {
-                    session()->flash('msj_peso', 'Está utilizando caracteres no permitidos. Solo números y separador de decimales con coma');
-                }
-            }
-            $estat = $this->estatura;
-            $permitidos = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
-            for($i=0; $i<count($permitidos); $i++){
-                $check = strpos($estat, $permitidos[$i]);
-                if($check === false)
-                {
-                    session()->flash('msj_estatura', 'Está utilizando caracteres no permitidos. Solo números y separador de decimales con coma');
-                }
-            }*/
             Transportista::create([
                 'cedula' => $this->cedula,
                 'apellido' => $this->apellido,
                 'num_pase' => $this->num_pase,
-//                'peso' => $this->peso,
-//                'estatura' => $this->estatura,
+                'peso' => $this->peso,
+                'estatura' => $this->estatura,
                 'usuario_id' => Auth::user()->id,
             ]);
         }else{
@@ -175,33 +157,16 @@ class Usuarios extends Component
                 'cedula' => 'required|max:15',
                 'apellido' => 'string|required|max:50',
                 'num_pase' => 'required',
-//                'peso' => 'required',
-//                'estatura' => 'required',
+                'peso' => 'required',
+                'estatura' => 'required',
             ]);
                         $estat = $this->peso;
-/*            $permitidos = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
-            for($i=0; $i<count($permitidos); $i++){
-                if(str_contains($estat, $permitidos[$i]))
-                {
-                    session()->flash('msj_peso', 'Está utilizando caracteres no permitidos. Solo números y separador de decimales con coma');
-                    break;
-                }
-            }
-            $estat = $this->estatura;
-            $permitidos = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
-            for($i=0; $i<count($permitidos); $i++){
-                if(!str_contains($estat, $permitidos[$i]))
-                {
-                    session()->flash('msj_estatura', 'Está utilizando caracteres no permitidos. Solo números y separador de decimales con coma');
-                    break;
-                }
-            }*/
             Transportista::updateOrCreate(['id' => $id_trans], [
                 'cedula' => $this->cedula,
                 'apellido' => $this->apellido,
                 'num_pase' => $this->num_pase,
-//                'peso' => $this->peso,
-//                'estatura' => $this->estatura,
+                'peso' => $this->peso,
+                'estatura' => $this->estatura,
                 'usuario_id' => Auth::user()->id,
             ]);
         }

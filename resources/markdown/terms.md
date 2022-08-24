@@ -1,3 +1,117 @@
-# Terms of Service
+# Terminos y Condiciones
 
-Edit this file to define the terms of service for your application.
+Los siguientes términos y condiciones gobiernan el uso y acceso a los bienes y servicios que ofrece la plataforma web o app de la empresa ONFLEX, al utilizarla, usted está confirmando que ha leído y comprendido todas las condiciones aquí expresadas y, en consecuencia, las acepta.
+Para hacer uso de ONFLEX usted declara que representa o es funcionario de una empresa de transporte legalmente constituida y autorizada por el gobierno colombiano, de un generador de carga sea persona natural o jurídica registrada en el RUT, o de un transportista independiente, conductor, propietario administrador o tenedor de un vehículo para transporte de carga por carretera debidamente registrado en el RUNT para la prestación de los servicios de transporte de carga por carretera conforme a lo establecido por la Ley colombiana, en adelante todos ellos referidos como “usuarios”.
+Estos términos y condiciones de uso del sitio web/APP regulan el uso que los usuarios pueden dar al contenido publicado en el mismo, el uso que el sitio web/APP puede hacer de la información suministrada por el usuario, así como el comportamiento que debe seguir el usuario al navegar en el sitio web/APP. Por favor leer atentamente estos términos y condiciones antes de empezar a usar el presente sitio web/APP. Si el usuario no acepta estos términos y condiciones o si el usuario es menor de 18 años no debe usar el sitio web/APP. Así las cosas, este documento contiene información legal, de carácter obligatorio y vinculante, que le recomendamos leer completamente en conjunto con la Política de Tratamiento de Datos Personales y Aviso de Privacidad. Por medio de la aprobación de los presentes Términos y Condiciones, se entiende que el usuario los ha leído, entendido y aceptado, en  todas sus partes, y entiende que estos le son legalmente vinculantes. En caso de no estar de acuerdo con los presentes Términos y Condiciones, el usuario deberá abstenerse de utilizar el sitio web/APP.
+
+1. Información general. Este sitio web/APP se encuentra constituido bajo la legislación colombiana y es controlado y operado por ONFLEX S.A.S. BIC, sociedad comercial identificada con NIT 901.613.226-7, con domicilio en la ciudad de Bogotá, Cundinamarca, Colombia, y, que para los efectos del presente documento se denominará ONFLEX.
+
+2. Naturaleza jurídica. Los presentes Términos y Condiciones de uso regulan la relación contractual de carácter comercial entre los usuarios que acceden al sitio web/APP y ONFLEX.
+
+3. Aceptación de Términos y Condiciones. Al visitar o utilizar de cualquier forma este sitio web/APP, el usuario manifiesta y admite haber leído y entendido los siguientes Términos y Condiciones y está de acuerdo con sujetarse a los mismos y cumplir con todas las leyes y reglamentos aplicables que hagan parte de la legislación colombiana. En caso de que el usuario no esté de acuerdo con estos Términos y Condiciones, debe abstenerse de usar este sitio web/APP. ONFLEX se reserva el derecho a actualizar o cambiar los Términos y Condiciones en cualquier momento sin previo aviso, por lo que se le recomienda leer esta sección cada vez que se visite este sitio web/APP. Este sitio web/APP puede ser usado únicamente bajo los presentes Términos y Condiciones y puede ser utilizado únicamente con fines legales y lícitos. Están prohibidas las actividades que impliquen el uso indebido del sitio web/APP. En caso de que el usuario no esté de acuerdo total o parcialmente con estos Términos y
+Condiciones de uso, deberá abstenerse de usar este sitio web/APP.
+ONFLEX se reserva el derecho de negar o suspender el acceso a este sitio web/APP, membresías o cuentas de usuario, por parte de cualquier usuario que hubiere desconocido estos Términos y Condiciones, sin necesidad de notificación previa y sin indemnización a favor del usuario. En los casos de suspensión del servicio por parte de ONFLEX, los pagos a cargo del usuario estarán igualmente suspendidos hasta tanto se dé la reactivación del servicio respectivo. En los casos de cancelación o cierre de cuentas de usuario, el usuario no podrá acceder al contenido del sitio web/APP.
+
+4. Uso del sitio web/APP. El ingreso y/o uso de este sitio web/APP por parte del usuario deberá hacerse teniendo en cuenta, entre otras, las siguientes condiciones particulares, las cuales se entienden comprendidas y aceptadas por el usuario al ingresar y/o usar este sitio web/APP, y mientras éstas se encuentren en este sitio web/APP, ONFLEX no será responsable por su cumplimiento y el usuario mantendrá totalmente indemne a ONFLEX por todo concepto: 
+(i) El usuario está en la obligación de acatar estos Términos y Condiciones de uso, así como cualquier otra condición establecida en este sitio web/APP; de igual forma, es responsable por cualquier actividad que realice en su cuenta de usuario, respecto de los cuales exonera de toda responsabilidad a ONFLEX, empleados, contratistas, aliados comerciales y en general cualquier tercero relacionado con la compañía. 
+(ii) El usuario es el único responsable por su conducta y debe dar cumplimiento a todas las leyes, normas y reglamentos aplicables al acceso, uso y consulta de sitios en internet. 
+(iii) El usuario no puede infringir cualquier ley o regulac ión aplicable, por tanto, al usuario no le está
+permitido el uso de este sitio web/APP con fines ilícitos o lesivos contra este sitio web/APP o cualquier tercero, o que, de cualquier forma, puedan causar perjuicio o impedir el normal funcionamiento de este.(iv) El usuario no puede realizar actuaciones que puedan generar en este sitio web/APP o a través de este y por cualquier medio, entre otros, pero sin limitarse a, errores, daños, interrupciones o suspensión del funcionamiento del sitio  web/APP ni a los sistemas de ONFLEX o a terceros, ni que puedan atentar contra la información contenida en el sitio web/APP, equipos o la propiedad de terceros. (v) Al usuario le está prohibido usar este Sitio web/APP para implantar, enviar, distribuir o transmitir cualquier virus o programa de computador dañino o potencialmente dañino, así como cualquier programa que tenga como propósito dañar el acceso, la operación, uso o contenido del sitio web/APP, o impedir o limitar el acceso o uso de este por parte de otros usuarios. (vi) El usuario no puede modificar, copiar, publicar, mostrar, transmitir, adaptar o en ninguna forma explotar el contenido de este sitio web/APP sin autorización previa y escrita de ONFLEX.
+(vii) El usuario de este sitio web/APP responderá por cualquier perjuicio o daño causado a ONFLEX por el uso indebido de este y por cualquier infracción e incumplimiento de estos Términos y Condiciones de uso. En adición, ONFLEX no confiere a los usuarios ninguna autorización para reproducir, copiar, enmarcar, compilar, cargar o republicar, adaptar, modificar, transmitir, vender ni comunicar al público, total o parcialmente ninguna herramienta y/o contenido del sitio web/APP. Cualquiera de estas actividades requiere de la autorización previa, expresa y por escrito de ONFLEX, pena de incurrir en violación a los derechos de propiedad industrial y derechos de autor, y someterse a las consecuencias civiles y penales de tal hecho.
+
+5. Descripción General de ONFLEX. ONFLEX es una plataforma colaborativa de información que conecta diversos sistemas para administrar la gestión de despachos para la carga terrestre, el pago de fletes y la promoción de beneficios para los usuarios.
+
+6. Servicios a los que se afilia. El usuario se afilia exclusivamente a los servicios descritos en el respectivo contrato de licencia de uso suscrito. En desarrollo de dicho contrato el usuario podría tener:
+* Acceso los conductores afiliados a ONFLEX disponibles en zonas de cargue;
+* Acceso a la documentación actualizada, digitalizada y confirmada del conductor a quien se le ha asignado la carga;
+* Ofertar servicios de transporte a generadores de carga con presencia nacional;
+* Afiliar a los conductores de su propia flota;
+* Calificar los servicios de los conductores;
+* Ofrecer a clientes la plataforma ONFLEX para registro de necesidades de carga.
+* Realizar o recibir pagos a través de la plataforma de pagos Onflex. (Aplican tarifas).
+
+7. Aclaración de los Servicios. ONFLEX y sus colaboradores brindan a los usuarios una plataforma de información para poner en contacto a los usuarios legalmente autorizados por las autoridades competentes colombianas.
+
+8. Licencia para el uso de ONFLEX. ONFLEX. es el titular de los derechos de Propiedad Intelectual de este sistema de información y su material, para todos los efectos tienen derechos reservados. Usted puede ver, descargar, imprimir páginas u otro contenido de ONFLEX sólo para su uso personal, sujeto a las restricciones establecidas en estos términos y condiciones y conforme al contrato de licencia suscrito con la empresa. Salvo que se indique expresamente lo contrario en el presente documento, nada de lo dispuesto en los presentes Términos y Condiciones deberá interpretarse en el sentido de otorgar una licencia o cesión sobre derechos de propiedad intelectual del contenido, servicios, información y herramientas contenidas en el mismo.
+
+9. Restricciones al uso de ONFLEX:
+a. Utilizar ONFLEX para el desarrollo de actividades ilícitas;
+b. Realizar prácticas restrictivas de la libre competencia;
+c. Republicar el material de ONFLEX;
+d. Vender, alquilar o sub-licenciar el contenido, bienes o servicios de ONFLEX;
+ONFLEX
+Términos y Condiciones ONFLEX Página 1 de 3
+e. Reproducir, duplicar, copiar o alterar el material de esta página para fines comerciales;
+f. Utilizar ONFLEX para fines de mercado sin la autorización de ONFLEX;
+g. Redistribuir el material de ONFLEX, salvo se trate de contenido que ha sido puesto a su disposición para estos fines dentro de su
+organización;
+h. Hacer uso de ONFLEX de alguna manera que cause o pueda causar daño al sistema, impida el acceso al mismo, genere competencia
+desleal, sea fraudulento o ilegal o en conexidad con estos propósitos.
+i. Realizar actividades sistemáticas de recolección de datos o información en o con relación a ONFLEX sin la autorización expresa de
+ONFLEX;
+j. Enviar comunicaciones comerciales no solicitadas.
+
+10. Destinación de los servicios e información. El usuario de ONFLEX solo podrá utilizar ONFLEX para los fines previstos en la ley y en estos términos y condiciones de manera personal, esto significa que su usuario y contraseña con los que se identifica en ONFLEX son intransferibles. Así mismo, se compromete a conservar toda la información que obtenga directa o indirectamente de ONFLEX en un lugar seguro y no compartirlo, venderlo, transferirlo, inclusive darle algún tipo de tratamiento sin previa autorización de su titular. Es de exclusiva responsabilidad del usuario la prevención de fraude o suplantación de su identidad por terceros sea con fines lícitos o ilícitos.
+
+11. Obligaciones del usuario. Es obligación del usuario brindar toda la información veraz, actualizada y debidamente soportada, para la correcta prestación de los servicios de ONFLEX. ONFLEX no se hace responsable de los incumplimientos, daños y perjuicios que se generen por ausencia o error en la información brindada por el usuario. El usuario acepta que al realizar transacciones a través ONFLEX está trabando una relación contractual con el proveedor del servicio y/o con el aceptante, esto implica el nacimiento de obligaciones, deberes y derechos que no vinculan a ONFLEX y/o sus colaboradores al ser un simple intermediario.
+
+12. Exclusión de Garantías. Nada de lo señalado en estos términos y condiciones se aplicará en contravención a sus derechos como consumidor, sobre los cuales no podrá pactar modificación o renuncia alguna. El servicio de ONFLEX se presta tal cual como se presenta en el sitio web/APP, puede ser objeto de ajustes sin previo aviso y ONFLEX no otorga ninguna garantía de cumplimiento de objetivos propuestos por su entidad.
+Onflex ni sus colaboradores garantizan entre otros que:
+* La utilización de ONFLEX cumplirá con sus necesidades, requisitos u objetivos;
+* La utilización de los servicios sea ininterrumpida, puntual o libre de errores;
+* Los contratos de transporte celebrados con otras empresas transportadoras, generadores de carga y/o conductores se cumplan;
+* Se corrijan los defectos del funcionamiento o de las funcionalidades de cualquier software que se proporcione como parte de los servicios;
+
+A los servicios de ONFLEX no se le aplicarán condiciones o garantías implícitas de calidad satisfactoria y adecuación a fines concretos, excepto se trate de lo expresamente establecido en estos términos y condiciones. Para todos los efectos legales las transacciones que usted realizará en ONFLEX son directamente con terceras partes, por lo tanto, se creará un contrato entre usted y el tercero oferente o aceptante del s ervicio, cuyo cumplimiento no involucra a ONFLEX el cumple funge como simple intermediario. El tercero con quien usted celebre el negocio estará autorizado para gestionar sus datos personales para realizar la transacción con usted, en caso de dudas o reclamos relativos al negocio, diríjase directamente al tercero pertinente.
+
+13. Limitación de Responsabilidad. ONFLEX ni sus colaboradores serán responsables por:
+a. Pérdidas indirectas o derivada en las que el usuario pueda incurrir, incluyendo pérdida de beneficios esperados que se hayan originado de forma directa o indirecta, pérdidas de fondo de negocio, pérdida de prestigio empresarial y/o pérdidas de datos.
+b. Pérdidas o daños que el usuario incurra como consecuencia de:
+* Modificaciones o cambios que se introduzcan con relación a los servicios de ONFLEX, o cualquier cese temporal o permanente de la prestación de los servicios o de cualquiera de sus funcionalidades;
+* La eliminación, falla o corrupción de almacenamiento de cualquier contenido u otros datos guardados o transmitidos en ONFLEX a través de la utilización de los servicios;
+* Falta de suministro o error de información por parte del usuario;
+* Falta de mantenimiento de seguridad y confidencialidad por parte del usuario de sus datos.
+c. Las limitaciones a la responsabilidad de ONFLEX y/o sus colaboradores se aplicarán independientemente de la previsibilidad o advertencia o posible advertencia de la consumación de dichas pérdidas.
+d. ONFLEX no garantiza que las funciones técnicas y de operación se presenten sin interrupciones o libres de errores, de que dichos defectos sean corregidos, o que este sitio web/APP o el servidor que lo hace disponible estén libres de virus u otros componentes dañosos.
+e. ONFLEX no será responsable por ningún perjuicio que resulte de la imposibilidad de acceso a la misma. Así las cosas, ONFLEX no es ni será responsable por las caídas del sitio web/APP y la falla en el suministro del servicio, quedando exonerado por cualquier tipo de daños y perjuicios causados debido a la no disponibilidad y/o interrupción del servicio ocasionados por fallas o no disponibilidad de las redes y servicios de telecomunicaciones utilizados para soportar el sitio web/APP, y que sean ajenos a su voluntad. Igualmente, ONFLEX no es ni será responsable por las fallas en el sistema antivirus del dispositivo del usuario o incompatibilidades con su hardware ya que el usuario es el único responsable de la configuración y conectividad de su dispositivo para el uso adecuado del sitio web/APP. De igual forma, ONFLEX no será responsable por pérdidas o usos no autorizados de la cuenta de usuario, contraseñas o cualquier otra actividad por parte de terceros ajenos a ONFLEX.
+f. los daños y perjuicios causados por virus informáticos, troyanos, código malicioso o cualesquiera otros sistemas físicos o lógicos a los sistemas de los usuarios no serán responsabilidad de ONFLEX
+
+14. Política de privacidad. Al utilizar este sitio web/APP usted acepta nuestra Política de Protección de Datos Personales y Aviso de Privacidad. Para saber cómo manejamos la información, datos y contenidos facilitados por nuestros usuarios y visitantes consulte nuestro Aviso de Privacidad, Política de seguridad de la información y Política de Protección de Datos Personales disponible en www.onflex.co.
+
+15. Declaración de veracidad. Con la suscripción del contrato de licencia de uso respectivo o el ingreso a la plataforma haciendo clic en señal de aceptación, usted certifica que la información suministrada es verídica, correcta, completa y da su consentimiento expreso e irrevocable a ONFLEX para consultarla y/o verificarla, en cualquier tiempo, a través de los sistemas de información públicos o privados, tales como, pero sin limitarse a centrales de riesgo e información financiera.
+
+16. Acceso Restringido. El acceso a ciertas áreas o a la integralidad del sistema de información ONFLEX podrá ser restringido por ONFLEX y/o cualquiera de sus colaboradores. En caso tal de estar el usuario autorizado para acceder a especiales áreas o funcionalidades, deberá asegurarse de que la identificación y contraseña que se le brinde serán guardadas bajo medidas de confidencialidad. ONFLEX y/o sus colaboradores podrán deshabilitar su usuario y contraseña unilateralmente y sin previo aviso.
+
+17. Contenido de Usuario. El usuario podrá tener acceso al contenido que ONFLEX le permita, sin limitaciones diferentes a las señalas en los términos y condiciones. Le queda expresamente prohibido presentar ante ningún usuario contenido de ONFLEX que es o ha sido parte o puede ser parte de un proceso judicial o similar. ONFLEX y/o sus colaboradores se reservan el derecho a editar o remover cualquier material y/o contenido presentado a través de ONFLEX o almacenado en sus servidores.
+
+18. Razonabilidad. Al utilizar la página web, o la aplicación móvil usted acepta que las exclusiones y limitaciones de responsabilidad expuestas en este documento son razonables, las ha leído y comprendido por completo.
+
+19. Provisiones inaplicables. Para todos los efectos legales, ONFLEX podrá figurar como intermediario entre entidades y conductores. Sin embargo, no serán aplicables las provisiones señalas en los artículos 1.344 y 1.345 del Código de Comercio colombiano.
+
+20. Responsabilidad ante terceros: El usuario se obliga a mantener indemne de cualquier reclamación judicial o extrajudicial a ONFLEX derivada de la propia responsabilidad personal del usuario, de sus funcionarios, empleados y/o dependientes. Por lo tanto, se abstendrá de iniciar cualquier tipo de acción contra este respecto a cualquier tipo de pérdidas que sufra con relación a ONFLEX. Así mismo, el usuario acepta que las limitaciones a la responsabilidad y de garantías señaladas en los términos y condiciones protege a los funcionarios, supervisores, agentes, empleados, subsidiarias, sucesores, asignatarios, dependientes, colaboradores, contratistas, directores, accionistas, subcont ratistas y en general, cualquier tercero vinculado a ONFLEX
+
+21. Indemnidad. El usuario se obliga a indemnizar a ONFLEX y/o a sus colaboradores por cualquier perdida, daño, costo, responsabilidad y gasto que se generen a causa suya por transgresión (por acción u omisión) de lo establecido en estos términos y condiciones.
+
+22. Transgresión a estos términos y condiciones. ONFLEX podrá tomar las acciones judiciales o extrajudiciales que considere apropiadas para manejar la situación generada por su incumplimiento o transgresión a estos términos y condiciones.
+
+23. Divisibilidad. Si una disposición de estos términos y condiciones es determinada como inválida y/o inaplicable por un juez u otra autoridad competente, las demás disposiciones seguirán siendo aplicables. Si cualquiera de las provisiones consideradas inválidas y/o inaplicables puede volverse legal y aplicable si una de sus partes es eliminada, esa parte se considerará como eliminada y el resto de la disposición continuará siendo aplicable.
+
+24. Integridad del Acuerdo. Estos términos y condiciones hacen parte integral del contrato de licencia de uso de la plataforma ONFLEX que usted celebró con ONFLEX, razón por la cual, cualquier diferencia que surja en relación con los mismos, se sujetara a la cláusula de resolución de controversias del contrato de licencia suscrito.
+
+25. Ley aplicable. Estos términos y condiciones estarán regidos e interpretados según la Ley Colombiana.
+
+26. Cookies. Las cookies son pequeños archivos de texto enviados por un sitio y que se guardan en el disco duro del dispositivo electrónico a través del cual se accede al mismo. La mayoría de los navegadores aceptan cookies automáticamente. Este sitio web hace uso de cookie s propias y de terceros. Tenga en cuenta que el uso de las cookies va a permitir optimizar su experiencia de navegación. ONFLEX hará uso de las cookies para determinar sus preferencias de navegación para efectos promocionales, comerciales y publicitarios, para efectos estadísticos, entre otros fines. Al aceptar estos Términos y Condiciones, usted acepta que ONFLEX utilice cookies para los fines aquí señalados. El uso y navegación continuo en el  sitio web se entenderá como aceptación de los Términos y Condiciones y como consecuencia, del uso de las cookies . No obstante, el usuario podrá configurar su navegador para que notifique y rechace la instalación de las cookies enviadas por el sitio web, sin que ello  mpida su acceso a los contenidos. Sin embargo, tenga en cuenta que al desactivar el uso de cookies usted podrá experimentar una disminución en la calidad de funcionamiento de la página web, no obstante, podrá deshabilitar las cookies si así lo desea.
+
+27. Reportes y denuncias. Los usuarios podrán reportar a ONFLEX cualquier conducta o contenido que pueda infringir estos Términos y Condiciones, el Aviso de Privacidad, Política de Protección de Datos Personales o la legislación aplicable. Para tal efecto, el sitio web contará con los canales idóneos para formular la respectiva PQRS. Recibida la solicitud, ONFLEX a su entera discreción, determinará si corresponde la eliminación o modificación del contenido.
+
+28. Modificaciones o terminación del sitio y sus servicios. ONFLEX posee total autonomía para la administración del sitio web/APP, por lo cual se reserva el derecho discrecional de modificar, cambiar, aclarar, adicionar, remover, suprimir o prescindir, de manera unilateral, cualquier parte o la totalidad de estos, así como de estos Términos y Condiciones, modificando, cambiando, aclarando, adicionando, removiendo, suprimiendo o prescindiendo cualquiera de sus estipulaciones, en cualquier momento y sin previo aviso, según se considere necesario. Al usar este sitio web/APP después de que se hayan publicado las modificaciones y cambios, el usuario acepta esas modificaciones y cambios. En todo caso, ONFLEX publicará la fecha en que la versión vigente de los Términos y Condiciones fue publicada, para fines informativos de los usuarios.
+
+29. Contacto. Las condiciones descritas en este documento pueden ser impresas y guardadas por los usuarios; si el usuario tiene alguna duda respecto de los Términos y Condiciones, Aviso de Privacidad, Política de Protección de Datos Personales, uso del sitio web o de su perfil/cuenta de usuario, podrá ponerse en contacto con ONFLEX escribiendo al correo electrónico gerencia@onflex..co o en el teléfono 3043895275.
+
+30. Registros y Autorizaciones. ha solicitado el registro de la marca ONFLEX bajo la solicitud Nro. 14 851351973. asignada por la Superintendencia  de Industria y Comercio de Colombia.
+
+Fecha de última actualización: (agosto 22 de 2022)
+
+ONFLEX® es una marca registrada de ONFLEX. BIC – NIT. 901.613.226-7
+
+Tel. 3043895275

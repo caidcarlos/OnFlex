@@ -23,7 +23,7 @@
             <div class="mt-4">
                 <x-jet-label for="peso_soporte" value="{{ __('Peso de Soporte (En Toneladas)') }}" />
                 <input id="peso_soporte" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                    type="number" max="30" name="peso_soporte" placeholder="30" title="Por favor use de separador decimal un punto (.)" maxlenght="5" onKeyPress="return validarDecimal(event,this);" wire:model.defer="peso_soporte" required />
+                    type="number" max="35" min="10" name="peso_soporte" placeholder="30" wire:model.defer="peso_soporte" required />
                 @error('peso_soporte')
                     <div id="text-sm text-red-500">{{$message}}</div>
                 @enderror

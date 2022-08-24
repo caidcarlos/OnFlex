@@ -112,10 +112,10 @@
                             <div class = "text-sm text-red-600 ">{{$message}}</div>
                         @enderror
                     </div>
-                    <!--div class="mt-4">
+                    <div class="mt-4">
                         <x-jet-label for="peso" value="{{ __('Peso (En kilogramos. Utilice punto para separar decimal)') }}" />
                         <input id="peso" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                            type="text" name="peso" placeholder="90.00" title="Por favor use de separador decimal un punto (.)" maxlength="5" onKeyPress="return validarDecimal(event,this);" wire:model.defer = "peso" required />
+                            type="number" name="peso" placeholder="90.00" wire:model.defer = "peso" required />
                         @error('peso')
                             <div class = "text-sm text-red-600 ">{{$message}}</div>
                         @enderror
@@ -123,11 +123,11 @@
                     <div class="mt-4">
                         <x-jet-label for="estatura" value="{{ __('Estatura (En metros. Utilice punto para separar decimal)') }}" />
                         <input id="estatura" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
-                            type="text" name="estatura" placeholder="1.86" title="Por favor use de separador decimal un punto (.)" maxlength="4" onKeyPress="return validarDecimal(event,this);" wire:model.defer = "estatura" required />
+                            type="number" name="estatura" placeholder="1.86" wire:model.defer = "estatura" required />
                         @error('estatura')
                             <div class = "text-sm text-red-600 ">{{$message}}</div>
                         @enderror
-                    </div-->
+                    </div>
                     <div class="mt-4">
                         <button class = "inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition"
                             wire:click.prevent = "guardarTransportista({{Auth::user()->id}})">
