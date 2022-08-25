@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('¿Olvidó su contraseña? Tranquilo. Escriba su correo electrónico y le enviaremos un email con el enlace para ue creee una nueva.') }}
+            {{ __('¿Olvidó su contraseña? No hay problema. Escriba su correo electrónico y le enviaremos un email con el enlace para ue creee una nueva.') }}
         </div>
 
         @if (session('status'))
@@ -24,7 +24,11 @@
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-between mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Volver') }}
+                </a>
+
                 <x-jet-button>
                     {{ __('Obtener enlace de cambio de contraseña') }}
                 </x-jet-button>
