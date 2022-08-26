@@ -23,6 +23,7 @@ use App\Http\Livewire\Usuarios;
 use App\Http\Livewire\Viajes;
 use App\Http\Middleware\ProfileReview;
 use App\Http\Middleware\ProtectDashboard;
+use App\Http\Controllers\PagoValidacion;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +62,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/revisiones-pagos', Revisi
 Route::middleware(['auth:sanctum', 'verified'])->get('/mis-pagos', MisPagos::class)->name('mis-pagos');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/amigo-en-via', AmigoEnVia::class)->name('amigo-en-via');//
 Route::middleware(['auth:sanctum', 'verified'])->get('/nutricionista', Nutricionista::class)->name('nutricionista');//
+Route::get('/pagos-epayco', [PagoValidacion::class, 'index'])->name('pagos-epayco');
+Route::get('/response', [PagoValidacion::class, 'pagoresponse'])->name('pagos-epayco-response');
+//Route::middleware(['auth:sanctum', 'verified'])->get('/pagos-validacion', PagosValidacion::class, )->name('pagos-validacion');
 //Route::middleware(['auth:sanctum', 'verified'])->get('/categorias', Categorias::class)->middleware('can:categorias')->name('categorias');
 
 
