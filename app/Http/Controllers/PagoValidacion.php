@@ -17,17 +17,24 @@ class PagoValidacion extends Controller
     }
 
     public function pagoresponse(Request $request){
-        
+        echo $request->ref_payco = '921ff8ef550617754024645b';
         $url= "https://secure.epayco.co/validation/v1/reference/{$request->ref_payco}";
+        //echo $url."<br>";
         $response = Http::get($url);
-        $monto = 50000;
+        $monto = env('SUSCRIPCION', 79999);
         $data = $response->json();
+        print_r($data['data']);
         $referencia = $request->ref_payco;
         switch ($data['data']['x_cod_transaction_state']) {
             case 1:
                 # Aprobada
-                $status_pago=true;
-                $ruta='completar-perfil';
+                
+                if ($data['data']['x_amount_ok']==$monto) {
+                    $status_pago=true;
+                    $ruta='completar-perfil';
+                }else{
+                    $ruta='pagos-manuales';
+                }
                 break;
             case 2:
                 # Rechazada
@@ -79,24 +86,24 @@ class PagoValidacion extends Controller
                 break;
         }
         $fecha = date('Y-m-d');
-        $pagomanual = PagoManual::create([
-            'referencia'    => $referencia,
-            'fecha_pago'    => $fecha,
-            'monto'         => $monto,
-            'status_pago'   => $status_pago,
-            'id_user'       => Auth::user()->id,
-        ]);
-        $transaction_log = Transactionlog::create([
-            'refer'             => $referencia,
-            'refer_payco'       => $data['data']['x_ref_payco'],
-            'bill'              => $data['data']['x_id_factura'],
-            'description'       => $data['data']['x_description'],
-            'status'            => $data['data']['x_cod_transaction_state'],
-            'bankname'          => $data['data']['x_bank_name'],
-            'ip'                => $data['data']['x_customer_ip'],
-            'signature'         => $data['data']['x_signature'],
-            'transaction_date'  => $data['data']['x_transaction_date']
-        ]);
+        // $pagomanual = PagoManual::create([
+        //     'referencia'    => $referencia,
+        //     'fecha_pago'    => $fecha,
+        //     'monto'         => $monto,
+        //     'status_pago'   => $status_pago,
+        //     'id_user'       => Auth::user()->id,
+        // ]);
+        // $transaction_log = Transactionlog::create([
+        //     'refer'             => $referencia,
+        //     'refer_payco'       => $data['data']['x_ref_payco'],
+        //     'bill'              => $data['data']['x_id_factura'],
+        //     'description'       => $data['data']['x_description'],
+        //     'status'            => $data['data']['x_cod_transaction_state'],
+        //     'bankname'          => $data['data']['x_bank_name'],
+        //     'ip'                => $data['data']['x_customer_ip'],
+        //     'signature'         => $data['data']['x_signature'],
+        //     'transaction_date'  => $data['data']['x_transaction_date']
+        // ]);
 
         return redirect()->route($ruta);
     }

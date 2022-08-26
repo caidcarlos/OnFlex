@@ -74,7 +74,7 @@
                                         src="https://checkout.epayco.co/checkout.js"
                                         class="epayco-button"
                                         data-epayco-key="28f77f799ead4ee69f14fbf98c62c1c0"
-                                        data-epayco-amount="50000"
+                                        data-epayco-amount="79999"
                                         data-epayco-name="Pago Suscripcion"
                                         data-epayco-description="Pago Suscripcion"
                                         data-epayco-currency="cop"
