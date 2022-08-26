@@ -81,8 +81,8 @@
                                         data-epayco-country="co"
                                         data-epayco-test="true"
                                         data-epayco-external="false"
-                                        data-epayco-response="http://onflexalfa.test/response"
-                                        data-epayco-confirmation="https://ejemplo.com/confirmacion"
+                                        data-epayco-response="http://apponflex.co/response"
+                                        data-epayco-confirmation="http://apponflex.co/confirmacion"
                                         data-epayco-methodconfirmation="get">
                                     </script>
                             </form>

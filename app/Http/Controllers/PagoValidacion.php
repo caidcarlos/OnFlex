@@ -86,24 +86,24 @@ class PagoValidacion extends Controller
                 break;
         }
         $fecha = date('Y-m-d');
-        // $pagomanual = PagoManual::create([
-        //     'referencia'    => $referencia,
-        //     'fecha_pago'    => $fecha,
-        //     'monto'         => $monto,
-        //     'status_pago'   => $status_pago,
-        //     'id_user'       => Auth::user()->id,
-        // ]);
-        // $transaction_log = Transactionlog::create([
-        //     'refer'             => $referencia,
-        //     'refer_payco'       => $data['data']['x_ref_payco'],
-        //     'bill'              => $data['data']['x_id_factura'],
-        //     'description'       => $data['data']['x_description'],
-        //     'status'            => $data['data']['x_cod_transaction_state'],
-        //     'bankname'          => $data['data']['x_bank_name'],
-        //     'ip'                => $data['data']['x_customer_ip'],
-        //     'signature'         => $data['data']['x_signature'],
-        //     'transaction_date'  => $data['data']['x_transaction_date']
-        // ]);
+        $pagomanual = PagoManual::create([
+            'referencia'    => $referencia,
+            'fecha_pago'    => $fecha,
+            'monto'         => $monto,
+            'status_pago'   => $status_pago,
+            'id_user'       => Auth::user()->id,
+        ]);
+        $transaction_log = Transactionlog::create([
+            'refer'             => $referencia,
+            'refer_payco'       => $data['data']['x_ref_payco'],
+            'bill'              => $data['data']['x_id_factura'],
+            'description'       => $data['data']['x_description'],
+            'status'            => $data['data']['x_cod_transaction_state'],
+            'bankname'          => $data['data']['x_bank_name'],
+            'ip'                => $data['data']['x_customer_ip'],
+            'signature'         => $data['data']['x_signature'],
+            'transaction_date'  => $data['data']['x_transaction_date']
+        ]);
 
         return redirect()->route($ruta);
     }
