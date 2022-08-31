@@ -64,12 +64,13 @@
                                 <div id="text-sm text-red-500">{ {$message}}</div>
                             @ enderror
                         </div-->
-                        <div class="mt-4">
-                            <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                        <div class="flex justify-start">
+                            <button class="mt-4 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                 wire:click.prevent = "guardarPago()">
                                 Registrar Pago
                             </button>
-                            <form>
+                            <div class="mt-4 ml-4">
+                                <form>
                                     <script
                                         src="https://checkout.epayco.co/checkout.js"
                                         class="epayco-button"
@@ -85,7 +86,8 @@
                                         data-epayco-confirmation="http://apponflex.co/confirmacion"
                                         data-epayco-methodconfirmation="get">
                                     </script>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </form>
                 @else
@@ -156,13 +158,41 @@
                                     <div id="text-sm text-red-500">{ {$message}}</div>
                                 @ enderror
                             </div-->
-                            <div class="mt-4">
-                                <button class="inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
+                            <div class="flex justify-start">
+                                <button class="mt-4 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                     wire:click.prevent = "guardarPago()">
                                     Registrar Pago
                                 </button>
+                                <div class="mt-4 ml-4">
+                                    <form>
+                                        <script
+                                            src="https://checkout.epayco.co/checkout.js"
+                                            class="epayco-button"
+                                            data-epayco-key="28f77f799ead4ee69f14fbf98c62c1c0"
+                                            data-epayco-amount="79999"
+                                            data-epayco-name="Pago Suscripcion"
+                                            data-epayco-description="Pago Suscripcion"
+                                            data-epayco-currency="cop"
+                                            data-epayco-country="co"
+                                            data-epayco-test="true"
+                                            data-epayco-external="false"
+                                            data-epayco-response="http://apponflex.co/response"
+                                            data-epayco-confirmation="http://apponflex.co/confirmacion"
+                                            data-epayco-methodconfirmation="get">
+                                        </script>
+                                    </form>
+                                </div>
                             </div>
                         </form>
+                    @endif
+                    @if (($verificacion->status_pago == true) && (is_null($rechazado)))
+                        <div class="mb-2 text-sm text-[#303c4e]">
+                            ¡Muy bien! Tu pago ha sido aprobado. Ya puedes comenzar con el registro de tus datos en el perfil.<br />
+                            <a href="{{route('completar-perfil')}}" 
+                                class ="mt-4 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition">
+                                Continuar
+                            </a>
+                        </div>
                     @endif
                 @endif
             </x-jet-authentication-card>
