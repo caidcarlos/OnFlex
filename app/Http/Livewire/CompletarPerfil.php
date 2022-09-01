@@ -28,7 +28,7 @@ class CompletarPerfil extends Component
 
     public function guardarTransportista(){
         $this->validate([
-            'cedula' => 'required|min:6|max:12',
+            'cedula' => 'required|min:6|max:12|unique:transportista',
             'nombre' => 'required|min:2|max:50',
             'apellido' => 'required|min:2|max:50',
             'licencia' => 'required',
@@ -49,7 +49,7 @@ class CompletarPerfil extends Component
 
     public function guardarEmpresa(){
         $this->validate([
-            'nit' => 'required|min:6|max:12',
+            'nit' => 'required|min:6|max:12|unique:empresa',
             'razon_social' => 'required|min:2|max:50',
             'nombre_rep' => 'required|min:2|max:50',
             'comercial' => 'required',
