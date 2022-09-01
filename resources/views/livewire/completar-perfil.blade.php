@@ -4,10 +4,17 @@
             <x-slot name="logo">
                 <x-jet-authentication-card-logo />
             </x-slot>
-    
-            <div class="mb-4 text-sm text-[#303c4e]">
-                {{ __('¡Muy bien! Hemos validado tu pago. Antes de comenzar a utilizar la aplicación, por favor tómate unos minutos para completar tu perfil de usuario') }}
-            </div>
+            
+            @if (Auth::user()->tipo_usuario == '2')
+                <div class="mb-4 text-sm text-[#303c4e]">
+                    {{ __('¡Muy bien! Antes de comenzar a utilizar la aplicación, por favor tómate unos minutos para completar tu perfil de usuario') }}
+                </div>    
+            @endif
+            @if (Auth::user()->tipo_usuario == '3')
+                <div class="mb-4 text-sm text-[#303c4e]">
+                    {{ __('¡Muy bien! Hemos validado tu pago. Antes de comenzar a utilizar la aplicación, por favor tómate unos minutos para completar tu perfil de usuario') }}
+                </div>
+            @endif
     
             @if (session('status'))
                 <div class="mb-4 font-medium text-sm text-[#00f2a1]">
