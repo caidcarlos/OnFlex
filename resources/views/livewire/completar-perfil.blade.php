@@ -129,6 +129,19 @@
                         @enderror
                     </div>
                     <div class="mt-4">
+                        <x-jet-label for="comercial" value="{{ __('Asesorado por:') }}" />
+                        <select id="comercial" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                            type="text" name="comercial" wire:model.defer = "comercial" required>
+                            <option value=null>Seleccione un comercial de la lista</option>
+                            @foreach ($comerciales as $comercial)
+                                <option value="{{$comercial->id}}">{{$comercial->nombre}} {{$comercial->apellidos}}</option>
+                            @endforeach
+                        </select>
+                        @error('comercial')
+                            <div id="text-sm text-red-500">{{$message}}</div>
+                        @enderror
+                    </div>
+                    <div class="mt-4">
                         <button class = "inline-flex items-center px-4 py-2 rounded-md bg-[#303c4e] font-bold text-sm text-white hover:text-[#00f2a1] active:bg-[#303c4e] focus:outline-none focus:border-[#303c4e] focus:ring focus:ring-[#303c4e] disabled:opacity-50 transition"
                             wire:click.prevent = "guardarTransportista({{Auth::user()->id}})">
                             Guardar Cambios

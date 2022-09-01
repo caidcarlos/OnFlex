@@ -32,6 +32,7 @@ class CompletarPerfil extends Component
             'nombre' => 'required|min:2|max:50',
             'apellido' => 'required|min:2|max:50',
             'licencia' => 'required',
+            'comercial' => 'required',
             'peso' => 'required',
             'estatura' => 'required',
         ]);
@@ -42,6 +43,7 @@ class CompletarPerfil extends Component
             'num_pase' => $this->licencia,
             'peso' => $this->peso,
             'estatura' => $this->estatura,
+            'id_comercial' => $this->comercial,
             'usuario_id' => Auth::user()->id,
         ]);
         return redirect()->route('subir-foto-perfil');

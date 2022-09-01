@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Comercial;
 use App\Models\Empresa;
+use App\Models\Transportista;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -30,7 +31,8 @@ class Comerciales extends Component
             ->orderBy('id', 'desc')
             ->paginate($this->numero);
         $empresas = Empresa::select('comercial_id AS comercial')->get();
-        return view('livewire.comerciales.comerciales', compact('comerciales', 'empresas'));
+        $transportistas =  Transportista::select('id_comercial AS comercial')->get();
+        return view('livewire.comerciales.comerciales', compact('comerciales', 'empresas', 'transportistas'));
     }
 
     public function registrar(){
