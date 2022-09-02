@@ -4,10 +4,17 @@
             <x-slot name="logo">
                 <x-jet-authentication-card-logo />
             </x-slot>
-    
-            <div class="mb-4 text-sm text-[#303c4e]">
-                {{ __('¡Muy bien! Hemos validado tu pago. Antes de comenzar a utilizar la aplicación, por favor tómate unos minutos para completar tu perfil de usuario') }}
-            </div>
+            
+            @if (Auth::user()->tipo_usuario == '2')
+                <div class="mb-4 text-sm text-[#303c4e]">
+                    {{ __('¡Muy bien! Antes de comenzar a utilizar la aplicación, por favor tómate unos minutos para completar tu perfil de usuario') }}
+                </div>    
+            @endif
+            @if (Auth::user()->tipo_usuario == '3')
+                <div class="mb-4 text-sm text-[#303c4e]">
+                    {{ __('¡Muy bien! Hemos validado tu pago. Antes de comenzar a utilizar la aplicación, por favor tómate unos minutos para completar tu perfil de usuario') }}
+                </div>
+            @endif
     
             @if (session('status'))
                 <div class="mb-4 font-medium text-sm text-[#00f2a1]">
@@ -126,6 +133,19 @@
                             type="number" name="estatura" placeholder="1.86" wire:model.defer = "estatura" required />
                         @error('estatura')
                             <div class = "text-sm text-red-600 ">{{$message}}</div>
+                        @enderror
+                    </div>
+                    <div class="mt-4">
+                        <x-jet-label for="comercial" value="{{ __('Asesorado por:') }}" />
+                        <select id="comercial" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                            type="text" name="comercial" wire:model.defer = "comercial" required>
+                            <option value=null>Seleccione un comercial de la lista</option>
+                            @foreach ($comerciales as $comercial)
+                                <option value="{{$comercial->id}}">{{$comercial->nombre}} {{$comercial->apellidos}}</option>
+                            @endforeach
+                        </select>
+                        @error('comercial')
+                            <div id="text-sm text-red-500">{{$message}}</div>
                         @enderror
                     </div>
                     <div class="mt-4">

@@ -54,18 +54,18 @@
                 @if($modalConfirm)
                     @include('livewire.comerciales.modalConfirm')
                 @endif
-            <div class="mt-4 shadow w-11/12 mx-auto">
+            <div class="mt-4 shadow w-11/12 mx-auto overflow-x-auto">
                 <table class="px-2 w-full border-1 border-gray-700">
                     <thead>
                         <tr class="bg-gray-700">
                             <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
-                                Nombre
+                                Nombre y Apellido
                             </th>
                             <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
-                                Apeliido
+                                Cuentas Vendidas a Empresas
                             </th>
                             <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
-                                Cuentas Vendidas
+                                Cuentas Vendidas a Transportistas
                             </th>
                             <th class="w-1/5 text-white font-bold py-2 text-md border border-gray-700">
                                 Status
@@ -79,13 +79,23 @@
                         @foreach ($comerciales as $comercial)
                             @if($pivot == 1)
                                 <tr class="hover:bg-gray-200 text-sm text-center">
-                                    <td>{{$comercial->nombre}}</td>
-                                    <td>{{$comercial->apellidos}}</td>
+                                    <td>{{$comercial->nombre}} {{$comercial->apellidos}}</td>
                                     <td>
                                         @php
                                             $i = 0;
                                             foreach($empresas as $e){
                                                 if($e->comercial == $comercial->id){
+                                                    $i++;
+                                                }
+                                            }
+                                            echo $i;
+                                        @endphp
+                                    </td>
+                                    <td>
+                                        @php
+                                            $i = 0;
+                                            foreach($transportistas as $t){
+                                                if($t->comercial == $comercial->id){
                                                     $i++;
                                                 }
                                             }
