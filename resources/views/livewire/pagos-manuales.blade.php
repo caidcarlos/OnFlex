@@ -80,7 +80,7 @@
                                         data-epayco-description="Pago Suscripcion"
                                         data-epayco-currency="cop"
                                         data-epayco-country="co"
-                                        data-epayco-test="true"
+                                        data-epayco-test="false"
                                         data-epayco-external="false"
                                         data-epayco-response="http://apponflex.co/response"
                                         data-epayco-confirmation="http://apponflex.co/confirmacion"
