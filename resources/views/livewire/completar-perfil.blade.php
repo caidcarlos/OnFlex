@@ -136,6 +136,14 @@
                         @enderror
                     </div>
                     <div class="mt-4">
+                        <x-jet-label for="telefono" value="{{ __('Teléfono') }}" />
+                        <input id="telefono" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
+                            type="text" name="telefono" wire:model.defer = "telefono" required />
+                        @error('telefono')
+                            <div id="text-sm text-red-500">{{$message}}</div>
+                        @enderror
+                    </div>
+                    <div class="mt-4">
                         <x-jet-label for="comercial" value="{{ __('Asesorado por:') }}" />
                         <select id="comercial" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" 
                             type="text" name="comercial" wire:model.defer = "comercial" required>

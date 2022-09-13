@@ -35,6 +35,7 @@ class CompletarPerfil extends Component
             'comercial' => 'required',
             'peso' => 'required',
             'estatura' => 'required',
+            'telefono' => 'required'
         ]);
         $this->guadarNombre($this->nombre);
         Transportista::create([
@@ -43,6 +44,7 @@ class CompletarPerfil extends Component
             'num_pase' => $this->licencia,
             'peso' => $this->peso,
             'estatura' => $this->estatura,
+            'telefono' => $this->telefono,
             'id_comercial' => $this->comercial,
             'usuario_id' => Auth::user()->id,
         ]);
