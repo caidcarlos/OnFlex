@@ -33,14 +33,14 @@
                         href="{{route('propuestas-viajes')}}">aquí</a></div>
                     </div>
                     <div class="bg-gray-700 text-white text-md mt-2 rounded">
-                        <div class="p-2">Por otro lado, en la parte superior derecha puedes revisar tu menú y actualzar la información que nos has suministrado cada vez que quieras.</div>
+                        <div class="p-2">Por otro lado, en la parte superior derecha puedes revisar tu menú y actualizar la información que nos has suministrado cada vez que quieras.</div>
                     </div>
                     <div class="bg-gray-700 text-white text-md mt-2 rounded">
                         <div class="p-2">Recuerda que tu bienestar y el de los tuyos es importante para nosotros. Es por eso que OnFlex te ofrece la oportunidad de hacer amena tu experiencia y la de las personas más cercanas a ti, ofreciéndole beneficios. Para que tu beneficiario disfruten de esos servicios, registralo <a class="underline text-green-400" 
                         href="{{route('beneficiario')}}">aquí</a></div>
                     </div>
                     <div class="bg-gray-700 text-white text-md mt-2 rounded">
-                        <div class="p-2">En OnFlex, puedes registrar hasta dos camiones... Si posees otro, no dudes en registralo <a class="underline text-green-400" 
+                        <div class="p-2">En OnFlex, puedes registrar hasta dos vehículos... Si posees otro, no dudes en registrarlo <a class="underline text-green-400" 
                         href="{{route('camiones')}}">aquí</a></div>
                     </div>
                 @endif

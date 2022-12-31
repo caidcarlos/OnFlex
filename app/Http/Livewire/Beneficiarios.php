@@ -28,6 +28,7 @@ class Beneficiarios extends Component
     {
         $beneficiario = Beneficiario::join('ciudades', 'ciudades.id', '=', 'beneficiarios.ciudad_id')
             ->select([
+                'beneficiarios.id AS id',
                 'beneficiarios.cedula AS cedula',
                 'beneficiarios.nombre AS nombre',
                 'beneficiarios.apellido AS apellido',

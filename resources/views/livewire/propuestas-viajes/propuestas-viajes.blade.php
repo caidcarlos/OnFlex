@@ -216,7 +216,7 @@
                                                     Ver Detalles
                                                 </button>  
                                             </div>
-                                            <div class="mt-4 md:mt-0 w-full md:w-auto">
+                                            <div class="w-full md:w-auto">
                                                 @if((Auth::user()->tipo_usuario == 2) && ($propuesta->estado_viaje == 'ACTIVA'))
                                                     <button class="w-full ml-0 mt-1 md:mt-0 md:ml-1 inline-flex items-center px-4 py-2 rounded-md bg-gray-700 font-bold text-sm text-white hover:text-green-400 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring focus:ring-gray-600 disabled:opacity-50 transition"
                                                         wire:click.prevent = "cancelarViaje({{$propuesta->id}})"
