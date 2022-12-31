@@ -183,6 +183,9 @@ class Viajes extends Component
         ]);
         $this->gastos = Gastos::where('viaje_id', '=', $id_viaje)
             ->get();
+        $this->concepto = '';
+        $this->cantidad = '';
+        $this->precio = '';
     }
 
     public function modificarGasto($gasto_id){
